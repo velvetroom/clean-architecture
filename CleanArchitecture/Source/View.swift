@@ -47,7 +47,6 @@ open class View<Interactor, Presenter:PresenterProtocol, Content:UIView>:UIViewC
     
     open override func viewWillAppear(_ animated:Bool) {
         super.viewWillAppear(animated)
-        self.updateNavigation()
         self.willAppear()
         self.presenter.willAppear()
     }
@@ -75,10 +74,5 @@ open class View<Interactor, Presenter:PresenterProtocol, Content:UIView>:UIViewC
         self.presenter.viewModel = ViewModel()
         self.presenter.view = self
         self.initProperties()
-    }
-    
-    private func updateNavigation() {
-        let viewModel:ViewModelNavigation = self.viewModel.property()
-        self.viewModel.update(property:viewModel)
     }
 }

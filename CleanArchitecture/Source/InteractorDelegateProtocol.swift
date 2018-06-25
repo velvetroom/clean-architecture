@@ -1,6 +1,6 @@
 import Foundation
 
-public protocol InteractorPresentationProtocol:class {
+public protocol InteractorDelegateProtocol:class {
     var transition:TransitionProtocol? { get }
     
     func shouldUpdate()

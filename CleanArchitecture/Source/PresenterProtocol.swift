@@ -1,3 +1,3 @@
 import Foundation
 
-public protocol PresenterProtocol:InteractorPresentationProtocol, ViewDelegateProtocol { }
+public protocol PresenterProtocol:InteractorDelegateProtocol, ViewDelegateProtocol { }
