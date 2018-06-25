@@ -1,35 +1,83 @@
-//
-//  TestView.swift
-//  Tests
-//
-//  Created by zero on 25.06.18.
-//  Copyright © 2018 iturbide. All rights reserved.
-//
-
 import XCTest
+@testable import Shared
 
-class TestView: XCTestCase {
-    
-    override func setUp() {
-        super.setUp()
-        // Put setup code here. This method is called before the invocation of each test method in the class.
+class TestView:XCTestCase {
+    func testNotRetainingTransition() {
+        let view:MockView = MockView()
+        view.transition = MockTransitionProtocol()
+        XCTAssertNil(view.transition, "Retains")
     }
     
-    override func tearDown() {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
-        super.tearDown()
+    func testInjectsViewOnPresenter() {
+        let view:MockView = MockView()
+        XCTAssertNotNil(view.presenter.view, "Not injected")
     }
     
-    func testExample() {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
+    func testInitWithPresenterNotInjectingView() {
+        let presenter:MockPresenterProtocol = PresenterFactory.makePresenter()
+        let _:MockView = MockView(presenter:presenter)
+        XCTAssertNil(presenter.view, "Injecting/replacing view on presenter")
     }
     
-    func testPerformanceExample() {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
-        }
+    func testViewContent() {
+        let view:MockView = MockView()
+        let content:MockUIView? = view.view as? MockUIView
+        XCTAssertNotNil(content, "Invalid content type")
     }
     
+    func testCallsPresenterOnViewDidLoad() {
+        let presenter:MockPresenterProtocol = PresenterFactory.makePresenter()
+        let view:MockView = MockView(presenter:presenter)
+        var called:Bool = false
+        presenter.onDidLoad = { called = true }
+        view.viewDidLoad()
+        XCTAssertTrue(called, "Not called")
+    }
+    
+    func testCallsInteractorOnViewDidLoad() {
+        let presenter:MockPresenterProtocol = PresenterFactory.makePresenter()
+        let view:MockView = MockView(presenter:presenter)
+        var called:Bool = false
+        presenter.interactor.onDidLoad = { called = true }
+        view.viewDidLoad()
+        XCTAssertTrue(called, "Not called")
+    }
+    
+    func testCallsPresenterOnViewWillAppear() {
+        let presenter:MockPresenterProtocol = PresenterFactory.makePresenter()
+        let view:MockView = MockView(presenter:presenter)
+        var called:Bool = false
+        presenter.onWillAppear = { called = true }
+        view.viewWillAppear(false)
+        XCTAssertTrue(called, "Not called")
+    }
+    
+    func testCallsPresenterOnViewDidAppear() {
+        let presenter:MockPresenterProtocol = PresenterFactory.makePresenter()
+        let view:MockView = MockView(presenter:presenter)
+        var called:Bool = false
+        presenter.onDidAppear = { called = true }
+        view.viewDidAppear(false)
+        XCTAssertTrue(called, "Not called")
+    }
+    
+    func testCallsPresenterOnOrientationChange() {
+        let presenter:MockPresenterProtocol = PresenterFactory.makePresenter()
+        let view:MockView = MockView(presenter:presenter)
+        var called:Bool = false
+        presenter.onOrientationChanged = { called = true }
+        view.viewWillTransition(to:CGSize.zero, with:MockTransitionCoordinator())
+        XCTAssertTrue(called, "Not called")
+    }
+    
+    func testInjectContentWithPresenter() {
+        let presenter:MockPresenterProtocol = PresenterFactory.makePresenter()
+        let view:MockView = MockView(presenter:presenter)
+        XCTAssertNotNil(view.content, "Not injected")
+    }
+    
+    func testInjectContentWithoutPresenter() {
+        let view:MockView = MockView()
+        XCTAssertNotNil(view.content, "Not injected")
+    }
 }
