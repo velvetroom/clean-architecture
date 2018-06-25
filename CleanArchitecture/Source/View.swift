@@ -40,7 +40,6 @@ open class View<Interactor, Presenter:PresenterProtocol, Content:UIView>:UIViewC
     
     open override func viewDidLoad() {
         super.viewDidLoad()
-        self.configureView()
         self.didLoad()
         self.presenter.didLoad()
         self.presenter.interactor.didLoad()
@@ -76,10 +75,6 @@ open class View<Interactor, Presenter:PresenterProtocol, Content:UIView>:UIViewC
         self.presenter.viewModel = ViewModel()
         self.presenter.view = self
         self.initProperties()
-    }
-    
-    private func configureView() {
-        self.navigationItem.largeTitleDisplayMode = UINavigationItem.LargeTitleDisplayMode.always
     }
     
     private func updateNavigation() {
