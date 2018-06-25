@@ -5,6 +5,12 @@
       location = "group:Demo/Demo.xcodeproj">
    </FileRef>
    <FileRef
+      location = "group:Demo/../README.md">
+   </FileRef>
+   <FileRef
+      location = "group:Demo/../LICENSE">
+   </FileRef>
+   <FileRef
       location = "group:Demo/../.gitignore">
    </FileRef>
 </Workspace>

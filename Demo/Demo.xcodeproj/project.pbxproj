@@ -26,7 +26,6 @@
 		DA01BC5220E0C15C000F16DF /* Configuration */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Configuration; sourceTree = "<group>"; };
 		DA01BC5820E0C188000F16DF /* TestsDemo.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TestsDemo.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		DA640CFE20E0C1CA006F2DC8 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
-		DA640D0220E0C218006F2DC8 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; name = .gitignore; path = ../.gitignore; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -50,7 +49,6 @@
 		DA01BC3420E0C082000F16DF = {
 			isa = PBXGroup;
 			children = (
-				DA640D0220E0C218006F2DC8 /* .gitignore */,
 				DA640CFC20E0C1CA006F2DC8 /* Source */,
 				DA640D0120E0C1D3006F2DC8 /* Tests */,
 				DA640CFD20E0C1CA006F2DC8 /* Assets */,
