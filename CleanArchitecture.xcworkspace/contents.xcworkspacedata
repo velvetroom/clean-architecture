@@ -14,6 +14,9 @@
       location = "group:CHANGELOG.md">
    </FileRef>
    <FileRef
+      location = "group:CleanArchitecture.podspec">
+   </FileRef>
+   <FileRef
       location = "group:Demo/../LICENSE">
    </FileRef>
    <FileRef
