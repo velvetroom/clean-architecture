@@ -1,5 +1,5 @@
 import XCTest
-@testable import Shared
+@testable import CleanArchitecture
 
 class TestViewProtocol:XCTestCase {
     private var view:MockView!

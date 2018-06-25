@@ -1,5 +1,5 @@
 import XCTest
-@testable import Shared
+@testable import CleanArchitecture
 
 class TestViewModelPropertyProtocol:XCTestCase {
     private var property:MockViewModelPropertyProtocol!

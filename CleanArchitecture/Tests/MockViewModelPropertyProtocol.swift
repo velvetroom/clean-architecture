@@ -1,5 +1,5 @@
 import Foundation
-@testable import Shared
+import CleanArchitecture
 
 struct MockViewModelPropertyProtocol:ViewModelPropertyProtocol {
     var observing:((MockViewModelPropertyProtocol) -> Void)?

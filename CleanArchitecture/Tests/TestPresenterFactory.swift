@@ -1,5 +1,5 @@
 import XCTest
-@testable import Shared
+@testable import CleanArchitecture
 
 class TestPresenterFactory:XCTestCase {
     func testInjectsReferencesOnViewAndPresenter() {

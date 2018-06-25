@@ -1,9 +1,9 @@
 import Foundation
-@testable import Shared
+import CleanArchitecture
 
 class MockInteractorProtocol:InteractorProtocol {
     var onDidLoad:(() -> Void)?
-    weak var presenter:InteractorPresentationProtocol?
+    var presenter:InteractorDelegateProtocol?
     
     required init() { }
     

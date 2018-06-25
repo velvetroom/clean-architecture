@@ -1,4 +1,4 @@
 import Foundation
-@testable import Shared
+import CleanArchitecture
 
 class MockView:View<MockInteractorProtocol, MockPresenterProtocol, MockUIView> { }

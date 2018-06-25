@@ -1,23 +1,24 @@
 import XCTest
-@testable import Shared
+@testable import CleanArchitecture
 
 class TestViewModel:XCTestCase {
     private var viewModel:ViewModel!
-    private var property:MockViewModelPropertyProtocol!
+    private var propertyA:MockViewModelPropertyProtocol!
+    private var propertyB:MockViewModelSecondPropertyProtocol!
     
     override func setUp() {
         super.setUp()
         self.viewModel = ViewModel()
-        self.property = MockViewModelPropertyProtocol()
+        self.propertyA = MockViewModelPropertyProtocol()
+        self.propertyB = MockViewModelSecondPropertyProtocol()
     }
     
-    func testUpdatesNavigation() {
-        var navigation:ViewModelNavigation = self.viewModel.property()
-        let current:Bool = navigation.toolbarHidden
-        navigation.toolbarHidden = !current
-        self.viewModel.update(property:navigation)
-        let updatedNavigation:ViewModelNavigation? = self.viewModel.property()
-        XCTAssertEqual(updatedNavigation?.toolbarHidden, !current, "Not updated")
+    func testUpdatesProperty() {
+        var property:MockViewModelPropertyProtocol = self.viewModel.property()
+        property.name = "hello world"
+        self.viewModel.update(property:property)
+        let updatedProperty:MockViewModelPropertyProtocol = self.viewModel.property()
+        XCTAssertEqual(updatedProperty.name, property.name, "Failed to update")
     }
     
     func testNotifyObserver() {
@@ -25,7 +26,7 @@ class TestViewModel:XCTestCase {
         var notifiedAfterCopy:Bool = false
         let firstName:String = "hello world"
         let secondName:String = "lorem ipsum"
-        self.property.observing = { (viewModel:MockViewModelPropertyProtocol) in
+        self.propertyA.observing = { (viewModel:MockViewModelPropertyProtocol) in
             if notified == false {
                 notified = true
                 XCTAssertEqual(firstName, viewModel.name, "Invalid value")
@@ -35,11 +36,11 @@ class TestViewModel:XCTestCase {
             }
         }
         
-        self.property.name = firstName
-        self.viewModel.update(property:self.property)
+        self.propertyA.name = firstName
+        self.viewModel.update(property:self.propertyA)
         
-        self.property.name = secondName
-        self.viewModel.update(property:self.property)
+        self.propertyA.name = secondName
+        self.viewModel.update(property:self.propertyA)
         
         XCTAssertTrue(notified, "Not notified")
         XCTAssertTrue(notifiedAfterCopy, "Not notified after copy")
@@ -51,18 +52,19 @@ class TestViewModel:XCTestCase {
     }
     
     func testReturnsRightProperty() {
-        self.viewModel.update(property:self.property)
-        self.viewModel.update(property:ViewModelNavigation())
+        self.viewModel.update(property:self.propertyA)
+        self.viewModel.update(property:self.propertyB)
         let property:MockViewModelPropertyProtocol? = self.viewModel.property()
         XCTAssertNotNil(property, "Property is not the right type")
     }
     
     func testReplacesExistingPropertyOfSameType() {
-        self.viewModel.update(property:ViewModelNavigation())
-        self.viewModel.update(property:ViewModelNavigation())
-        self.viewModel.update(property:ViewModelNavigation())
-        self.viewModel.update(property:ViewModelNavigation())
-        self.viewModel.update(property:ViewModelNavigation())
+        self.viewModel.update(property:MockViewModelPropertyProtocol())
+        self.viewModel.update(property:MockViewModelPropertyProtocol())
+        self.viewModel.update(property:MockViewModelPropertyProtocol())
+        self.viewModel.update(property:MockViewModelPropertyProtocol())
+        self.viewModel.update(property:MockViewModelPropertyProtocol())
+        self.viewModel.update(property:MockViewModelPropertyProtocol())
         XCTAssertEqual(self.viewModel.properties.count, 1, "Failed to replace")
     }
     

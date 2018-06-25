@@ -1,5 +1,5 @@
 import Foundation
-@testable import Shared
+import CleanArchitecture
 
 class MockPresenterProtocol:PresenterProtocol {
     var onDidLoad:(() -> Void)?
