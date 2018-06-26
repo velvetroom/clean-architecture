@@ -9,6 +9,7 @@ class Amount {
         self.formatter.minimumIntegerDigits = Constants.minIntegers
         self.formatter.minimumFractionDigits = Constants.minDecimals
         self.formatter.maximumFractionDigits = Constants.maxDecimals
+        self.formatter.decimalSeparator = "."
     }
     
     func amountFrom(string:String) -> Float {
