@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		DA033C4E20E0CCB7009EB0B3 /* View.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA033C4D20E0CCB7009EB0B3 /* View.swift */; };
 		DA033C5020E0CCC3009EB0B3 /* TestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA033C4F20E0CCC3009EB0B3 /* TestView.swift */; };
+		DA1EA5DB20E2051700B8160E /* TransitionProtocol+Default.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA1EA5DA20E2051700B8160E /* TransitionProtocol+Default.swift */; };
 		DA20C80C20E0CC5A00B7234B /* CleanArchitecture.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DA20C7F320E0CAC800B7234B /* CleanArchitecture.framework */; };
 		DAD470EA20E0E43200E3D031 /* ViewModelPropertyProtocol+Default.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAD470D820E0E43100E3D031 /* ViewModelPropertyProtocol+Default.swift */; };
 		DAD470EB20E0E43200E3D031 /* ViewModelPropertyProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAD470D920E0E43100E3D031 /* ViewModelPropertyProtocol.swift */; };
@@ -53,6 +54,7 @@
 /* Begin PBXFileReference section */
 		DA033C4D20E0CCB7009EB0B3 /* View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = View.swift; sourceTree = "<group>"; };
 		DA033C4F20E0CCC3009EB0B3 /* TestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestView.swift; sourceTree = "<group>"; };
+		DA1EA5DA20E2051700B8160E /* TransitionProtocol+Default.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TransitionProtocol+Default.swift"; sourceTree = "<group>"; };
 		DA20C7F320E0CAC800B7234B /* CleanArchitecture.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = CleanArchitecture.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DA20C80120E0CC2900B7234B /* Configuration */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Configuration; sourceTree = "<group>"; };
 		DA20C80720E0CC5A00B7234B /* Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -128,6 +130,7 @@
 			isa = PBXGroup;
 			children = (
 				DAD4711620E0E4E400E3D031 /* TransitionProtocol.swift */,
+				DA1EA5DA20E2051700B8160E /* TransitionProtocol+Default.swift */,
 				DAD470DD20E0E43100E3D031 /* InteractorProtocol.swift */,
 				DAD470E320E0E43100E3D031 /* InteractorProtocol+Default.swift */,
 				DAD470E020E0E43100E3D031 /* InteractorDelegateProtocol.swift */,
@@ -277,6 +280,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DA1EA5DB20E2051700B8160E /* TransitionProtocol+Default.swift in Sources */,
 				DAD4711720E0E4E400E3D031 /* TransitionProtocol.swift in Sources */,
 				DAD470F420E0E43200E3D031 /* PresenterProtocol+Default.swift in Sources */,
 				DAD470F820E0E43200E3D031 /* PresenterFactory.swift in Sources */,
