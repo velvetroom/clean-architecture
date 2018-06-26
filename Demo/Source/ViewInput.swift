@@ -1,8 +1,9 @@
 import UIKit
 
-class ViewInput:UIView {
+class ViewInput:UIView, UITextFieldDelegate {
     weak var label:UILabel!
     weak var field:UITextField!
+    var delegateCallback:((String) -> Void)?
     
     init() {
         super.init(frame:CGRect.zero)
@@ -13,6 +14,21 @@ class ViewInput:UIView {
     
     required init?(coder:NSCoder) {
         return nil
+    }
+    
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        guard
+            let currentText:String = textField.text,
+            let range:Range = Range(range, in:currentText)
+        else { return true }
+        let updatedText:String = currentText.replacingCharacters(in:range, with:string)
+        self.delegateCallback?(updatedText)
+        return true
+    }
+    
+    func textFieldShouldReturn(_ textField:UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
     }
     
     private func configureView() {
@@ -44,6 +60,8 @@ class ViewInput:UIView {
         field.spellCheckingType = UITextSpellCheckingType.no
         field.textAlignment = NSTextAlignment.right
         field.keyboardType = UIKeyboardType.numbersAndPunctuation
+        field.returnKeyType = UIReturnKeyType.done
+        field.delegate = self
         self.field = field
         self.addSubview(field)
     }
