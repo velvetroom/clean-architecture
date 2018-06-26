@@ -15,7 +15,7 @@ class TestPresenter:XCTestCase {
         var validated:Bool = false
         let interactor:MockInteractor = MockInteractor()
         self.presenter.interactor = interactor
-        interactor.onAmountFrom = { validated = true }
+        interactor.onUpdateRate = { validated = true }
         self.presenter.updatedRate(string:String())
         XCTAssertTrue(validated, "Not validated")
     }
@@ -24,7 +24,7 @@ class TestPresenter:XCTestCase {
         var validated:Bool = false
         let interactor:MockInteractor = MockInteractor()
         self.presenter.interactor = interactor
-        interactor.onAmountFrom = { validated = true }
+        interactor.onUpdateEuro = { validated = true }
         self.presenter.updatedEuro(string:String())
         XCTAssertTrue(validated, "Not validated")
     }
@@ -33,7 +33,7 @@ class TestPresenter:XCTestCase {
         var validated:Bool = false
         let interactor:MockInteractor = MockInteractor()
         self.presenter.interactor = interactor
-        interactor.onAmountFrom = { validated = true }
+        interactor.onUpdateUsd = { validated = true }
         self.presenter.updatedUsd(string:String())
         XCTAssertTrue(validated, "Not validated")
     }

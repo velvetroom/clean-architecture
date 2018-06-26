@@ -2,10 +2,22 @@ import Foundation
 @testable import Demo
 
 class MockInteractor:Interactor {
-    var onAmountFrom:(() -> Void)?
+    var onUpdateRate:(() -> Void)?
+    var onUpdateEuro:(() -> Void)?
+    var onUpdateUsd:(() -> Void)?
     
-    override func amountFrom(string:String) -> Float {
-        self.onAmountFrom?()
-        return super.amountFrom(string:string)
+    override func updateRateWith(string:String) -> ExchangeText {
+        self.onUpdateRate?()
+        return ExchangeText()
+    }
+    
+    override func updateEuroWith(string:String) -> ExchangeText {
+        self.onUpdateEuro?()
+        return ExchangeText()
+    }
+    
+    override func updateUsdWith(string:String) -> ExchangeText {
+        self.onUpdateUsd?()
+        return ExchangeText()
     }
 }
