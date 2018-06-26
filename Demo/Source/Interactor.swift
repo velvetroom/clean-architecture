@@ -11,6 +11,11 @@ class Interactor:InteractorProtocol {
         self.exchanger = Exchanger()
     }
     
+    func initialExchanger() -> ExchangeText {
+        self.exchanger.euroChanged()
+        return self.amount.exchangeFrom(exchange:self.exchanger.exchange)
+    }
+    
     func updateRateWith(string:String) -> ExchangeText {
         self.exchanger.exchange.rate = self.amount.amountFrom(string:string)
         self.exchanger.rateChanged()
