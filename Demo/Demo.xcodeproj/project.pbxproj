@@ -16,11 +16,19 @@
 		DA1EA5EA20E20F4300B8160E /* ViewInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA1EA5E920E20F4300B8160E /* ViewInput.swift */; };
 		DA1EA5EC20E21B9300B8160E /* TestViewInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA1EA5EB20E21B9300B8160E /* TestViewInput.swift */; };
 		DA1EA5EE20E21D9400B8160E /* TestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA1EA5ED20E21D9400B8160E /* TestView.swift */; };
+		DA1EA5F020E21E5700B8160E /* Amount.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA1EA5EF20E21E5700B8160E /* Amount.swift */; };
+		DA1EA5F220E21E9E00B8160E /* TestAmount.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA1EA5F120E21E9E00B8160E /* TestAmount.swift */; };
+		DA1EA5F420E21EE900B8160E /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA1EA5F320E21EE900B8160E /* Constants.swift */; };
+		DA1EA5F620E2221A00B8160E /* MockAmount.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA1EA5F520E2221A00B8160E /* MockAmount.swift */; };
+		DA1EA5F820E2226400B8160E /* TestInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA1EA5F720E2226400B8160E /* TestInteractor.swift */; };
+		DA1EA5FA20E2230D00B8160E /* MockInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA1EA5F920E2230D00B8160E /* MockInteractor.swift */; };
+		DA1EA5FC20E2234100B8160E /* TestPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA1EA5FB20E2234100B8160E /* TestPresenter.swift */; };
+		DA1EA5FE20E223EB00B8160E /* MockPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA1EA5FD20E223EB00B8160E /* MockPresenter.swift */; };
 		DA640D0020E0C1CA006F2DC8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DA640CFE20E0C1CA006F2DC8 /* LaunchScreen.storyboard */; };
 		DA640D0620E0C425006F2DC8 /* Application.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA640D0520E0C425006F2DC8 /* Application.swift */; };
 		DA640D0820E0C4D5006F2DC8 /* View.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA640D0720E0C4D5006F2DC8 /* View.swift */; };
-		DA640D0A20E0C55F006F2DC8 /* CurrencyExchanger.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA640D0920E0C55F006F2DC8 /* CurrencyExchanger.swift */; };
-		DA640D0C20E0C57D006F2DC8 /* TestCurrencyExchanger.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA640D0B20E0C57D006F2DC8 /* TestCurrencyExchanger.swift */; };
+		DA640D0A20E0C55F006F2DC8 /* Exchanger.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA640D0920E0C55F006F2DC8 /* Exchanger.swift */; };
+		DA640D0C20E0C57D006F2DC8 /* TestExchanger.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA640D0B20E0C57D006F2DC8 /* TestExchanger.swift */; };
 		DA69304620E0CD870039A3D6 /* CleanArchitecture.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = DA033C5220E0CD6D009EB0B3 /* CleanArchitecture.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		DA69304820E0CDB50039A3D6 /* CleanArchitecture.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DA033C5220E0CD6D009EB0B3 /* CleanArchitecture.framework */; };
 /* End PBXBuildFile section */
@@ -63,11 +71,19 @@
 		DA1EA5E920E20F4300B8160E /* ViewInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewInput.swift; sourceTree = "<group>"; };
 		DA1EA5EB20E21B9300B8160E /* TestViewInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestViewInput.swift; sourceTree = "<group>"; };
 		DA1EA5ED20E21D9400B8160E /* TestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestView.swift; sourceTree = "<group>"; };
+		DA1EA5EF20E21E5700B8160E /* Amount.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Amount.swift; sourceTree = "<group>"; };
+		DA1EA5F120E21E9E00B8160E /* TestAmount.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestAmount.swift; sourceTree = "<group>"; };
+		DA1EA5F320E21EE900B8160E /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		DA1EA5F520E2221A00B8160E /* MockAmount.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockAmount.swift; sourceTree = "<group>"; };
+		DA1EA5F720E2226400B8160E /* TestInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestInteractor.swift; sourceTree = "<group>"; };
+		DA1EA5F920E2230D00B8160E /* MockInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockInteractor.swift; sourceTree = "<group>"; };
+		DA1EA5FB20E2234100B8160E /* TestPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestPresenter.swift; sourceTree = "<group>"; };
+		DA1EA5FD20E223EB00B8160E /* MockPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockPresenter.swift; sourceTree = "<group>"; };
 		DA640CFE20E0C1CA006F2DC8 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		DA640D0520E0C425006F2DC8 /* Application.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Application.swift; sourceTree = "<group>"; };
 		DA640D0720E0C4D5006F2DC8 /* View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = View.swift; sourceTree = "<group>"; };
-		DA640D0920E0C55F006F2DC8 /* CurrencyExchanger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyExchanger.swift; sourceTree = "<group>"; };
-		DA640D0B20E0C57D006F2DC8 /* TestCurrencyExchanger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestCurrencyExchanger.swift; sourceTree = "<group>"; };
+		DA640D0920E0C55F006F2DC8 /* Exchanger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Exchanger.swift; sourceTree = "<group>"; };
+		DA640D0B20E0C57D006F2DC8 /* TestExchanger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestExchanger.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -130,7 +146,9 @@
 				DA1EA5E920E20F4300B8160E /* ViewInput.swift */,
 				DA1EA5E320E2093500B8160E /* Presenter.swift */,
 				DA1EA5E520E2093C00B8160E /* Interactor.swift */,
-				DA640D0920E0C55F006F2DC8 /* CurrencyExchanger.swift */,
+				DA640D0920E0C55F006F2DC8 /* Exchanger.swift */,
+				DA1EA5EF20E21E5700B8160E /* Amount.swift */,
+				DA1EA5F320E21EE900B8160E /* Constants.swift */,
 			);
 			path = Source;
 			sourceTree = "<group>";
@@ -156,7 +174,13 @@
 			children = (
 				DA1EA5ED20E21D9400B8160E /* TestView.swift */,
 				DA1EA5EB20E21B9300B8160E /* TestViewInput.swift */,
-				DA640D0B20E0C57D006F2DC8 /* TestCurrencyExchanger.swift */,
+				DA1EA5FB20E2234100B8160E /* TestPresenter.swift */,
+				DA1EA5F720E2226400B8160E /* TestInteractor.swift */,
+				DA1EA5F120E21E9E00B8160E /* TestAmount.swift */,
+				DA640D0B20E0C57D006F2DC8 /* TestExchanger.swift */,
+				DA1EA5FD20E223EB00B8160E /* MockPresenter.swift */,
+				DA1EA5F920E2230D00B8160E /* MockInteractor.swift */,
+				DA1EA5F520E2221A00B8160E /* MockAmount.swift */,
 			);
 			path = Tests;
 			sourceTree = "<group>";
@@ -263,12 +287,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DA1EA5F020E21E5700B8160E /* Amount.swift in Sources */,
+				DA1EA5F420E21EE900B8160E /* Constants.swift in Sources */,
 				DA1EA5E420E2093500B8160E /* Presenter.swift in Sources */,
 				DA1EA5E220E2092E00B8160E /* ViewContent.swift in Sources */,
 				DA640D0820E0C4D5006F2DC8 /* View.swift in Sources */,
 				DA1EA5EA20E20F4300B8160E /* ViewInput.swift in Sources */,
 				DA640D0620E0C425006F2DC8 /* Application.swift in Sources */,
-				DA640D0A20E0C55F006F2DC8 /* CurrencyExchanger.swift in Sources */,
+				DA640D0A20E0C55F006F2DC8 /* Exchanger.swift in Sources */,
 				DA1EA5E620E2093C00B8160E /* Interactor.swift in Sources */,
 				DA1EA5E820E20C6500B8160E /* ViewConstants.swift in Sources */,
 				DA1EA5DD20E206DF00B8160E /* Navigation.swift in Sources */,
@@ -280,8 +306,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				DA1EA5EE20E21D9400B8160E /* TestView.swift in Sources */,
-				DA640D0C20E0C57D006F2DC8 /* TestCurrencyExchanger.swift in Sources */,
+				DA1EA5FE20E223EB00B8160E /* MockPresenter.swift in Sources */,
+				DA640D0C20E0C57D006F2DC8 /* TestExchanger.swift in Sources */,
+				DA1EA5F220E21E9E00B8160E /* TestAmount.swift in Sources */,
+				DA1EA5F620E2221A00B8160E /* MockAmount.swift in Sources */,
+				DA1EA5F820E2226400B8160E /* TestInteractor.swift in Sources */,
 				DA1EA5EC20E21B9300B8160E /* TestViewInput.swift in Sources */,
+				DA1EA5FC20E2234100B8160E /* TestPresenter.swift in Sources */,
+				DA1EA5FA20E2230D00B8160E /* MockInteractor.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

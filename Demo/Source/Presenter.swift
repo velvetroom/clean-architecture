@@ -9,14 +9,14 @@ class Presenter:PresenterProtocol {
     required init() { }
     
     func updatedRate(string:String) {
-        
+        let amount:Float = self.interactor.amountFrom(string:string)
     }
     
     func updatedEuro(string:String) {
-        
+        let amount:Float = self.interactor.amountFrom(string:string)
     }
     
     func updatedUsd(string:String) {
-        
+        let amount:Float = self.interactor.amountFrom(string:string)
     }
 }

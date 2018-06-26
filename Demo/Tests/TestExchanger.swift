@@ -1,6 +1,6 @@
 import XCTest
 
-class TestCurrencyExchanger:XCTestCase {
+class TestExchanger:XCTestCase {
     override func setUp() {
         super.setUp()
     }
