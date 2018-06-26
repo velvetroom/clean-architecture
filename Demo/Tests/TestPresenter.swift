@@ -37,4 +37,34 @@ class TestPresenter:XCTestCase {
         self.presenter.updatedUsd(string:String())
         XCTAssertTrue(validated, "Not validated")
     }
+    
+    func testUpdateViewModelOnUpdateRate() {
+        var called:Bool = false
+        var property:ViewModelUsd = self.view.viewModel.property()
+        property.observing = { (viewModel:ViewModelUsd) in called = true }
+        self.view.viewModel.update(property:property)
+        called = false
+        self.presenter.updatedRate(string:String())
+        XCTAssertTrue(called, "Not updated")
+    }
+    
+    func testUpdateViewModelOnUpdateEuro() {
+        var called:Bool = false
+        var property:ViewModelUsd = self.view.viewModel.property()
+        property.observing = { (viewModel:ViewModelUsd) in called = true }
+        self.view.viewModel.update(property:property)
+        called = false
+        self.presenter.updatedEuro(string:String())
+        XCTAssertTrue(called, "Not updated")
+    }
+    
+    func testUpdateViewModelOnUpdateUsd() {
+        var called:Bool = false
+        var property:ViewModelEuro = self.view.viewModel.property()
+        property.observing = { (viewModel:ViewModelEuro) in called = true }
+        self.view.viewModel.update(property:property)
+        called = false
+        self.presenter.updatedUsd(string:String())
+        XCTAssertTrue(called, "Not updated")
+    }
 }
