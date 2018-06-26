@@ -1,16 +1,9 @@
 import UIKit
+import CleanArchitecture
 
-class View:UIViewController {
-    init() {
-        super.init(nibName:nil, bundle:nil)
-        self.configureView()
-    }
-    
-    required init?(coder:NSCoder) {
-        return nil
-    }
-    
-    private func configureView() {
+class View:CleanArchitecture.View<Interactor, Presenter, UIView> {    
+    override func didLoad() {
+        super.didLoad()
         self.title = NSLocalizedString("View_Title", comment:String())
     }
 }
