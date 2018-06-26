@@ -28,6 +28,7 @@
 		DA1EA60220E225CD00B8160E /* ViewModelEuro.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA1EA60120E225CD00B8160E /* ViewModelEuro.swift */; };
 		DA1EA60420E225E100B8160E /* ViewModelUsd.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA1EA60320E225E100B8160E /* ViewModelUsd.swift */; };
 		DA1EA60620E2275A00B8160E /* TestView_ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA1EA60520E2275A00B8160E /* TestView_ViewModel.swift */; };
+		DA1EA60820E228D500B8160E /* Exchange.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA1EA60720E228D500B8160E /* Exchange.swift */; };
 		DA640D0020E0C1CA006F2DC8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DA640CFE20E0C1CA006F2DC8 /* LaunchScreen.storyboard */; };
 		DA640D0620E0C425006F2DC8 /* Application.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA640D0520E0C425006F2DC8 /* Application.swift */; };
 		DA640D0820E0C4D5006F2DC8 /* View.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA640D0720E0C4D5006F2DC8 /* View.swift */; };
@@ -87,6 +88,7 @@
 		DA1EA60120E225CD00B8160E /* ViewModelEuro.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModelEuro.swift; sourceTree = "<group>"; };
 		DA1EA60320E225E100B8160E /* ViewModelUsd.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModelUsd.swift; sourceTree = "<group>"; };
 		DA1EA60520E2275A00B8160E /* TestView_ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestView_ViewModel.swift; sourceTree = "<group>"; };
+		DA1EA60720E228D500B8160E /* Exchange.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Exchange.swift; sourceTree = "<group>"; };
 		DA640CFE20E0C1CA006F2DC8 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		DA640D0520E0C425006F2DC8 /* Application.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Application.swift; sourceTree = "<group>"; };
 		DA640D0720E0C4D5006F2DC8 /* View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = View.swift; sourceTree = "<group>"; };
@@ -158,6 +160,7 @@
 				DA1EA5E320E2093500B8160E /* Presenter.swift */,
 				DA1EA5E520E2093C00B8160E /* Interactor.swift */,
 				DA640D0920E0C55F006F2DC8 /* Exchanger.swift */,
+				DA1EA60720E228D500B8160E /* Exchange.swift */,
 				DA1EA5EF20E21E5700B8160E /* Amount.swift */,
 				DA1EA5F320E21EE900B8160E /* Constants.swift */,
 			);
@@ -307,6 +310,7 @@
 				DA1EA60420E225E100B8160E /* ViewModelUsd.swift in Sources */,
 				DA1EA5EA20E20F4300B8160E /* ViewInput.swift in Sources */,
 				DA640D0620E0C425006F2DC8 /* Application.swift in Sources */,
+				DA1EA60820E228D500B8160E /* Exchange.swift in Sources */,
 				DA640D0A20E0C55F006F2DC8 /* Exchanger.swift in Sources */,
 				DA1EA5E620E2093C00B8160E /* Interactor.swift in Sources */,
 				DA1EA5E820E20C6500B8160E /* ViewConstants.swift in Sources */,
