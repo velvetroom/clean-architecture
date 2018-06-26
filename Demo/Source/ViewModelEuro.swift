@@ -3,9 +3,9 @@ import CleanArchitecture
 
 struct ViewModelEuro:ViewModelPropertyProtocol {
     var observing:((ViewModelEuro) -> Void)?
-    var amount:Float
+    var amount:String
     
     init() {
-        self.amount = 0
+        self.amount = String()
     }
 }

@@ -3,9 +3,9 @@ import CleanArchitecture
 
 struct ViewModelRate:ViewModelPropertyProtocol {
     var observing:((ViewModelRate) -> Void)?
-    var amount:Float
+    var amount:String
     
     init() {
-        self.amount = 0
+        self.amount = String()
     }
 }

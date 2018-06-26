@@ -19,6 +19,7 @@ class TestView:XCTestCase {
     func testUpdateRateCallsPresenter() {
         var called:Bool = false
         let presenter:MockPresenter = MockPresenter()
+        presenter.viewModel = self.view.presenter.viewModel
         self.view.presenter = presenter
         self.view.didLoad()
         presenter.onUpdatedRate = { called = true }
@@ -30,6 +31,7 @@ class TestView:XCTestCase {
     func testUpdateEuroCallsPresenter() {
         var called:Bool = false
         let presenter:MockPresenter = MockPresenter()
+        presenter.viewModel = self.view.presenter.viewModel
         self.view.presenter = presenter
         self.view.didLoad()
         presenter.onUpdatedEuro = { called = true }
@@ -41,11 +43,22 @@ class TestView:XCTestCase {
     func testUpdateUsdCallsPresenter() {
         var called:Bool = false
         let presenter:MockPresenter = MockPresenter()
+        presenter.viewModel = self.view.presenter.viewModel
         self.view.presenter = presenter
         self.view.didLoad()
         presenter.onUpdatedUsd = { called = true }
         let _:Bool = self.view.content.inputUsd.textField(UITextField(), shouldChangeCharactersIn:NSMakeRange(0, 0),
                                                            replacementString:String())
         XCTAssertTrue(called, "Not called")
+    }
+    
+    func testAddedViewModelObserversOnLoad() {
+        self.view.didLoad()
+        let rate:ViewModelRate = self.view.viewModel.property()
+        let euro:ViewModelEuro = self.view.viewModel.property()
+        let usd:ViewModelUsd = self.view.viewModel.property()
+        XCTAssertNotNil(rate.observing, "Not configured")
+        XCTAssertNotNil(euro.observing, "Not configured")
+        XCTAssertNotNil(usd.observing, "Not configured")
     }
 }
