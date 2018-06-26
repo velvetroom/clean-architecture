@@ -1,0 +1,5 @@
+View_Title="Clean Architecture";
+ViewContent_LabelTitle="Exchange currency Euro <> USD";
+ViewContent_LabelInputRate="Rate: 1 Euro = USD";
+ViewContent_LabelInputEuro="Euro";
+ViewContent_LabelInputUsd="USD";
