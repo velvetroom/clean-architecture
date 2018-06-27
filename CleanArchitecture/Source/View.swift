@@ -1,7 +1,6 @@
 import UIKit
 
-open class View<Interactor, Presenter:PresenterProtocol, Content:UIView>:
-    UIViewController, ViewProtocol where Interactor == Presenter.Interactor {
+open class View<Presenter:PresenterProtocol, Content:UIView>:UIViewController, ViewProtocol {
     open var presenter:Presenter
     open var content:Content!
     
