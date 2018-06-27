@@ -1,6 +1,6 @@
 import UIKit
 
-class Navigation:UINavigationController, NavigationProtocol {
+class Navigation:UINavigationController, TransitionProtocol {
     init() {
         super.init(nibName:nil, bundle:nil)
         let view:View = View()
