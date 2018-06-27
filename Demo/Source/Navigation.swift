@@ -1,7 +1,6 @@
 import UIKit
-import CleanArchitecture
 
-class Navigation:UINavigationController, TransitionProtocol {
+class Navigation:UINavigationController {
     init() {
         super.init(nibName:nil, bundle:nil)
         self.setViewControllers([View()], animated:false)
