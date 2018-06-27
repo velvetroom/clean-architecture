@@ -1,4 +1,4 @@
-# Changelog
+# Change log
 
 
 ## Version 1.4
