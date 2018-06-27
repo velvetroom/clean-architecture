@@ -2,12 +2,6 @@ import XCTest
 @testable import CleanArchitecture
 
 class TestView:XCTestCase {
-    func testNotRetainingTransition() {
-        let view:MockView = MockView()
-        view.transition = MockTransitionProtocol()
-        XCTAssertNil(view.transition, "Retains")
-    }
-    
     func testInjectsViewOnPresenter() {
         let view:MockView = MockView()
         XCTAssertNotNil(view.presenter.view, "Not injected")
