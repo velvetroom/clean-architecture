@@ -1,5 +1,11 @@
 # Changelog
 
+
+## Version 1.4
+
+- Removed unnecessary transition protocol
+
+
 ## Version 1.3
 
 - Removed constrain from transition associated type
@@ -25,4 +31,3 @@
 
 - Added demo app
 - Added CI supported by Bitrise
-
