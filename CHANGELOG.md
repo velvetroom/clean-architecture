@@ -1,8 +1,19 @@
 # Changelog
 
+## Version 1.2
+
+- Added TransitionProtocol as an associatedtype for PresenterProtocol
+  Clients should be able to extend TransitonProtocol
+  Presenter will own a weak reference to transition
+  
+- Remove InteractorProtocol from View Generic signature
+   It can be infered from PresenterProtocol  
+
+
 ## Version 1.1
 
 - Removed transition protocol
+
 
 ## Version 1.0
 
