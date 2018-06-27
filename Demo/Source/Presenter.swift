@@ -3,7 +3,7 @@ import CleanArchitecture
 
 class Presenter:PresenterProtocol {
     weak var view:ViewProtocol?
-    weak var transition:Navigation?
+    weak var transition:TransitionProtocol?
     var viewModel:ViewModel!
     var interactor:Interactor!
     

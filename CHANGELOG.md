@@ -1,5 +1,11 @@
 # Changelog
 
+## Version 1.3
+
+- Removed constrain from transition associated type
+   You can assign your own TransitionProtocol now, not just a concrete type
+
+
 ## Version 1.2
 
 - Added TransitionProtocol as an associatedtype for PresenterProtocol
