@@ -1,6 +1,12 @@
 # Change log
 
 
+## Version 1.5
+
+- Removed ViewDelegateProtocol
+- Added class constraint to InteractorProtocol
+
+
 ## Version 1.4
 
 - Removed unnecessary transition protocol
