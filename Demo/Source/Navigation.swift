@@ -1,9 +1,11 @@
 import UIKit
 
-class Navigation:UINavigationController {
+class Navigation:UINavigationController, NavigationProtocol {
     init() {
         super.init(nibName:nil, bundle:nil)
-        self.setViewControllers([View()], animated:false)
+        let view:View = View()
+        view.transition = self
+        self.setViewControllers([view], animated:false)
     }
     
     required init?(coder:NSCoder) {
