@@ -10,7 +10,6 @@
 		DA033C4E20E0CCB7009EB0B3 /* View.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA033C4D20E0CCB7009EB0B3 /* View.swift */; };
 		DA033C5020E0CCC3009EB0B3 /* TestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA033C4F20E0CCC3009EB0B3 /* TestView.swift */; };
 		DA20C80C20E0CC5A00B7234B /* CleanArchitecture.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DA20C7F320E0CAC800B7234B /* CleanArchitecture.framework */; };
-		DA55194620E4C8CA00A2609C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DA55194520E4C8CA00A2609C /* Foundation.framework */; };
 		DABED05420E39371007C3E18 /* MockTransitionProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = DABED05320E39371007C3E18 /* MockTransitionProtocol.swift */; };
 		DAD470EA20E0E43200E3D031 /* ViewModelPropertyProtocol+Default.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAD470D820E0E43100E3D031 /* ViewModelPropertyProtocol+Default.swift */; };
 		DAD470EB20E0E43200E3D031 /* ViewModelPropertyProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAD470D920E0E43100E3D031 /* ViewModelPropertyProtocol.swift */; };
@@ -54,7 +53,6 @@
 		DA20C7F320E0CAC800B7234B /* CleanArchitecture.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = CleanArchitecture.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DA20C80120E0CC2900B7234B /* Configuration */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Configuration; sourceTree = "<group>"; };
 		DA20C80720E0CC5A00B7234B /* Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		DA55194520E4C8CA00A2609C /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		DABED05320E39371007C3E18 /* MockTransitionProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockTransitionProtocol.swift; sourceTree = "<group>"; };
 		DAD470D820E0E43100E3D031 /* ViewModelPropertyProtocol+Default.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ViewModelPropertyProtocol+Default.swift"; sourceTree = "<group>"; };
 		DAD470D920E0E43100E3D031 /* ViewModelPropertyProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewModelPropertyProtocol.swift; sourceTree = "<group>"; };
@@ -87,7 +85,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DA55194620E4C8CA00A2609C /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -108,7 +105,6 @@
 				DA20C80220E0CC3400B7234B /* Source */,
 				DA20C80820E0CC5A00B7234B /* Tests */,
 				DA20C7F420E0CAC800B7234B /* Products */,
-				DA55194420E4C8CA00A2609C /* Frameworks */,
 				DA20C80120E0CC2900B7234B /* Configuration */,
 			);
 			sourceTree = "<group>";
@@ -161,14 +157,6 @@
 				DAD470FE20E0E43B00E3D031 /* MockUIView.swift */,
 			);
 			path = Tests;
-			sourceTree = "<group>";
-		};
-		DA55194420E4C8CA00A2609C /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				DA55194520E4C8CA00A2609C /* Foundation.framework */,
-			);
-			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
