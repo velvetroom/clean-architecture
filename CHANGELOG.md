@@ -1,6 +1,11 @@
 # Change log
 
 
+## Version 1.6
+
+- Remove optional from StartTransition in PresenterProtocol
+
+
 ## Version 1.5
 
 - Removed ViewDelegateProtocol
