@@ -1,6 +1,6 @@
 import Foundation
 
-public protocol InteractorProtocol:class {
+public protocol InteractorProtocol:AnyObject {
     var presenter:InteractorDelegateProtocol? { get set }
     
     init()
