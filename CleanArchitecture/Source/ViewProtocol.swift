@@ -1,6 +1,6 @@
 import Foundation
 
-public protocol ViewProtocol:class {
+public protocol ViewProtocol:AnyObject {
     var interactor:InteractorProtocol { get }
     var viewModel:ViewModel { get }
     

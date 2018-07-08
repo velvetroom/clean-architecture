@@ -1,4 +1,4 @@
 import Foundation
 import CleanArchitecture
 
-protocol TransitionProtocol:class { }
+protocol TransitionProtocol:AnyObject { }
