@@ -1,6 +1,11 @@
 # Change log
 
 
+## Version 1.7
+
+- Replace class constraint in protocols for AnyObject
+
+
 ## Version 1.6
 
 - Remove optional from StartTransition in PresenterProtocol
