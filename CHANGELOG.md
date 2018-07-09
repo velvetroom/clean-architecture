@@ -1,5 +1,11 @@
 # Change log
 
+
+## Version 1.9
+
+- Update to Swift 4.2
+
+
 ## Version 1.8
 
 - Refactor ViewModel
