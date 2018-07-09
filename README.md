@@ -28,3 +28,57 @@ changes really hard to apply or it will be a very fragile structure where any si
 to break and in need of corrective refactoring.
 
 
+## Implementation
+
+By dividing your project into different layers you will be able to have a clear separation of concerns.
+
+### Architecture overview
+
+-View
+-ViewModel
+-Presenter
+-Interactor
+-{ Business models }
+
+
+### Architecture dependencies
+
+-ViewModel
+--Just a data structure
+-View
+--Depends on (knows about)
+---Presenter
+---ViewModel
+--Ignores (knows nothing about)
+-Presenter
+--Depends on (knows about)
+---Interactor
+---ViewModel
+--Ignores (knows nothing about)
+---View
+-Interactor
+--Depends on (knows about)
+---{ Business models }
+--Ignores (knows nothing about)
+---Presenter
+
+
+# Install
+### CocoaPods
+You can get CleanArchitecture easily with CocoaPods.
+
+Add to your Podfile
+```
+pod 'CleanArchitecture'
+```
+Run installation
+```
+> pod install
+```
+If you are wondering what is CocoaPods take a look at: [https://cocoapods.org](https://cocoapods.org)
+
+
+# Demo
+Clone or download this repo, it contains a simple Demo App that will help you have a clear vision of how to adapt Clean Architecture to your project
+
+
