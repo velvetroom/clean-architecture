@@ -3,22 +3,27 @@ import XCTest
 
 class TestViewModel:XCTestCase {
     private var viewModel:ViewModel!
-    private var propertyA:MockViewModelPropertyProtocol!
-    private var propertyB:MockViewModelSecondPropertyProtocol!
+    private var propertyA:MockViewModelProtocol!
+    private var propertyB:MockViewModelSecondProtocol!
     
     override func setUp() {
         super.setUp()
         self.viewModel = ViewModel()
-        self.propertyA = MockViewModelPropertyProtocol()
-        self.propertyB = MockViewModelSecondPropertyProtocol()
+        self.propertyA = MockViewModelProtocol()
+        self.propertyB = MockViewModelSecondProtocol()
     }
     
     func testUpdatesProperty() {
-        var property:MockViewModelPropertyProtocol = self.viewModel.property()
-        property.name = "hello world"
+        var updated:Bool = false
+        let name:String = "hello world"
+        self.viewModel.observe { (property:MockViewModelProtocol) in
+            XCTAssertEqual(property.name, name, "Failed to update")
+            updated = true
+        }
+        var property:MockViewModelProtocol = MockViewModelProtocol()
+        property.name = name
         self.viewModel.update(property:property)
-        let updatedProperty:MockViewModelPropertyProtocol = self.viewModel.property()
-        XCTAssertEqual(updatedProperty.name, property.name, "Failed to update")
+        XCTAssertTrue(updated, "Not updated")
     }
     
     func testNotifyObserver() {
@@ -26,7 +31,7 @@ class TestViewModel:XCTestCase {
         var notifiedAfterCopy:Bool = false
         let firstName:String = "hello world"
         let secondName:String = "lorem ipsum"
-        self.propertyA.observing = { (viewModel:MockViewModelPropertyProtocol) in
+        self.viewModel.observe { (viewModel:MockViewModelProtocol) in
             if notified == false {
                 notified = true
                 XCTAssertEqual(firstName, viewModel.name, "Invalid value")
@@ -46,62 +51,34 @@ class TestViewModel:XCTestCase {
         XCTAssertTrue(notifiedAfterCopy, "Not notified after copy")
     }
     
-    func testPropertyCreatesViewModelIfNotFound() {
-        let property:MockViewModelPropertyProtocol? = self.viewModel.property()
-        XCTAssertNotNil(property, "Failed to create property")
-    }
-    
-    func testReturnsRightProperty() {
-        self.viewModel.update(property:self.propertyA)
-        self.viewModel.update(property:self.propertyB)
-        let property:MockViewModelPropertyProtocol? = self.viewModel.property()
-        XCTAssertNotNil(property, "Property is not the right type")
-    }
-    
     func testReplacesExistingPropertyOfSameType() {
-        self.viewModel.update(property:MockViewModelPropertyProtocol())
-        self.viewModel.update(property:MockViewModelPropertyProtocol())
-        self.viewModel.update(property:MockViewModelPropertyProtocol())
-        self.viewModel.update(property:MockViewModelPropertyProtocol())
-        self.viewModel.update(property:MockViewModelPropertyProtocol())
-        self.viewModel.update(property:MockViewModelPropertyProtocol())
-        XCTAssertEqual(self.viewModel.properties.count, 1, "Failed to replace")
+        self.viewModel.update(property:MockViewModelProtocol())
+        self.viewModel.update(property:MockViewModelProtocol())
+        self.viewModel.update(property:MockViewModelProtocol())
+        self.viewModel.update(property:MockViewModelProtocol())
+        self.viewModel.update(property:MockViewModelProtocol())
+        self.viewModel.update(property:MockViewModelProtocol())
+        XCTAssertEqual(self.viewModel.items.count, 1, "Failed to replace")
     }
     
-    func testCopyObserverWhenReplacingProperty() {
-        var secondPropertyCalled:Bool = false
-        var fourthPropertyCalled:Bool = false
-        let firstProperty:MockViewModelPropertyProtocol = MockViewModelPropertyProtocol()
-        self.viewModel.update(property:firstProperty)
-        let returnAfterFirstProperty:MockViewModelPropertyProtocol = self.viewModel.property()
-        XCTAssertNil(returnAfterFirstProperty.observing, "Should not contain observer")
-        
-        var secondProperty:MockViewModelPropertyProtocol = MockViewModelPropertyProtocol()
-        secondProperty.observing = { (viewModel:MockViewModelPropertyProtocol) in
-            secondPropertyCalled = true
-        }
-        self.viewModel.update(property:secondProperty)
-        let returnAfterSecondProperty:MockViewModelPropertyProtocol = self.viewModel.property()
-        XCTAssertNotNil(returnAfterSecondProperty.observing, "Should contain observer")
-        
-        let thirdProperty:MockViewModelPropertyProtocol = MockViewModelPropertyProtocol()
-        self.viewModel.update(property:thirdProperty)
-        let returnAfterThirdProperty:MockViewModelPropertyProtocol = self.viewModel.property()
-        XCTAssertNotNil(returnAfterThirdProperty, "Should have copied observer")
-        
-        var fourthProperty:MockViewModelPropertyProtocol = MockViewModelPropertyProtocol()
-        fourthProperty.observing = { (viewModel:MockViewModelPropertyProtocol) in
-            fourthPropertyCalled = true
-        }
-        self.viewModel.update(property:fourthProperty)
-        let returnAfterFourthProperty:MockViewModelPropertyProtocol = self.viewModel.property()
-        XCTAssertNotNil(returnAfterFourthProperty, "Should have kept observer")
-        
-        secondPropertyCalled = false
-        fourthPropertyCalled = false
-        self.viewModel.update(property:MockViewModelPropertyProtocol())
-        
-        XCTAssertFalse(secondPropertyCalled, "Second should not be called")
-        XCTAssertTrue(fourthPropertyCalled, "Fourth should not be called")
+    func testUpdateObserver() {
+        var updated:Bool = false
+        let view:MockView = MockView()
+        view.startObserving()
+        view.onPropertyUpdated = { updated = true }
+        view.presenter.viewModel.update(property:MockViewModelProtocol())
+        XCTAssertTrue(updated, "Failed to update")
+    }
+    
+    func testNotRetainingObserver() {
+        var updated:Bool = false
+        let transition:MockTransitionProtocol = MockTransitionProtocol()
+        transition.view = MockView()
+        transition.view?.startObserving()
+        transition.view?.onPropertyUpdated = { updated = true }
+        transition.view?.presenter.viewModel.update(property:MockViewModelProtocol())
+        transition.view = nil
+        XCTAssertTrue(updated, "Failed to update")
+        XCTAssertNil(transition.view, "Failed to release")
     }
 }

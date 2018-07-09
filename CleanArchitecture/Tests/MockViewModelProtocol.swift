@@ -1,8 +1,7 @@
 import Foundation
 import CleanArchitecture
 
-struct MockViewModelPropertyProtocol:ViewModelProtocol {
-    var observing:((MockViewModelPropertyProtocol) -> Void)?
+struct MockViewModelProtocol:ViewModelProtocol {
     var name:String
     
     init() {
