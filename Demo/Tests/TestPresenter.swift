@@ -41,13 +41,11 @@ class TestPresenter:XCTestCase {
     func testUpdateViewModelOnUpdateRate() {
         var called:Bool = false
         let string:String = "5"
-        var property:ViewModelUsd = self.view.viewModel.property()
-        property.observing = { (viewModel:ViewModelUsd) in
+        self.view.presenter.viewModel.observe { (viewModel:ViewModelUsd) in
             called = true
         }
         self.view.presenter.interactor.exchanger.exchange.euro = 1
         self.view.presenter.interactor.exchanger.exchange.usd = 1
-        self.view.viewModel.update(property:property)
         called = false
         self.presenter.updatedRate(string:string)
         XCTAssertTrue(called, "Not updated")
@@ -56,13 +54,11 @@ class TestPresenter:XCTestCase {
     func testUpdateViewModelOnUpdateEuro() {
         var called:Bool = false
         let string:String = "5.00"
-        var property:ViewModelUsd = self.view.viewModel.property()
-        property.observing = { (viewModel:ViewModelUsd) in
+        self.view.presenter.viewModel.observe { (viewModel:ViewModelUsd) in
             called = true
         }
         self.view.presenter.interactor.exchanger.exchange.rate = 1
         self.view.presenter.interactor.exchanger.exchange.usd = 1
-        self.view.viewModel.update(property:property)
         called = false
         self.presenter.updatedEuro(string:string)
         XCTAssertTrue(called, "Not updated")
@@ -71,13 +67,11 @@ class TestPresenter:XCTestCase {
     func testUpdateViewModelOnUpdateUsd() {
         var called:Bool = false
         let string:String = "5"
-        var property:ViewModelEuro = self.view.viewModel.property()
-        property.observing = { (viewModel:ViewModelEuro) in
+        self.view.presenter.viewModel.observe { (viewModel:ViewModelEuro) in
             called = true
         }
         self.view.presenter.interactor.exchanger.exchange.rate = 1
         self.view.presenter.interactor.exchanger.exchange.euro = 1
-        self.view.viewModel.update(property:property)
         called = false
         self.presenter.updatedUsd(string:string)
         XCTAssertTrue(called, "Not updated")

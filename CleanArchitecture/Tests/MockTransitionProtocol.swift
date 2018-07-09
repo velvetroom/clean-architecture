@@ -1,4 +1,6 @@
 import Foundation
 import CleanArchitecture
 
-class MockTransitionProtocol { }
+class MockTransitionProtocol {
+    var view:MockView?
+}

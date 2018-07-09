@@ -51,14 +51,4 @@ class TestView:XCTestCase {
                                                            replacementString:String())
         XCTAssertTrue(called, "Not called")
     }
-    
-    func testAddedViewModelObserversOnLoad() {
-        self.view.didLoad()
-        let rate:ViewModelRate = self.view.viewModel.property()
-        let euro:ViewModelEuro = self.view.viewModel.property()
-        let usd:ViewModelUsd = self.view.viewModel.property()
-        XCTAssertNotNil(rate.observing, "Not configured")
-        XCTAssertNotNil(euro.observing, "Not configured")
-        XCTAssertNotNil(usd.observing, "Not configured")
-    }
 }

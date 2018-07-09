@@ -2,6 +2,7 @@ import Foundation
 import CleanArchitecture
 
 class Interactor:InteractorProtocol {
+    var transition:TransitionProtocol?
     var presenter:InteractorDelegateProtocol?
     var amount:Amount
     var exchanger:Exchanger

@@ -11,29 +11,16 @@
 		DA033C5020E0CCC3009EB0B3 /* TestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA033C4F20E0CCC3009EB0B3 /* TestView.swift */; };
 		DA20C80C20E0CC5A00B7234B /* CleanArchitecture.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DA20C7F320E0CAC800B7234B /* CleanArchitecture.framework */; };
 		DABED05420E39371007C3E18 /* MockTransitionProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = DABED05320E39371007C3E18 /* MockTransitionProtocol.swift */; };
-		DAD470EA20E0E43200E3D031 /* ViewModelPropertyProtocol+Default.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAD470D820E0E43100E3D031 /* ViewModelPropertyProtocol+Default.swift */; };
-		DAD470EB20E0E43200E3D031 /* ViewModelPropertyProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAD470D920E0E43100E3D031 /* ViewModelPropertyProtocol.swift */; };
 		DAD470EC20E0E43200E3D031 /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAD470DA20E0E43100E3D031 /* ViewModel.swift */; };
-		DAD470EE20E0E43200E3D031 /* InteractorDelegateProtocol+Default.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAD470DC20E0E43100E3D031 /* InteractorDelegateProtocol+Default.swift */; };
 		DAD470EF20E0E43200E3D031 /* InteractorProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAD470DD20E0E43100E3D031 /* InteractorProtocol.swift */; };
-		DAD470F120E0E43200E3D031 /* ViewProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAD470DF20E0E43100E3D031 /* ViewProtocol.swift */; };
-		DAD470F220E0E43200E3D031 /* InteractorDelegateProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAD470E020E0E43100E3D031 /* InteractorDelegateProtocol.swift */; };
-		DAD470F420E0E43200E3D031 /* PresenterProtocol+Default.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAD470E220E0E43100E3D031 /* PresenterProtocol+Default.swift */; };
-		DAD470F520E0E43200E3D031 /* InteractorProtocol+Default.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAD470E320E0E43100E3D031 /* InteractorProtocol+Default.swift */; };
-		DAD470F820E0E43200E3D031 /* PresenterFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAD470E620E0E43100E3D031 /* PresenterFactory.swift */; };
-		DAD470F920E0E43200E3D031 /* ViewProtocol+Default.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAD470E720E0E43100E3D031 /* ViewProtocol+Default.swift */; };
 		DAD470FB20E0E43200E3D031 /* PresenterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAD470E920E0E43200E3D031 /* PresenterProtocol.swift */; };
 		DAD4710920E0E43B00E3D031 /* MockView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAD470FC20E0E43B00E3D031 /* MockView.swift */; };
 		DAD4710B20E0E43B00E3D031 /* MockUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAD470FE20E0E43B00E3D031 /* MockUIView.swift */; };
 		DAD4710D20E0E43B00E3D031 /* MockPresenterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAD4710020E0E43B00E3D031 /* MockPresenterProtocol.swift */; };
-		DAD4710E20E0E43B00E3D031 /* TestViewModelPropertyProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAD4710120E0E43B00E3D031 /* TestViewModelPropertyProtocol.swift */; };
-		DAD4710F20E0E43B00E3D031 /* TestPresenterFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAD4710220E0E43B00E3D031 /* TestPresenterFactory.swift */; };
 		DAD4711020E0E43B00E3D031 /* MockInteractorProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAD4710320E0E43B00E3D031 /* MockInteractorProtocol.swift */; };
-		DAD4711120E0E43B00E3D031 /* TestView_ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAD4710420E0E43B00E3D031 /* TestView_ViewModel.swift */; };
 		DAD4711220E0E43B00E3D031 /* TestViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAD4710520E0E43B00E3D031 /* TestViewModel.swift */; };
-		DAD4711320E0E43B00E3D031 /* TestViewProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAD4710620E0E43B00E3D031 /* TestViewProtocol.swift */; };
-		DAD4711520E0E43B00E3D031 /* MockViewModelPropertyProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAD4710820E0E43B00E3D031 /* MockViewModelPropertyProtocol.swift */; };
-		DAD4711920E0E83D00E3D031 /* MockViewModelSecondPropertyProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAD4711820E0E83D00E3D031 /* MockViewModelSecondPropertyProtocol.swift */; };
+		DAD4711520E0E43B00E3D031 /* MockViewModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAD4710820E0E43B00E3D031 /* MockViewModelProtocol.swift */; };
+		DAD4711920E0E83D00E3D031 /* MockViewModelSecondProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAD4711820E0E83D00E3D031 /* MockViewModelSecondProtocol.swift */; };
 		DAD4711B20E0E94A00E3D031 /* MockTransitionCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAD4711A20E0E94A00E3D031 /* MockTransitionCoordinator.swift */; };
 /* End PBXBuildFile section */
 
@@ -54,29 +41,16 @@
 		DA20C80120E0CC2900B7234B /* Configuration */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Configuration; sourceTree = "<group>"; };
 		DA20C80720E0CC5A00B7234B /* Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		DABED05320E39371007C3E18 /* MockTransitionProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockTransitionProtocol.swift; sourceTree = "<group>"; };
-		DAD470D820E0E43100E3D031 /* ViewModelPropertyProtocol+Default.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ViewModelPropertyProtocol+Default.swift"; sourceTree = "<group>"; };
-		DAD470D920E0E43100E3D031 /* ViewModelPropertyProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewModelPropertyProtocol.swift; sourceTree = "<group>"; };
 		DAD470DA20E0E43100E3D031 /* ViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
-		DAD470DC20E0E43100E3D031 /* InteractorDelegateProtocol+Default.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "InteractorDelegateProtocol+Default.swift"; sourceTree = "<group>"; };
 		DAD470DD20E0E43100E3D031 /* InteractorProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InteractorProtocol.swift; sourceTree = "<group>"; };
-		DAD470DF20E0E43100E3D031 /* ViewProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewProtocol.swift; sourceTree = "<group>"; };
-		DAD470E020E0E43100E3D031 /* InteractorDelegateProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InteractorDelegateProtocol.swift; sourceTree = "<group>"; };
-		DAD470E220E0E43100E3D031 /* PresenterProtocol+Default.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "PresenterProtocol+Default.swift"; sourceTree = "<group>"; };
-		DAD470E320E0E43100E3D031 /* InteractorProtocol+Default.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "InteractorProtocol+Default.swift"; sourceTree = "<group>"; };
-		DAD470E620E0E43100E3D031 /* PresenterFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PresenterFactory.swift; sourceTree = "<group>"; };
-		DAD470E720E0E43100E3D031 /* ViewProtocol+Default.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ViewProtocol+Default.swift"; sourceTree = "<group>"; };
 		DAD470E920E0E43200E3D031 /* PresenterProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PresenterProtocol.swift; sourceTree = "<group>"; };
 		DAD470FC20E0E43B00E3D031 /* MockView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MockView.swift; sourceTree = "<group>"; };
 		DAD470FE20E0E43B00E3D031 /* MockUIView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MockUIView.swift; sourceTree = "<group>"; };
 		DAD4710020E0E43B00E3D031 /* MockPresenterProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MockPresenterProtocol.swift; sourceTree = "<group>"; };
-		DAD4710120E0E43B00E3D031 /* TestViewModelPropertyProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestViewModelPropertyProtocol.swift; sourceTree = "<group>"; };
-		DAD4710220E0E43B00E3D031 /* TestPresenterFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestPresenterFactory.swift; sourceTree = "<group>"; };
 		DAD4710320E0E43B00E3D031 /* MockInteractorProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MockInteractorProtocol.swift; sourceTree = "<group>"; };
-		DAD4710420E0E43B00E3D031 /* TestView_ViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestView_ViewModel.swift; sourceTree = "<group>"; };
 		DAD4710520E0E43B00E3D031 /* TestViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestViewModel.swift; sourceTree = "<group>"; };
-		DAD4710620E0E43B00E3D031 /* TestViewProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestViewProtocol.swift; sourceTree = "<group>"; };
-		DAD4710820E0E43B00E3D031 /* MockViewModelPropertyProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MockViewModelPropertyProtocol.swift; sourceTree = "<group>"; };
-		DAD4711820E0E83D00E3D031 /* MockViewModelSecondPropertyProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockViewModelSecondPropertyProtocol.swift; sourceTree = "<group>"; };
+		DAD4710820E0E43B00E3D031 /* MockViewModelProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MockViewModelProtocol.swift; sourceTree = "<group>"; };
+		DAD4711820E0E83D00E3D031 /* MockViewModelSecondProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockViewModelSecondProtocol.swift; sourceTree = "<group>"; };
 		DAD4711A20E0E94A00E3D031 /* MockTransitionCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MockTransitionCoordinator.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -122,17 +96,8 @@
 			isa = PBXGroup;
 			children = (
 				DAD470DD20E0E43100E3D031 /* InteractorProtocol.swift */,
-				DAD470E320E0E43100E3D031 /* InteractorProtocol+Default.swift */,
-				DAD470E020E0E43100E3D031 /* InteractorDelegateProtocol.swift */,
-				DAD470DC20E0E43100E3D031 /* InteractorDelegateProtocol+Default.swift */,
 				DAD470E920E0E43200E3D031 /* PresenterProtocol.swift */,
-				DAD470E220E0E43100E3D031 /* PresenterProtocol+Default.swift */,
-				DAD470E620E0E43100E3D031 /* PresenterFactory.swift */,
-				DAD470D920E0E43100E3D031 /* ViewModelPropertyProtocol.swift */,
-				DAD470D820E0E43100E3D031 /* ViewModelPropertyProtocol+Default.swift */,
 				DAD470DA20E0E43100E3D031 /* ViewModel.swift */,
-				DAD470DF20E0E43100E3D031 /* ViewProtocol.swift */,
-				DAD470E720E0E43100E3D031 /* ViewProtocol+Default.swift */,
 				DA033C4D20E0CCB7009EB0B3 /* View.swift */,
 			);
 			path = Source;
@@ -141,18 +106,14 @@
 		DA20C80820E0CC5A00B7234B /* Tests */ = {
 			isa = PBXGroup;
 			children = (
-				DAD4710220E0E43B00E3D031 /* TestPresenterFactory.swift */,
-				DAD4710120E0E43B00E3D031 /* TestViewModelPropertyProtocol.swift */,
 				DAD4710520E0E43B00E3D031 /* TestViewModel.swift */,
-				DAD4710620E0E43B00E3D031 /* TestViewProtocol.swift */,
 				DA033C4F20E0CCC3009EB0B3 /* TestView.swift */,
-				DAD4710420E0E43B00E3D031 /* TestView_ViewModel.swift */,
 				DABED05320E39371007C3E18 /* MockTransitionProtocol.swift */,
 				DAD4711A20E0E94A00E3D031 /* MockTransitionCoordinator.swift */,
 				DAD4710320E0E43B00E3D031 /* MockInteractorProtocol.swift */,
 				DAD4710020E0E43B00E3D031 /* MockPresenterProtocol.swift */,
-				DAD4710820E0E43B00E3D031 /* MockViewModelPropertyProtocol.swift */,
-				DAD4711820E0E83D00E3D031 /* MockViewModelSecondPropertyProtocol.swift */,
+				DAD4710820E0E43B00E3D031 /* MockViewModelProtocol.swift */,
+				DAD4711820E0E83D00E3D031 /* MockViewModelSecondProtocol.swift */,
 				DAD470FC20E0E43B00E3D031 /* MockView.swift */,
 				DAD470FE20E0E43B00E3D031 /* MockUIView.swift */,
 			);
@@ -268,19 +229,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DAD470F420E0E43200E3D031 /* PresenterProtocol+Default.swift in Sources */,
-				DAD470F820E0E43200E3D031 /* PresenterFactory.swift in Sources */,
-				DAD470F220E0E43200E3D031 /* InteractorDelegateProtocol.swift in Sources */,
 				DA033C4E20E0CCB7009EB0B3 /* View.swift in Sources */,
-				DAD470EA20E0E43200E3D031 /* ViewModelPropertyProtocol+Default.swift in Sources */,
 				DAD470FB20E0E43200E3D031 /* PresenterProtocol.swift in Sources */,
-				DAD470EE20E0E43200E3D031 /* InteractorDelegateProtocol+Default.swift in Sources */,
 				DAD470EC20E0E43200E3D031 /* ViewModel.swift in Sources */,
 				DAD470EF20E0E43200E3D031 /* InteractorProtocol.swift in Sources */,
-				DAD470F520E0E43200E3D031 /* InteractorProtocol+Default.swift in Sources */,
-				DAD470F920E0E43200E3D031 /* ViewProtocol+Default.swift in Sources */,
-				DAD470F120E0E43200E3D031 /* ViewProtocol.swift in Sources */,
-				DAD470EB20E0E43200E3D031 /* ViewModelPropertyProtocol.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -288,18 +240,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DAD4711520E0E43B00E3D031 /* MockViewModelPropertyProtocol.swift in Sources */,
+				DAD4711520E0E43B00E3D031 /* MockViewModelProtocol.swift in Sources */,
 				DAD4710920E0E43B00E3D031 /* MockView.swift in Sources */,
 				DAD4711220E0E43B00E3D031 /* TestViewModel.swift in Sources */,
-				DAD4711120E0E43B00E3D031 /* TestView_ViewModel.swift in Sources */,
-				DAD4710E20E0E43B00E3D031 /* TestViewModelPropertyProtocol.swift in Sources */,
-				DAD4711920E0E83D00E3D031 /* MockViewModelSecondPropertyProtocol.swift in Sources */,
+				DAD4711920E0E83D00E3D031 /* MockViewModelSecondProtocol.swift in Sources */,
 				DABED05420E39371007C3E18 /* MockTransitionProtocol.swift in Sources */,
-				DAD4711320E0E43B00E3D031 /* TestViewProtocol.swift in Sources */,
 				DAD4710B20E0E43B00E3D031 /* MockUIView.swift in Sources */,
 				DAD4711020E0E43B00E3D031 /* MockInteractorProtocol.swift in Sources */,
 				DAD4711B20E0E94A00E3D031 /* MockTransitionCoordinator.swift in Sources */,
-				DAD4710F20E0E43B00E3D031 /* TestPresenterFactory.swift in Sources */,
 				DAD4710D20E0E43B00E3D031 /* MockPresenterProtocol.swift in Sources */,
 				DA033C5020E0CCC3009EB0B3 /* TestView.swift in Sources */,
 			);

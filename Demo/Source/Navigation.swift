@@ -4,7 +4,7 @@ class Navigation:UINavigationController, TransitionProtocol {
     init() {
         super.init(nibName:nil, bundle:nil)
         let view:View = View()
-        view.transition = self
+        view.presenter.interactor.transition = self
         self.setViewControllers([view], animated:false)
     }
     

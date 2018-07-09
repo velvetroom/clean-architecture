@@ -2,15 +2,12 @@ import XCTest
 @testable import CleanArchitecture
 
 class TestView:XCTestCase {
-    func testInjectsViewOnPresenter() {
+    func testInjectsDependencies() {
         let view:MockView = MockView()
-        XCTAssertNotNil(view.presenter.view, "Not injected")
-    }
-    
-    func testInitWithPresenterNotInjectingView() {
-        let presenter:MockPresenterProtocol = PresenterFactory.makePresenter()
-        let _:MockView = MockView(presenter:presenter)
-        XCTAssertNil(presenter.view, "Injecting/replacing view on presenter")
+        XCTAssertNotNil(view.presenter, "Not injected")
+        XCTAssertNotNil(view.presenter.interactor, "Not injected")
+        XCTAssertNotNil(view.presenter.interactor.presenter, "Not injected")
+        XCTAssertNotNil(view.presenter.viewModel, "Not injected")
     }
     
     func testViewContent() {
@@ -20,7 +17,8 @@ class TestView:XCTestCase {
     }
     
     func testCallsPresenterOnViewDidLoad() {
-        let presenter:MockPresenterProtocol = PresenterFactory.makePresenter()
+        let presenter:MockPresenterProtocol = MockPresenterProtocol()
+        presenter.interactor = MockInteractorProtocol()
         let view:MockView = MockView(presenter:presenter)
         var called:Bool = false
         presenter.onDidLoad = { called = true }
@@ -29,7 +27,8 @@ class TestView:XCTestCase {
     }
     
     func testCallsInteractorOnViewDidLoad() {
-        let presenter:MockPresenterProtocol = PresenterFactory.makePresenter()
+        let presenter:MockPresenterProtocol = MockPresenterProtocol()
+        presenter.interactor = MockInteractorProtocol()
         let view:MockView = MockView(presenter:presenter)
         var called:Bool = false
         presenter.interactor.onDidLoad = { called = true }
@@ -38,7 +37,7 @@ class TestView:XCTestCase {
     }
     
     func testCallsPresenterOnViewWillAppear() {
-        let presenter:MockPresenterProtocol = PresenterFactory.makePresenter()
+        let presenter:MockPresenterProtocol = MockPresenterProtocol()
         let view:MockView = MockView(presenter:presenter)
         var called:Bool = false
         presenter.onWillAppear = { called = true }
@@ -47,7 +46,7 @@ class TestView:XCTestCase {
     }
     
     func testCallsPresenterOnViewDidAppear() {
-        let presenter:MockPresenterProtocol = PresenterFactory.makePresenter()
+        let presenter:MockPresenterProtocol = MockPresenterProtocol()
         let view:MockView = MockView(presenter:presenter)
         var called:Bool = false
         presenter.onDidAppear = { called = true }
@@ -56,7 +55,7 @@ class TestView:XCTestCase {
     }
     
     func testCallsPresenterOnOrientationChange() {
-        let presenter:MockPresenterProtocol = PresenterFactory.makePresenter()
+        let presenter:MockPresenterProtocol = MockPresenterProtocol()
         let view:MockView = MockView(presenter:presenter)
         var called:Bool = false
         presenter.onOrientationChanged = { called = true }
@@ -65,7 +64,7 @@ class TestView:XCTestCase {
     }
     
     func testInjectContentWithPresenter() {
-        let presenter:MockPresenterProtocol = PresenterFactory.makePresenter()
+        let presenter:MockPresenterProtocol = MockPresenterProtocol()
         let view:MockView = MockView(presenter:presenter)
         XCTAssertNotNil(view.content, "Not injected")
     }

@@ -1,8 +1,7 @@
 import Foundation
 import CleanArchitecture
 
-struct ViewModelEuro:ViewModelPropertyProtocol {
-    var observing:((ViewModelEuro) -> Void)?
+struct ViewModelEuro:ViewModelProtocol {
     var amount:String
     
     init() {
