@@ -5,7 +5,9 @@ open class View<Presenter:PresenterProtocol, Content:UIView>:UIViewController {
     open var content:Content!
     
     public required init() {
-        self.presenter = PresenterFactory.makePresenter()
+        self.presenter = Presenter()
+        self.presenter.interactor = Presenter.Interactor()
+        self.presenter.interactor.presenter = self.presenter
         super.init(nibName:nil, bundle:nil)
         self.postInit()
     }

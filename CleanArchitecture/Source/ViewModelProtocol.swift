@@ -5,3 +5,9 @@ public protocol ViewModelProtocol {
     
     init()
 }
+
+public extension ViewModelProtocol {
+    func notifyObserver() {
+        self.observing?(self)
+    }
+}

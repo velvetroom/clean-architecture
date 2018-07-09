@@ -8,3 +8,7 @@ public protocol InteractorProtocol:AnyObject {
     init()
     func didLoad()
 }
+
+public extension InteractorProtocol {
+    func didLoad() { }
+}
