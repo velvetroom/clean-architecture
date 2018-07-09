@@ -10,7 +10,7 @@ class MockTransitionCoordinator:NSObject, UIViewControllerTransitionCoordinator 
     var transitionDuration:TimeInterval
     var percentComplete:CGFloat
     var completionVelocity:CGFloat
-    var completionCurve:UIViewAnimationCurve
+    var completionCurve:UIView.AnimationCurve
     var containerView:UIView
     var targetTransform:CGAffineTransform
     
@@ -24,7 +24,7 @@ class MockTransitionCoordinator:NSObject, UIViewControllerTransitionCoordinator 
         self.transitionDuration = 0
         self.percentComplete = 0
         self.completionVelocity = 0
-        self.completionCurve = UIViewAnimationCurve.easeIn
+        self.completionCurve = UIView.AnimationCurve.easeIn
         self.containerView = UIView()
         self.targetTransform = CGAffineTransform.identity
         super.init()

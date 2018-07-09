@@ -56,7 +56,7 @@ class ViewInput:UIView, UITextFieldDelegate {
     private func makeField() {
         let field:UITextField = UITextField()
         field.translatesAutoresizingMaskIntoConstraints = false
-        field.borderStyle = UITextBorderStyle.roundedRect
+        field.borderStyle = UITextField.BorderStyle.roundedRect
         field.autocorrectionType = UITextAutocorrectionType.no
         field.spellCheckingType = UITextSpellCheckingType.no
         field.textAlignment = NSTextAlignment.right
