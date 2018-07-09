@@ -1,5 +1,12 @@
 # Change log
 
+## Version 1.8
+
+- Refactor ViewModel
+- Remove ViewProtocol
+- Interactor is now the owner of Transition
+- Remove helper properties
+
 
 ## Version 1.7
 
