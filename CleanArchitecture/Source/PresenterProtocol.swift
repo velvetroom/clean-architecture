@@ -2,9 +2,6 @@ import Foundation
 
 public protocol PresenterProtocol:InteractorDelegateProtocol {
     associatedtype Interactor:InteractorProtocol
-    associatedtype Transition
-    var transition:Transition? { get set }
-    var view:ViewProtocol? { get set }
     var interactor:Interactor! { get set }
     var viewModel:ViewModel! { get set }
     

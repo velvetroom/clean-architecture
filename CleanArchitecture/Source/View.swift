@@ -1,6 +1,6 @@
 import UIKit
 
-open class View<Presenter:PresenterProtocol, Content:UIView>:UIViewController, ViewProtocol {
+open class View<Presenter:PresenterProtocol, Content:UIView>:UIViewController {
     open var presenter:Presenter
     open var content:Content!
     
@@ -58,7 +58,6 @@ open class View<Presenter:PresenterProtocol, Content:UIView>:UIViewController, V
     private func postInit() {
         self.content = Content()
         self.presenter.viewModel = ViewModel()
-        self.presenter.view = self
         self.initProperties()
     }
 }
