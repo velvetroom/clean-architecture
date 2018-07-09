@@ -26,32 +26,20 @@ class View:CleanArchitecture.View<Presenter, ViewContent> {
     }
     
     private func configureRateViewModel() {
-        var property:ViewModelRate = self.viewModel.property()
-        property.observing = self.updated
-        self.viewModel.update(property:property)
+        self.presenter.viewModel.observe { [weak self] (property:ViewModelRate) in
+            self?.content.inputRate.field.text = property.amount
+        }
     }
     
     private func configureEuroViewModel() {
-        var property:ViewModelEuro = self.viewModel.property()
-        property.observing = self.updated
-        self.viewModel.update(property:property)
+        self.presenter.viewModel.observe { [weak self] (property:ViewModelEuro) in
+            self?.content.inputEuro.field.text = property.amount
+        }
     }
     
     private func configureUsdViewModel() {
-        var property:ViewModelUsd = self.viewModel.property()
-        property.observing = self.updated
-        self.viewModel.update(property:property)
-    }
-    
-    private func updated(viewModel:ViewModelRate) {
-        self.content.inputRate.field.text = viewModel.amount
-    }
-    
-    private func updated(viewModel:ViewModelEuro) {
-        self.content.inputEuro.field.text = viewModel.amount
-    }
-    
-    private func updated(viewModel:ViewModelUsd) {
-        self.content.inputUsd.field.text = viewModel.amount
+        self.presenter.viewModel.observe { [weak self] (property:ViewModelUsd) in
+            self?.content.inputUsd.field.text = property.amount
+        }
     }
 }
