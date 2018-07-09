@@ -1,6 +1,6 @@
 import Foundation
 
-public extension ViewModelPropertyProtocol {
+public extension ViewModelProtocol {
     func notifyObserver() {
         self.observing?(self)
     }

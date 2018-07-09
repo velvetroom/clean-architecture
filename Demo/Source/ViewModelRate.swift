@@ -1,7 +1,7 @@
 import Foundation
 import CleanArchitecture
 
-struct ViewModelRate:ViewModelPropertyProtocol {
+struct ViewModelRate:ViewModelProtocol {
     var observing:((ViewModelRate) -> Void)?
     var amount:String
     

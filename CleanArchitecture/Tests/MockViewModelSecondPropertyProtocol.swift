@@ -1,7 +1,7 @@
 import UIKit
 import CleanArchitecture
 
-struct MockViewModelSecondPropertyProtocol:ViewModelPropertyProtocol {
+struct MockViewModelSecondPropertyProtocol:ViewModelProtocol {
     var observing:((MockViewModelSecondPropertyProtocol) -> Void)?
     var value:CGFloat
     

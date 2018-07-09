@@ -1,6 +1,6 @@
 import Foundation
 
-public protocol ViewModelPropertyProtocol {
+public protocol ViewModelProtocol {
     var observing:((Self) -> Void)? { get set }
     
     init()

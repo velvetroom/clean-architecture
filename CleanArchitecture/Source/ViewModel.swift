@@ -7,14 +7,14 @@ open class ViewModel {
         self.properties = [:]
     }
     
-    open func update<ViewModelProperty:ViewModelPropertyProtocol>(property:ViewModelProperty) {
+    open func update<ViewModelProperty:ViewModelProtocol>(property:ViewModelProperty) {
         let property:ViewModelProperty = self.observedProperty(property:property)
         let identifier:ObjectIdentifier = ObjectIdentifier(type(of:property))
         self.properties[identifier] = property
         property.notifyObserver()
     }
     
-    open func property<ViewModelProperty:ViewModelPropertyProtocol>() -> ViewModelProperty {
+    open func property<ViewModelProperty:ViewModelProtocol>() -> ViewModelProperty {
         let identifier:ObjectIdentifier = ObjectIdentifier(ViewModelProperty.self)
         guard
             let viewModel:ViewModelProperty = self.properties[identifier] as? ViewModelProperty
@@ -22,7 +22,7 @@ open class ViewModel {
         return viewModel
     }
     
-    private func observedProperty<ViewModelProperty:ViewModelPropertyProtocol>(
+    private func observedProperty<ViewModelProperty:ViewModelProtocol>(
         property:ViewModelProperty) -> ViewModelProperty {
         var property:ViewModelProperty = property
         if property.observing == nil {
