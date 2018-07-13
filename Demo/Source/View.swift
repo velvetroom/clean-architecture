@@ -1,9 +1,9 @@
 import UIKit
 import CleanArchitecture
 
-class View:CleanArchitecture.View<Presenter, ViewContent> {    
-    override func didLoad() {
-        super.didLoad()
+class View:CleanArchitecture.View<Presenter, ViewContent> {
+    override func viewDidLoad() {
+        super.viewDidLoad()
         self.configureView()
         self.configureOutlets()
         self.configureViewModel()
