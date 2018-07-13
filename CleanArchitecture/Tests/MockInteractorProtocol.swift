@@ -4,7 +4,7 @@ import CleanArchitecture
 class MockInteractorProtocol:InteractorProtocol {
     var onDidLoad:(() -> Void)?
     var presenter:InteractorDelegateProtocol?
-    var transition:MockTransitionProtocol?
+    var router:MockTransitionProtocol?
     
     required init() { }
     
