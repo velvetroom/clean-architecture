@@ -1,6 +1,12 @@
 # Change log
 
 
+## Version 1.10
+
+- Renamed Transition associated type as Router
+- Removed abstract methods from View; Use UIView methods instead
+
+
 ## Version 1.9
 
 - Update to Swift 4.2
