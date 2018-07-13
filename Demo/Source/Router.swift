@@ -1,10 +1,10 @@
 import UIKit
 
-class Navigation:UINavigationController, TransitionProtocol {
+class Router:UINavigationController {
     init() {
         super.init(nibName:nil, bundle:nil)
         let view:View = View()
-        view.presenter.interactor.transition = self
+        view.presenter.interactor.router = self
         self.setViewControllers([view], animated:false)
     }
     

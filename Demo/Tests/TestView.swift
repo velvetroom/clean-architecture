@@ -10,7 +10,7 @@ class TestView:XCTestCase {
     }
     
     func testAssignedDelegateToInputs() {
-        self.view.didLoad()
+        self.view.viewDidLoad()
         XCTAssertNotNil(self.view.content.inputRate.delegateCallback, "Failed to assign delegate")
         XCTAssertNotNil(self.view.content.inputEuro.delegateCallback, "Failed to assign delegate")
         XCTAssertNotNil(self.view.content.inputUsd.delegateCallback, "Failed to assign delegate")
@@ -20,8 +20,9 @@ class TestView:XCTestCase {
         var called:Bool = false
         let presenter:MockPresenter = MockPresenter()
         presenter.viewModel = self.view.presenter.viewModel
+        presenter.interactor = self.view.presenter.interactor
         self.view.presenter = presenter
-        self.view.didLoad()
+        self.view.viewDidLoad()
         presenter.onUpdatedRate = { called = true }
         let _:Bool = self.view.content.inputRate.textField(UITextField(), shouldChangeCharactersIn:NSMakeRange(0, 0),
                                                            replacementString:String())
@@ -32,8 +33,9 @@ class TestView:XCTestCase {
         var called:Bool = false
         let presenter:MockPresenter = MockPresenter()
         presenter.viewModel = self.view.presenter.viewModel
+        presenter.interactor = self.view.presenter.interactor
         self.view.presenter = presenter
-        self.view.didLoad()
+        self.view.viewDidLoad()
         presenter.onUpdatedEuro = { called = true }
         let _:Bool = self.view.content.inputEuro.textField(UITextField(), shouldChangeCharactersIn:NSMakeRange(0, 0),
                                                            replacementString:String())
@@ -44,8 +46,9 @@ class TestView:XCTestCase {
         var called:Bool = false
         let presenter:MockPresenter = MockPresenter()
         presenter.viewModel = self.view.presenter.viewModel
+        presenter.interactor = self.view.presenter.interactor
         self.view.presenter = presenter
-        self.view.didLoad()
+        self.view.viewDidLoad()
         presenter.onUpdatedUsd = { called = true }
         let _:Bool = self.view.content.inputUsd.textField(UITextField(), shouldChangeCharactersIn:NSMakeRange(0, 0),
                                                            replacementString:String())

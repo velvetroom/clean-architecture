@@ -7,7 +7,7 @@ class TestView_ViewModel:XCTestCase {
     override func setUp() {
         super.setUp()
         self.view = View()
-        self.view.didLoad()
+        self.view.viewDidLoad()
     }
     
     func testUpdateRateWithViewModel() {
