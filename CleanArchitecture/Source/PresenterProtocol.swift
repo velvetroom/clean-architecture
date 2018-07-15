@@ -9,14 +9,12 @@ public protocol PresenterProtocol:InteractorDelegateProtocol {
     func didLoad()
     func willAppear()
     func didAppear()
-    func orientationChanged()
 }
 
 public extension PresenterProtocol {
     func didLoad() { }
     func willAppear() { }
     func didAppear() { }
-    func orientationChanged() { }
     func shouldUpdate() { }
 }
 
