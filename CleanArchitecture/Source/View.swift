@@ -18,9 +18,7 @@ open class View<Presenter:PresenterProtocol, Content:UIView>:UIViewController {
         self.postInit()
     }
     
-    public required init?(coder:NSCoder) {
-        return nil
-    }
+    public required init?(coder:NSCoder) { return nil }
     
     open override func loadView() {
         self.view = self.content

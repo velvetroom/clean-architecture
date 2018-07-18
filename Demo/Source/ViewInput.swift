@@ -12,9 +12,7 @@ class ViewInput:UIView, UITextFieldDelegate {
         self.layoutOutlets()
     }
     
-    required init?(coder:NSCoder) {
-        return nil
-    }
+    required init?(coder:NSCoder) { return nil }
     
     func textField(_ textField:UITextField, shouldChangeCharactersIn range:NSRange,
                    replacementString string:String) -> Bool {
