@@ -1,6 +1,11 @@
 # Change log
 
 
+## Version 1.11
+
+- Removed orientation change methods from Presenter
+
+
 ## Version 1.10
 
 - Renamed Transition associated type as Router
