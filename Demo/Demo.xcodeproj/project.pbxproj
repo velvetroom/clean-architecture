@@ -12,13 +12,11 @@
 		DA1EA5E220E2092E00B8160E /* ViewContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA1EA5E120E2092E00B8160E /* ViewContent.swift */; };
 		DA1EA5E420E2093500B8160E /* Presenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA1EA5E320E2093500B8160E /* Presenter.swift */; };
 		DA1EA5E620E2093C00B8160E /* Interactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA1EA5E520E2093C00B8160E /* Interactor.swift */; };
-		DA1EA5E820E20C6500B8160E /* ViewConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA1EA5E720E20C6500B8160E /* ViewConstants.swift */; };
 		DA1EA5EA20E20F4300B8160E /* ViewInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA1EA5E920E20F4300B8160E /* ViewInput.swift */; };
 		DA1EA5EC20E21B9300B8160E /* TestViewInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA1EA5EB20E21B9300B8160E /* TestViewInput.swift */; };
 		DA1EA5EE20E21D9400B8160E /* TestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA1EA5ED20E21D9400B8160E /* TestView.swift */; };
 		DA1EA5F020E21E5700B8160E /* Amount.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA1EA5EF20E21E5700B8160E /* Amount.swift */; };
 		DA1EA5F220E21E9E00B8160E /* TestAmount.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA1EA5F120E21E9E00B8160E /* TestAmount.swift */; };
-		DA1EA5F420E21EE900B8160E /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA1EA5F320E21EE900B8160E /* Constants.swift */; };
 		DA1EA5F620E2221A00B8160E /* MockAmount.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA1EA5F520E2221A00B8160E /* MockAmount.swift */; };
 		DA1EA5F820E2226400B8160E /* TestInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA1EA5F720E2226400B8160E /* TestInteractor.swift */; };
 		DA1EA5FA20E2230D00B8160E /* MockInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA1EA5F920E2230D00B8160E /* MockInteractor.swift */; };
@@ -74,13 +72,11 @@
 		DA1EA5E120E2092E00B8160E /* ViewContent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewContent.swift; sourceTree = "<group>"; };
 		DA1EA5E320E2093500B8160E /* Presenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Presenter.swift; sourceTree = "<group>"; };
 		DA1EA5E520E2093C00B8160E /* Interactor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Interactor.swift; sourceTree = "<group>"; };
-		DA1EA5E720E20C6500B8160E /* ViewConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewConstants.swift; sourceTree = "<group>"; };
 		DA1EA5E920E20F4300B8160E /* ViewInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewInput.swift; sourceTree = "<group>"; };
 		DA1EA5EB20E21B9300B8160E /* TestViewInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestViewInput.swift; sourceTree = "<group>"; };
 		DA1EA5ED20E21D9400B8160E /* TestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestView.swift; sourceTree = "<group>"; };
 		DA1EA5EF20E21E5700B8160E /* Amount.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Amount.swift; sourceTree = "<group>"; };
 		DA1EA5F120E21E9E00B8160E /* TestAmount.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestAmount.swift; sourceTree = "<group>"; };
-		DA1EA5F320E21EE900B8160E /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		DA1EA5F520E2221A00B8160E /* MockAmount.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockAmount.swift; sourceTree = "<group>"; };
 		DA1EA5F720E2226400B8160E /* TestInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestInteractor.swift; sourceTree = "<group>"; };
 		DA1EA5F920E2230D00B8160E /* MockInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockInteractor.swift; sourceTree = "<group>"; };
@@ -155,7 +151,6 @@
 				DA640D0520E0C425006F2DC8 /* Application.swift */,
 				DA1EA5DC20E206DF00B8160E /* Router.swift */,
 				DA640D0720E0C4D5006F2DC8 /* View.swift */,
-				DA1EA5E720E20C6500B8160E /* ViewConstants.swift */,
 				DA1EA5E120E2092E00B8160E /* ViewContent.swift */,
 				DA1EA5E920E20F4300B8160E /* ViewInput.swift */,
 				DAC0CC1820E233DF00EA8519 /* ViewModelRate.swift */,
@@ -167,7 +162,6 @@
 				DA1EA60720E228D500B8160E /* Exchange.swift */,
 				DA1EA60B20E22EC600B8160E /* ExchangeText.swift */,
 				DA1EA5EF20E21E5700B8160E /* Amount.swift */,
-				DA1EA5F320E21EE900B8160E /* Constants.swift */,
 			);
 			path = Source;
 			sourceTree = "<group>";
@@ -309,7 +303,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				DA1EA5F020E21E5700B8160E /* Amount.swift in Sources */,
-				DA1EA5F420E21EE900B8160E /* Constants.swift in Sources */,
 				DA1EA5E420E2093500B8160E /* Presenter.swift in Sources */,
 				DA1EA5E220E2092E00B8160E /* ViewContent.swift in Sources */,
 				DA640D0820E0C4D5006F2DC8 /* View.swift in Sources */,
@@ -321,7 +314,6 @@
 				DA1EA60820E228D500B8160E /* Exchange.swift in Sources */,
 				DA640D0A20E0C55F006F2DC8 /* Exchanger.swift in Sources */,
 				DA1EA5E620E2093C00B8160E /* Interactor.swift in Sources */,
-				DA1EA5E820E20C6500B8160E /* ViewConstants.swift in Sources */,
 				DA1EA60220E225CD00B8160E /* ViewModelEuro.swift in Sources */,
 				DA1EA5DD20E206DF00B8160E /* Router.swift in Sources */,
 			);

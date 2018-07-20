@@ -61,10 +61,9 @@ class ViewContent:UIView {
     private func layoutTitle() {
         if #available(iOS 11.0, *) {
             self.labelTitle.topAnchor.constraint(equalTo:self.safeAreaLayoutGuide.topAnchor,
-                                                 constant:ViewConstants.Title.top).isActive = true
+                                                 constant:Constants.titleTop).isActive = true
         } else {
-            self.labelTitle.topAnchor.constraint(equalTo:self.topAnchor,
-                                                 constant:ViewConstants.Title.top).isActive = true
+            self.labelTitle.topAnchor.constraint(equalTo:self.topAnchor, constant:Constants.titleTop).isActive = true
         }
         self.labelTitle.leftAnchor.constraint(equalTo:self.leftAnchor, constant:Constants.left).isActive = true
         self.labelTitle.rightAnchor.constraint(equalTo:self.rightAnchor, constant:-Constants.left).isActive = true
@@ -73,27 +72,31 @@ class ViewContent:UIView {
     
     private func layoutInputRate() {
         self.inputRate.topAnchor.constraint(equalTo:self.labelTitle.bottomAnchor,
-                                            constant:ViewConstants.Title.bottom).isActive = true
+                                            constant:Constants.titleBottom).isActive = true
         self.inputRate.leftAnchor.constraint(equalTo:self.leftAnchor, constant:Constants.left).isActive = true
-        self.inputRate.widthAnchor.constraint(equalToConstant:ViewConstants.Input.width).isActive = true
-        self.inputRate.heightAnchor.constraint(equalToConstant:ViewConstants.Input.height).isActive = true
+        self.inputRate.widthAnchor.constraint(equalToConstant:Constants.inputWidth).isActive = true
+        self.inputRate.heightAnchor.constraint(equalToConstant:Constants.inputHeight).isActive = true
     }
     
     private func layoutInputEuro() {
         self.inputEuro.topAnchor.constraint(equalTo:self.inputRate.bottomAnchor).isActive = true
         self.inputEuro.leftAnchor.constraint(equalTo:self.leftAnchor, constant:Constants.left).isActive = true
-        self.inputEuro.widthAnchor.constraint(equalToConstant:ViewConstants.Input.width).isActive = true
-        self.inputEuro.heightAnchor.constraint(equalToConstant:ViewConstants.Input.height).isActive = true
+        self.inputEuro.widthAnchor.constraint(equalToConstant:Constants.inputWidth).isActive = true
+        self.inputEuro.heightAnchor.constraint(equalToConstant:Constants.inputHeight).isActive = true
     }
     
     private func layoutInputUsd() {
         self.inputUsd.topAnchor.constraint(equalTo:self.inputEuro.bottomAnchor).isActive = true
         self.inputUsd.leftAnchor.constraint(equalTo:self.leftAnchor, constant:Constants.left).isActive = true
-        self.inputUsd.widthAnchor.constraint(equalToConstant:ViewConstants.Input.width).isActive = true
-        self.inputUsd.heightAnchor.constraint(equalToConstant:ViewConstants.Input.height).isActive = true
+        self.inputUsd.widthAnchor.constraint(equalToConstant:Constants.inputWidth).isActive = true
+        self.inputUsd.heightAnchor.constraint(equalToConstant:Constants.inputHeight).isActive = true
     }
 }
 
 private struct Constants {
     static let left:CGFloat = 20
+    static let inputWidth:CGFloat = 150
+    static let inputHeight:CGFloat = 80
+    static let titleBottom:CGFloat = 20
+    static let titleTop:CGFloat = 20
 }

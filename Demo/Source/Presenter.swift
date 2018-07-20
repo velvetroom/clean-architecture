@@ -65,3 +65,9 @@ class Presenter:PresenterProtocol {
         self.viewModel.update(property:property)
     }
 }
+
+private struct Constants {
+    static let initialRate:Float = 1.17
+    static let initialEuro:Float = 1
+}
+

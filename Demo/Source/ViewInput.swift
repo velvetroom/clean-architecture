@@ -69,13 +69,18 @@ class ViewInput:UIView, UITextFieldDelegate {
         self.label.topAnchor.constraint(equalTo:self.topAnchor).isActive = true
         self.label.leftAnchor.constraint(equalTo:self.leftAnchor).isActive = true
         self.label.widthAnchor.constraint(greaterThanOrEqualToConstant:0).isActive = true
-        self.label.heightAnchor.constraint(equalToConstant:ViewConstants.InputLabel.height).isActive = true
+        self.label.heightAnchor.constraint(equalToConstant:Constants.labelHeight).isActive = true
     }
     
     private func layoutField() {
         self.field.topAnchor.constraint(equalTo:self.label.bottomAnchor).isActive = true
         self.field.leftAnchor.constraint(equalTo:self.leftAnchor).isActive = true
         self.field.rightAnchor.constraint(equalTo:self.rightAnchor).isActive = true
-        self.field.heightAnchor.constraint(equalToConstant:ViewConstants.InputField.height).isActive = true
+        self.field.heightAnchor.constraint(equalToConstant:Constants.fieldHeight).isActive = true
     }
+}
+
+private struct Constants {
+    static let fieldHeight:CGFloat = 35
+    static let labelHeight:CGFloat = 30
 }
