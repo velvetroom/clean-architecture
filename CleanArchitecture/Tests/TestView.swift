@@ -54,15 +54,6 @@ class TestView:XCTestCase {
         XCTAssertTrue(called, "Not called")
     }
     
-    func testCallsPresenterOnOrientationChange() {
-        let presenter:MockPresenterProtocol = MockPresenterProtocol()
-        let view:MockView = MockView(presenter:presenter)
-        var called:Bool = false
-        presenter.onOrientationChanged = { called = true }
-        view.viewWillTransition(to:CGSize.zero, with:MockTransitionCoordinator())
-        XCTAssertTrue(called, "Not called")
-    }
-    
     func testInjectContentWithPresenter() {
         let presenter:MockPresenterProtocol = MockPresenterProtocol()
         let view:MockView = MockView(presenter:presenter)
