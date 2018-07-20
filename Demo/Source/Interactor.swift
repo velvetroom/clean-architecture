@@ -2,8 +2,8 @@ import Foundation
 import CleanArchitecture
 
 class Interactor:InteractorProtocol {
-    var router:Router?
-    var presenter:InteractorDelegateProtocol?
+    weak var router:Router?
+    weak var presenter:InteractorDelegateProtocol?
     var amount:Amount
     var exchanger:Exchanger
     
