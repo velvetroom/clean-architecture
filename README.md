@@ -70,7 +70,7 @@ The highest level policy is your application domain or in other words the busine
 
 The lowest level policy is your user interface, i.e. labels, buttons, images, etc.
 
-<img src="https://raw.githubusercontent.com/velvetroom/clean-architecture/master/Design/dependencies.png" alt="Structure" />
+<img src="https://raw.githubusercontent.com/velvetroom/clean-architecture/master/Design/dependencies.png" width="750" alt="Structure" />
 
 ## Implementation
 
