@@ -4,6 +4,7 @@
 ## Version 1.11
 
 - Removed orientation change methods from Presenter
+- Renamed InteractorDelegateProtocol to InteractorDelegate
 
 
 ## Version 1.10

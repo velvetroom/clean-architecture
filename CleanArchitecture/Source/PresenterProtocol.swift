@@ -1,6 +1,6 @@
 import Foundation
 
-public protocol PresenterProtocol:InteractorDelegateProtocol {
+public protocol PresenterProtocol:InteractorDelegate {
     associatedtype Interactor:InteractorProtocol
     var interactor:Interactor! { get set }
     var viewModel:ViewModel! { get set }
@@ -18,6 +18,6 @@ public extension PresenterProtocol {
     func shouldUpdate() { }
 }
 
-public protocol InteractorDelegateProtocol:AnyObject {
+public protocol InteractorDelegate:AnyObject {
     func shouldUpdate()
 }

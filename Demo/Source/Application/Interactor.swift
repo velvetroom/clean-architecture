@@ -3,7 +3,7 @@ import CleanArchitecture
 
 class Interactor:InteractorProtocol {
     weak var router:UINavigationController?
-    weak var presenter:InteractorDelegateProtocol?
+    weak var presenter:InteractorDelegate?
     var amount:Amount
     var exchanger:Exchanger
     
