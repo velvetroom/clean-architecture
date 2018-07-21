@@ -39,41 +39,32 @@ class TestPresenter:XCTestCase {
     }
     
     func testUpdateViewModelOnUpdateRate() {
-        var called:Bool = false
+        let expect:XCTestExpectation = self.expectation(description:"Observer not updated")
         let string:String = "5"
-        self.view.presenter.viewModel.observe { (viewModel:UsdViewModel) in
-            called = true
-        }
+        self.view.presenter.viewModel.observe { (viewModel:UsdViewModel) in expect.fulfill() }
         self.view.presenter.interactor.exchanger.exchange.euro = 1
         self.view.presenter.interactor.exchanger.exchange.usd = 1
-        called = false
         self.presenter.updatedRate(string:string)
-        XCTAssertTrue(called, "Not updated")
+        self.waitForExpectations(timeout:0.3, handler:nil)
     }
     
     func testUpdateViewModelOnUpdateEuro() {
-        var called:Bool = false
+        let expect:XCTestExpectation = self.expectation(description:"Observer not updated")
         let string:String = "5.00"
-        self.view.presenter.viewModel.observe { (viewModel:UsdViewModel) in
-            called = true
-        }
+        self.view.presenter.viewModel.observe { (viewModel:UsdViewModel) in expect.fulfill() }
         self.view.presenter.interactor.exchanger.exchange.rate = 1
         self.view.presenter.interactor.exchanger.exchange.usd = 1
-        called = false
         self.presenter.updatedEuro(string:string)
-        XCTAssertTrue(called, "Not updated")
+        self.waitForExpectations(timeout:0.3, handler:nil)
     }
     
     func testUpdateViewModelOnUpdateUsd() {
-        var called:Bool = false
+        let expect:XCTestExpectation = self.expectation(description:"Observer not updated")
         let string:String = "5"
-        self.view.presenter.viewModel.observe { (viewModel:EuroViewModel) in
-            called = true
-        }
+        self.view.presenter.viewModel.observe { (viewModel:EuroViewModel) in expect.fulfill() }
         self.view.presenter.interactor.exchanger.exchange.rate = 1
         self.view.presenter.interactor.exchanger.exchange.euro = 1
-        called = false
         self.presenter.updatedUsd(string:string)
-        XCTAssertTrue(called, "Not updated")
+        self.waitForExpectations(timeout:0.3, handler:nil)
     }
 }

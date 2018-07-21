@@ -12,7 +12,7 @@ public class ViewModel {
         item.property = property
         item.observer = self.item().observer
         self.items[ObjectIdentifier(Property.self)] = item
-        item.observer?(property)
+        DispatchQueue.main.async { item.observer?(property) }
     }
     
     public func observe<Property:ViewModelProtocol>(observer:@escaping((Property) -> Void)) {
