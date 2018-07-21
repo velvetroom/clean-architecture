@@ -1,9 +1,9 @@
 import UIKit
 
-class ViewInput:UIView, UITextFieldDelegate {
+class InputView:UIView, UITextFieldDelegate {
     weak var label:UILabel!
     weak var field:UITextField!
-    var delegateCallback:((String) -> Void)?
+    var listener:((String) -> Void)?
     
     init() {
         super.init(frame:CGRect.zero)
@@ -21,7 +21,7 @@ class ViewInput:UIView, UITextFieldDelegate {
             let range:Range = Range(range, in:currentText)
         else { return true }
         let updatedText:String = currentText.replacingCharacters(in:range, with:string)
-        self.delegateCallback?(updatedText)
+        self.listener?(updatedText)
         return true
     }
     

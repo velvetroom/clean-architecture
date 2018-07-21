@@ -1,7 +1,7 @@
 import Foundation
 import CleanArchitecture
 
-struct ViewModelRate:ViewModelProtocol {
+struct RateViewModel:ViewModelProtocol {
     var amount:String
     
     init() {

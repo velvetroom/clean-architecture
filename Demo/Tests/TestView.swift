@@ -2,18 +2,18 @@ import XCTest
 @testable import Demo
 
 class TestView:XCTestCase {
-    private var view:View!
+    private var view:DemoView!
     
     override func setUp() {
         super.setUp()
-        self.view = View()
+        self.view = DemoView()
     }
     
     func testAssignedDelegateToInputs() {
         self.view.viewDidLoad()
-        XCTAssertNotNil(self.view.content.inputRate.delegateCallback, "Failed to assign delegate")
-        XCTAssertNotNil(self.view.content.inputEuro.delegateCallback, "Failed to assign delegate")
-        XCTAssertNotNil(self.view.content.inputUsd.delegateCallback, "Failed to assign delegate")
+        XCTAssertNotNil(self.view.content.rate.listener, "Failed to assign delegate")
+        XCTAssertNotNil(self.view.content.euro.listener, "Failed to assign delegate")
+        XCTAssertNotNil(self.view.content.usd.listener, "Failed to assign delegate")
     }
     
     func testUpdateRateCallsPresenter() {
@@ -24,7 +24,7 @@ class TestView:XCTestCase {
         self.view.presenter = presenter
         self.view.viewDidLoad()
         presenter.onUpdatedRate = { called = true }
-        let _:Bool = self.view.content.inputRate.textField(UITextField(), shouldChangeCharactersIn:NSMakeRange(0, 0),
+        let _:Bool = self.view.content.rate.textField(UITextField(), shouldChangeCharactersIn:NSMakeRange(0, 0),
                                                            replacementString:String())
         XCTAssertTrue(called, "Not called")
     }
@@ -37,8 +37,8 @@ class TestView:XCTestCase {
         self.view.presenter = presenter
         self.view.viewDidLoad()
         presenter.onUpdatedEuro = { called = true }
-        let _:Bool = self.view.content.inputEuro.textField(UITextField(), shouldChangeCharactersIn:NSMakeRange(0, 0),
-                                                           replacementString:String())
+        let _:Bool = self.view.content.euro.textField(UITextField(), shouldChangeCharactersIn:NSMakeRange(0, 0),
+                                                      replacementString:String())
         XCTAssertTrue(called, "Not called")
     }
     
@@ -50,7 +50,7 @@ class TestView:XCTestCase {
         self.view.presenter = presenter
         self.view.viewDidLoad()
         presenter.onUpdatedUsd = { called = true }
-        let _:Bool = self.view.content.inputUsd.textField(UITextField(), shouldChangeCharactersIn:NSMakeRange(0, 0),
+        let _:Bool = self.view.content.usd.textField(UITextField(), shouldChangeCharactersIn:NSMakeRange(0, 0),
                                                            replacementString:String())
         XCTAssertTrue(called, "Not called")
     }

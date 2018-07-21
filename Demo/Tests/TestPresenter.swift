@@ -2,12 +2,12 @@ import XCTest
 @testable import Demo
 
 class TestPresenter:XCTestCase {
-    private var view:View!
+    private var view:DemoView!
     private var presenter:Presenter!
     
     override func setUp() {
         super.setUp()
-        self.view = View()
+        self.view = DemoView()
         self.presenter = self.view.presenter
     }
     
@@ -41,7 +41,7 @@ class TestPresenter:XCTestCase {
     func testUpdateViewModelOnUpdateRate() {
         var called:Bool = false
         let string:String = "5"
-        self.view.presenter.viewModel.observe { (viewModel:ViewModelUsd) in
+        self.view.presenter.viewModel.observe { (viewModel:UsdViewModel) in
             called = true
         }
         self.view.presenter.interactor.exchanger.exchange.euro = 1
@@ -54,7 +54,7 @@ class TestPresenter:XCTestCase {
     func testUpdateViewModelOnUpdateEuro() {
         var called:Bool = false
         let string:String = "5.00"
-        self.view.presenter.viewModel.observe { (viewModel:ViewModelUsd) in
+        self.view.presenter.viewModel.observe { (viewModel:UsdViewModel) in
             called = true
         }
         self.view.presenter.interactor.exchanger.exchange.rate = 1
@@ -67,7 +67,7 @@ class TestPresenter:XCTestCase {
     func testUpdateViewModelOnUpdateUsd() {
         var called:Bool = false
         let string:String = "5"
-        self.view.presenter.viewModel.observe { (viewModel:ViewModelEuro) in
+        self.view.presenter.viewModel.observe { (viewModel:EuroViewModel) in
             called = true
         }
         self.view.presenter.interactor.exchanger.exchange.rate = 1

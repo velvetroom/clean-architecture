@@ -2,18 +2,18 @@ import XCTest
 @testable import Demo
 
 class TestViewInput:XCTestCase {
-    private var view:ViewInput!
+    private var view:InputView!
     
     override func setUp() {
         super.setUp()
-        self.view = ViewInput()
+        self.view = InputView()
     }
     
     func testCallsDelegateCallbackOnTextChange() {
         var called:Bool = false
         let originalText:String = "hello world"
         let testText:String = "lorem ipsumn"
-        self.view.delegateCallback = { (text:String) in
+        self.view.listener = { (text:String) in
             XCTAssertEqual(testText, text, "Invalid text received")
             called = true
         }
