@@ -117,9 +117,9 @@ class Interactor:InteractorProtocol {
 }
 ```
 
-- router: A weak reference to the object in charge of presenting views in you Application, the Navigation Controller for example.
-- presenter: A weak reference to the InteractorDelegate; this is the only communication going from the Interactor to the Presenter, the Interactor notifies the Presenter when it should update the presentation.
-- required init: Initialize any property that you need or leave it empty if none.
+- `router` A weak reference to the object in charge of presenting views in you Application, the Navigation Controller for example.
+- `presenter` A weak reference to the InteractorDelegate; this is the only communication going from the Interactor to the Presenter, the Interactor notifies the Presenter when it should update the presentation.
+- `required init` Initialize any property that you need or leave it empty if none.
 
 ### Presenter
 
@@ -146,9 +146,9 @@ class Presenter:PresenterProtocol {
 }
 ```
 
-- viewModel: The object defining how the view should look and what content to display. Presenter edits ViewModel and View gets notifified of a change, then View can update the change accordingly for the user.
-- interactor: Presenter is the owner of the interactor.
-- required init: Initialize any property if needed.
+- `viewModel` The object defining how the view should look and what content to display. Presenter edits ViewModel and View gets notifified of a change, then View can update the change accordingly for the user.
+- `interactor` Presenter is the owner of the interactor.
+- `required init` Initialize any property if needed.
 
 ### View
 
@@ -180,8 +180,8 @@ View is a Generic class that needs to be specialized with a class conforming to 
 class DemoView:View<Presenter, UIView> { }
 ```
 
-- Presenter: Your class conforming to PresenterProtocol
-- UIView: You can define what UIView should be used in the UIViewController, you could pass the default UIView or create your own subclass. Whatever class you assign here will be available as `content` property on your View.
+- `Presenter` Your class conforming to PresenterProtocol
+- `UIView` You can define what UIView should be used in the UIViewController, you could pass the default UIView or create your own subclass. Whatever class you assign here will be available as `content` property on your View.
 
 ### ViewModel
 
