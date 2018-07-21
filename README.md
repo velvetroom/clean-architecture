@@ -110,10 +110,10 @@ Create a class that implements InteractorProtocol and add the required boiler pl
 
 ```
 class Interactor:InteractorProtocol {
-weak var router:UINavigationController?
-weak var presenter:InteractorDelegateProtocol?
+    weak var router:UINavigationController?
+    weak var presenter:InteractorDelegateProtocol?
 
-required init() { }
+    required init() { }
 }
 ```
 
@@ -139,10 +139,10 @@ Create a class that implements PresenterProtocol and add the required boiler pla
 
 ```
 class Presenter:PresenterProtocol {
-var viewModel:ViewModel!
-var interactor:Interactor!
+    var viewModel:ViewModel!
+    var interactor:Interactor!
 
-required init() { }
+    required init() { }
 }
 ```
 
@@ -205,15 +205,15 @@ Create a new structure that implements ViewModelProtocol.
 
 ```
 struct ContentViewModel:ViewModelProtocol {
-var userName:String
-var buttonEnabled:Bool
-var buttonColor:UIColor?
-var icon:UIImage?
+    var userName:String
+    var buttonEnabled:Bool
+    var buttonColor:UIColor?
+    var icon:UIImage?
 
-init() {
-self.userName = String()
-self.buttonEnabled = false
-}
+    init() {
+        self.userName = String()
+        self.buttonEnabled = false
+    }
 }
 ```
 
@@ -225,9 +225,9 @@ In your Presenter class
 
 ```
 func update(userName:String) {
-var property:ContentViewModel = ContentViewModel()
-property.userName = userName
-self.viewModel.update(property:property)
+    var property:ContentViewModel = ContentViewModel()
+    property.userName = userName
+    self.viewModel.update(property:property)
 }
 ```
 
@@ -243,9 +243,9 @@ In your DemoView class
 
 ```
 func listenToUpdates() {
-self.presenter.viewModel.observe { [weak self] (property:ContentViewModel) in
-self?.title = property.userName
-}
+    self.presenter.viewModel.observe { [weak self] (property:ContentViewModel) in
+        self?.title = property.userName
+    }
 }
 ```
 
