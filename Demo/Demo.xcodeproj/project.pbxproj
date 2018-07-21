@@ -146,19 +146,8 @@
 		DA640CFC20E0C1CA006F2DC8 /* Source */ = {
 			isa = PBXGroup;
 			children = (
-				DA640D0520E0C425006F2DC8 /* Application.swift */,
-				DA640D0720E0C4D5006F2DC8 /* DemoView.swift */,
-				DA1EA5E120E2092E00B8160E /* ContentView.swift */,
-				DA1EA5E920E20F4300B8160E /* InputView.swift */,
-				DAC0CC1820E233DF00EA8519 /* RateViewModel.swift */,
-				DA1EA60120E225CD00B8160E /* EuroViewModel.swift */,
-				DA1EA60320E225E100B8160E /* UsdViewModel.swift */,
-				DA1EA5E320E2093500B8160E /* Presenter.swift */,
-				DA1EA5E520E2093C00B8160E /* Interactor.swift */,
-				DA640D0920E0C55F006F2DC8 /* Exchanger.swift */,
-				DA1EA60720E228D500B8160E /* Exchange.swift */,
-				DA1EA60B20E22EC600B8160E /* ExchangeText.swift */,
-				DA1EA5EF20E21E5700B8160E /* Amount.swift */,
+				DA67E34C21033B9F00BED256 /* Domain Specific */,
+				DA67E34D21033BB200BED256 /* Application */,
 			);
 			path = Source;
 			sourceTree = "<group>";
@@ -195,6 +184,33 @@
 				DA1EA5F520E2221A00B8160E /* MockAmount.swift */,
 			);
 			path = Tests;
+			sourceTree = "<group>";
+		};
+		DA67E34C21033B9F00BED256 /* Domain Specific */ = {
+			isa = PBXGroup;
+			children = (
+				DA640D0920E0C55F006F2DC8 /* Exchanger.swift */,
+				DA1EA60720E228D500B8160E /* Exchange.swift */,
+				DA1EA60B20E22EC600B8160E /* ExchangeText.swift */,
+				DA1EA5EF20E21E5700B8160E /* Amount.swift */,
+			);
+			path = "Domain Specific";
+			sourceTree = "<group>";
+		};
+		DA67E34D21033BB200BED256 /* Application */ = {
+			isa = PBXGroup;
+			children = (
+				DA640D0520E0C425006F2DC8 /* Application.swift */,
+				DA1EA5E520E2093C00B8160E /* Interactor.swift */,
+				DA1EA5E320E2093500B8160E /* Presenter.swift */,
+				DAC0CC1820E233DF00EA8519 /* RateViewModel.swift */,
+				DA1EA60120E225CD00B8160E /* EuroViewModel.swift */,
+				DA1EA60320E225E100B8160E /* UsdViewModel.swift */,
+				DA640D0720E0C4D5006F2DC8 /* DemoView.swift */,
+				DA1EA5E120E2092E00B8160E /* ContentView.swift */,
+				DA1EA5E920E20F4300B8160E /* InputView.swift */,
+			);
+			path = Application;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
