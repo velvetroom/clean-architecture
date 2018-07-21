@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		DA1EA5DD20E206DF00B8160E /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA1EA5DC20E206DF00B8160E /* Router.swift */; };
 		DA1EA5E020E2081C00B8160E /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = DA1EA5DE20E2081C00B8160E /* Localizable.strings */; };
 		DA1EA5E220E2092E00B8160E /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA1EA5E120E2092E00B8160E /* ContentView.swift */; };
 		DA1EA5E420E2093500B8160E /* Presenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA1EA5E320E2093500B8160E /* Presenter.swift */; };
@@ -67,7 +66,6 @@
 		DA01BC5220E0C15C000F16DF /* Configuration */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Configuration; sourceTree = "<group>"; };
 		DA01BC5820E0C188000F16DF /* TestsDemo.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TestsDemo.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		DA033C5220E0CD6D009EB0B3 /* CleanArchitecture.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = CleanArchitecture.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		DA1EA5DC20E206DF00B8160E /* Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
 		DA1EA5DF20E2081C00B8160E /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		DA1EA5E120E2092E00B8160E /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		DA1EA5E320E2093500B8160E /* Presenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Presenter.swift; sourceTree = "<group>"; };
@@ -149,7 +147,6 @@
 			isa = PBXGroup;
 			children = (
 				DA640D0520E0C425006F2DC8 /* Application.swift */,
-				DA1EA5DC20E206DF00B8160E /* Router.swift */,
 				DA640D0720E0C4D5006F2DC8 /* DemoView.swift */,
 				DA1EA5E120E2092E00B8160E /* ContentView.swift */,
 				DA1EA5E920E20F4300B8160E /* InputView.swift */,
@@ -315,7 +312,6 @@
 				DA640D0A20E0C55F006F2DC8 /* Exchanger.swift in Sources */,
 				DA1EA5E620E2093C00B8160E /* Interactor.swift in Sources */,
 				DA1EA60220E225CD00B8160E /* EuroViewModel.swift in Sources */,
-				DA1EA5DD20E206DF00B8160E /* Router.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
