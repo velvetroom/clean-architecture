@@ -1,10 +1,16 @@
 # Change log
 
 
+## Version 1.11
+
+- Removed orientation change methods from Presenter
+- Renamed InteractorDelegateProtocol to InteractorDelegate
+
+
 ## Version 1.10
 
 - Renamed Transition associated type as Router
-- Removed abstract methods from View; Use UIView methods instead
+- Removed abstract methods from View; use UIView methods instead
 
 
 ## Version 1.9

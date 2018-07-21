@@ -1,7 +1,7 @@
 import Foundation
 import CleanArchitecture
 
-struct ViewModelUsd:ViewModelProtocol {
+struct EuroViewModel:ViewModelProtocol {
     var amount:String
     
     init() {

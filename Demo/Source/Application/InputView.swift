@@ -1,9 +1,9 @@
 import UIKit
 
-class ViewInput:UIView, UITextFieldDelegate {
+class InputView:UIView, UITextFieldDelegate {
     weak var label:UILabel!
     weak var field:UITextField!
-    var delegateCallback:((String) -> Void)?
+    var listener:((String) -> Void)?
     
     init() {
         super.init(frame:CGRect.zero)
@@ -12,9 +12,7 @@ class ViewInput:UIView, UITextFieldDelegate {
         self.layoutOutlets()
     }
     
-    required init?(coder:NSCoder) {
-        return nil
-    }
+    required init?(coder:NSCoder) { return nil }
     
     func textField(_ textField:UITextField, shouldChangeCharactersIn range:NSRange,
                    replacementString string:String) -> Bool {
@@ -23,7 +21,7 @@ class ViewInput:UIView, UITextFieldDelegate {
             let range:Range = Range(range, in:currentText)
         else { return true }
         let updatedText:String = currentText.replacingCharacters(in:range, with:string)
-        self.delegateCallback?(updatedText)
+        self.listener?(updatedText)
         return true
     }
     
@@ -71,13 +69,18 @@ class ViewInput:UIView, UITextFieldDelegate {
         self.label.topAnchor.constraint(equalTo:self.topAnchor).isActive = true
         self.label.leftAnchor.constraint(equalTo:self.leftAnchor).isActive = true
         self.label.widthAnchor.constraint(greaterThanOrEqualToConstant:0).isActive = true
-        self.label.heightAnchor.constraint(equalToConstant:ViewConstants.InputLabel.height).isActive = true
+        self.label.heightAnchor.constraint(equalToConstant:Constants.labelHeight).isActive = true
     }
     
     private func layoutField() {
         self.field.topAnchor.constraint(equalTo:self.label.bottomAnchor).isActive = true
         self.field.leftAnchor.constraint(equalTo:self.leftAnchor).isActive = true
         self.field.rightAnchor.constraint(equalTo:self.rightAnchor).isActive = true
-        self.field.heightAnchor.constraint(equalToConstant:ViewConstants.InputField.height).isActive = true
+        self.field.heightAnchor.constraint(equalToConstant:Constants.fieldHeight).isActive = true
     }
+}
+
+private struct Constants {
+    static let fieldHeight:CGFloat = 35
+    static let labelHeight:CGFloat = 30
 }

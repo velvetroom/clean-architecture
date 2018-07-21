@@ -2,12 +2,12 @@ import XCTest
 @testable import Demo
 
 class TestInteractor:XCTestCase {
-    private var view:View!
+    private var view:DemoView!
     private var interactor:Interactor!
     
     override func setUp() {
         super.setUp()
-        self.view = View()
+        self.view = DemoView()
         self.interactor = self.view.presenter.interactor
     }
     

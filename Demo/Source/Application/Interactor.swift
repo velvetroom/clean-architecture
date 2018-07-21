@@ -1,9 +1,9 @@
-import Foundation
+import UIKit
 import CleanArchitecture
 
 class Interactor:InteractorProtocol {
-    var router:Router?
-    var presenter:InteractorDelegateProtocol?
+    weak var router:UINavigationController?
+    weak var presenter:InteractorDelegate?
     var amount:Amount
     var exchanger:Exchanger
     
