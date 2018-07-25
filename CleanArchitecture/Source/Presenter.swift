@@ -1,8 +1,8 @@
 import Foundation
 
 public protocol Presenter:InteractorDelegate {
-    associatedtype Interactor:InteractorProtocol
-    var interactor:Interactor! { get set }
+    associatedtype InteractorType:Interactor
+    var interactor:InteractorType! { get set }
     var viewModel:ViewModel! { get set }
     
     init()
