@@ -1,10 +1,9 @@
 import Foundation
 import CleanArchitecture
 
-class MockInteractorProtocol:InteractorProtocol {
+class MockInteractor:Interactor {
     var onDidLoad:(() -> Void)?
     var presenter:InteractorDelegate?
-    var router:MockTransitionProtocol?
     
     required init() { }
     

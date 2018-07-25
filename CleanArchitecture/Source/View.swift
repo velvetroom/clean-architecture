@@ -8,6 +8,7 @@ open class View<PresenterType:Presenter>:UIViewController {
         self.presenter.interactor = PresenterType.InteractorType()
         self.presenter.interactor.presenter = self.presenter
         super.init(nibName:nil, bundle:nil)
+        self.presenter.viewModels = ViewModels()
     }
     
     public init(presenter:PresenterType) {
