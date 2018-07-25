@@ -1,7 +1,7 @@
 import Foundation
 import CleanArchitecture
 
-class Presenter:PresenterProtocol {
+class Presenter:Presenter {
     var viewModel:ViewModel!
     var interactor:Interactor!
     

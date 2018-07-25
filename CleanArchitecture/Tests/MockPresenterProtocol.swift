@@ -1,7 +1,7 @@
 import Foundation
 import CleanArchitecture
 
-class MockPresenterProtocol:PresenterProtocol {
+class MockPresenterProtocol:Presenter {
     var onDidLoad:(() -> Void)?
     var onWillAppear:(() -> Void)?
     var onDidAppear:(() -> Void)?

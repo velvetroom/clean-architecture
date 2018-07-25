@@ -1,28 +1,22 @@
 import UIKit
 
-open class View<Presenter:PresenterProtocol, Content:UIView>:UIViewController {
-    open var presenter:Presenter
-    open var content:Content!
+open class View<PresenterType:Presenter>:UIViewController {
+    open var presenter:PresenterType
     
     public required init() {
-        self.presenter = Presenter()
-        self.presenter.interactor = Presenter.Interactor()
+        self.presenter = PresenterType()
+        self.presenter.interactor = PresenterType.Interactor()
         self.presenter.interactor.presenter = self.presenter
         super.init(nibName:nil, bundle:nil)
-        self.postInit()
     }
     
-    public init(presenter:Presenter) {
+    public init(presenter:PresenterType) {
         self.presenter = presenter
         super.init(nibName:nil, bundle:nil)
-        self.postInit()
+        self.presenter.viewModel = ViewModel()
     }
     
     public required init?(coder:NSCoder) { return nil }
-    
-    open override func loadView() {
-        self.view = self.content
-    }
     
     open override func viewDidLoad() {
         super.viewDidLoad()
@@ -38,10 +32,5 @@ open class View<Presenter:PresenterProtocol, Content:UIView>:UIViewController {
     open override func viewDidAppear(_ animated:Bool) {
         super.viewDidAppear(animated)
         self.presenter.didAppear()
-    }
-    
-    private func postInit() {
-        self.content = Content()
-        self.presenter.viewModel = ViewModel()
     }
 }
