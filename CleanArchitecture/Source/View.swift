@@ -13,7 +13,7 @@ open class View<PresenterType:Presenter>:UIViewController {
     public init(presenter:PresenterType) {
         self.presenter = presenter
         super.init(nibName:nil, bundle:nil)
-        self.presenter.viewModel = ViewModel()
+        self.presenter.viewModels = ViewModels()
     }
     
     public required init?(coder:NSCoder) { return nil }

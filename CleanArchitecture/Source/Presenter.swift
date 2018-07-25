@@ -3,7 +3,7 @@ import Foundation
 public protocol Presenter:InteractorDelegate {
     associatedtype InteractorType:Interactor
     var interactor:InteractorType! { get set }
-    var viewModel:ViewModel! { get set }
+    var viewModels:ViewModels! { get set }
     
     init()
     func didLoad()
