@@ -72,6 +72,11 @@ class DemoView:View<DemoPresenter> {
     }
     
     private func configureViewModel() {
+        self.presenter.viewModels.observe { [weak self] (viewModel:DemoViewModel) in
+            self?.rate.field.text = viewModel.rate
+            self?.euro.field.text = viewModel.euro
+            self?.usd.field.text = viewModel.usd
+        }
         self.presenter.viewModels.observe { [weak self] (viewModel:RateViewModel) in
             self?.rate.field.text = viewModel.amount
         }

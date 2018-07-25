@@ -28,10 +28,12 @@ class DemoPresenter:Presenter {
         self.viewModels.update(viewModel:property)
     }
     
-    func didLoad() {
+    func didAppear() {
         let exchange:ExchangeText = self.interactor.initialExchanger()
-        self.updatedRate(string:exchange.rate)
-        self.updatedEuro(string:exchange.euro)
-        self.updatedUsd(string:exchange.usd)
+        var property:DemoViewModel = DemoViewModel()
+        property.rate = exchange.rate
+        property.euro = exchange.euro
+        property.usd = exchange.usd
+        self.viewModels.update(viewModel:property)
     }
 }
