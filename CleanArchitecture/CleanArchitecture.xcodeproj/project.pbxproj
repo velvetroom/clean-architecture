@@ -13,7 +13,7 @@
 		DABED05420E39371007C3E18 /* MockTransitionProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = DABED05320E39371007C3E18 /* MockTransitionProtocol.swift */; };
 		DAD470EC20E0E43200E3D031 /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAD470DA20E0E43100E3D031 /* ViewModel.swift */; };
 		DAD470EF20E0E43200E3D031 /* InteractorProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAD470DD20E0E43100E3D031 /* InteractorProtocol.swift */; };
-		DAD470FB20E0E43200E3D031 /* PresenterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAD470E920E0E43200E3D031 /* PresenterProtocol.swift */; };
+		DAD470FB20E0E43200E3D031 /* Presenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAD470E920E0E43200E3D031 /* Presenter.swift */; };
 		DAD4710920E0E43B00E3D031 /* MockView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAD470FC20E0E43B00E3D031 /* MockView.swift */; };
 		DAD4710B20E0E43B00E3D031 /* MockUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAD470FE20E0E43B00E3D031 /* MockUIView.swift */; };
 		DAD4710D20E0E43B00E3D031 /* MockPresenterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAD4710020E0E43B00E3D031 /* MockPresenterProtocol.swift */; };
@@ -43,7 +43,7 @@
 		DABED05320E39371007C3E18 /* MockTransitionProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockTransitionProtocol.swift; sourceTree = "<group>"; };
 		DAD470DA20E0E43100E3D031 /* ViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
 		DAD470DD20E0E43100E3D031 /* InteractorProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InteractorProtocol.swift; sourceTree = "<group>"; };
-		DAD470E920E0E43200E3D031 /* PresenterProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PresenterProtocol.swift; sourceTree = "<group>"; };
+		DAD470E920E0E43200E3D031 /* Presenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Presenter.swift; sourceTree = "<group>"; };
 		DAD470FC20E0E43B00E3D031 /* MockView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MockView.swift; sourceTree = "<group>"; };
 		DAD470FE20E0E43B00E3D031 /* MockUIView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MockUIView.swift; sourceTree = "<group>"; };
 		DAD4710020E0E43B00E3D031 /* MockPresenterProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MockPresenterProtocol.swift; sourceTree = "<group>"; };
@@ -96,7 +96,7 @@
 			isa = PBXGroup;
 			children = (
 				DAD470DD20E0E43100E3D031 /* InteractorProtocol.swift */,
-				DAD470E920E0E43200E3D031 /* PresenterProtocol.swift */,
+				DAD470E920E0E43200E3D031 /* Presenter.swift */,
 				DAD470DA20E0E43100E3D031 /* ViewModel.swift */,
 				DA033C4D20E0CCB7009EB0B3 /* View.swift */,
 			);
@@ -230,7 +230,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				DA033C4E20E0CCB7009EB0B3 /* View.swift in Sources */,
-				DAD470FB20E0E43200E3D031 /* PresenterProtocol.swift in Sources */,
+				DAD470FB20E0E43200E3D031 /* Presenter.swift in Sources */,
 				DAD470EC20E0E43200E3D031 /* ViewModel.swift in Sources */,
 				DAD470EF20E0E43200E3D031 /* InteractorProtocol.swift in Sources */,
 			);
