@@ -175,7 +175,7 @@ Create a new class that inherits from View.
 View is a Generic class that needs to be specialized with a class conforming to Presenter.
 
 ```
-class DemoView:View<MyPresenter> { }
+class MyView:View<MyPresenter> { }
 ```
 
 - `MyPresenter` Your class conforming to Presenter
@@ -201,7 +201,7 @@ import CleanArchitecture
 Create a new structure that implements ViewModel.
 
 ```
-struct ContentViewModel:ViewModel {
+struct MyViewModel:ViewModel {
     var userName:String
     var buttonEnabled:Bool
     var buttonColor:UIColor?
@@ -222,7 +222,7 @@ In your Presenter class
 
 ```
 func update(userName:String) {
-    var viewModel:ContentViewModel = ContentViewModel()
+    var viewModel:MyViewModel = MyViewModel()
     viewModel.userName = userName
     self.viewModels.update(viewModel:viewModel)
 }
@@ -240,7 +240,7 @@ In your DemoView class
 
 ```
 func listenToUpdates() {
-    self.presenter.viewModels.observe { [weak self] (viewModel:ContentViewModel) in
+    self.presenter.viewModels.observe { [weak self] (viewModel:MyViewModel) in
         self?.title = viewModel.userName
     }
 }
