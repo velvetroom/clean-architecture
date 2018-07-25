@@ -2,27 +2,27 @@ import XCTest
 @testable import CleanArchitecture
 
 class TestViewModel:XCTestCase {
-    private var viewModel:ViewModel!
-    private var propertyA:MockViewModelProtocol!
-    private var propertyB:MockViewModelSecondProtocol!
+    private var viewModels:ViewModels!
+    private var propertyA:MockViewModel!
+    private var propertyB:MockSecondViewModel!
     
     override func setUp() {
         super.setUp()
-        self.viewModel = ViewModel()
-        self.propertyA = MockViewModelProtocol()
-        self.propertyB = MockViewModelSecondProtocol()
+        self.viewModels = ViewModels()
+        self.propertyA = MockViewModel()
+        self.propertyB = MockSecondViewModel()
     }
     
     func testUpdatesProperty() {
         let expect:XCTestExpectation = self.expectation(description:"Observer not updated")
         let name:String = "hello world"
-        self.viewModel.observe { (property:MockViewModelProtocol) in
-            XCTAssertEqual(property.name, name, "Failed to update")
+        self.viewModels.observe { (viewModel:MockViewModel) in
+            XCTAssertEqual(viewModel.name, name, "Failed to update")
             expect.fulfill()
         }
-        var property:MockViewModelProtocol = MockViewModelProtocol()
+        var property:MockViewModel = MockViewModel()
         property.name = name
-        self.viewModel.update(property:property)
+        self.viewModels.update(viewModel:property)
         self.waitForExpectations(timeout:0.3, handler:nil)
     }
     
@@ -32,7 +32,7 @@ class TestViewModel:XCTestCase {
         let expectAfterCopy:XCTestExpectation = self.expectation(description:"Observer not updated")
         let firstName:String = "hello world"
         let secondName:String = "lorem ipsum"
-        self.viewModel.observe { (viewModel:MockViewModelProtocol) in
+        self.viewModels.observe { (viewModel:MockViewModel) in
             if notified == false {
                 notified = true
                 expectNotified.fulfill()
@@ -44,21 +44,21 @@ class TestViewModel:XCTestCase {
         }
         
         self.propertyA.name = firstName
-        self.viewModel.update(property:self.propertyA)
+        self.viewModels.update(viewModel:self.propertyA)
         
         self.propertyA.name = secondName
-        self.viewModel.update(property:self.propertyA)
+        self.viewModels.update(viewModel:self.propertyA)
         self.waitForExpectations(timeout:0.3, handler:nil)
     }
     
     func testReplacesExistingPropertyOfSameType() {
-        self.viewModel.update(property:MockViewModelProtocol())
-        self.viewModel.update(property:MockViewModelProtocol())
-        self.viewModel.update(property:MockViewModelProtocol())
-        self.viewModel.update(property:MockViewModelProtocol())
-        self.viewModel.update(property:MockViewModelProtocol())
-        self.viewModel.update(property:MockViewModelProtocol())
-        XCTAssertEqual(self.viewModel.items.count, 1, "Failed to replace")
+        self.viewModels.update(viewModel:MockViewModel())
+        self.viewModels.update(viewModel:MockViewModel())
+        self.viewModels.update(viewModel:MockViewModel())
+        self.viewModels.update(viewModel:MockViewModel())
+        self.viewModels.update(viewModel:MockViewModel())
+        self.viewModels.update(viewModel:MockViewModel())
+        XCTAssertEqual(self.viewModels.items.count, 1, "Failed to replace")
     }
     
     func testUpdateObserver() {
@@ -66,19 +66,19 @@ class TestViewModel:XCTestCase {
         let view:MockView = MockView()
         view.startObserving()
         view.onPropertyUpdated = { expect.fulfill() }
-        view.presenter.viewModel.update(property:MockViewModelProtocol())
+        view.presenter.viewModels.update(viewModel:MockViewModel())
         self.waitForExpectations(timeout:0.3, handler:nil)
     }
     
     func testNotRetainingObserver() {
         let expect:XCTestExpectation = self.expectation(description:"Observer not updated")
-        let transition:MockTransitionProtocol = MockTransitionProtocol()
-        transition.view = MockView()
-        transition.view?.startObserving()
-        transition.view?.onPropertyUpdated = { expect.fulfill() }
-        transition.view?.presenter.viewModel.update(property:MockViewModelProtocol())
-        transition.view = nil
-        XCTAssertNil(transition.view, "Failed to release")
+        let container:MockContainer = MockContainer()
+        container.view = MockView()
+        container.view?.startObserving()
+        container.view?.onPropertyUpdated = { expect.fulfill() }
+        container.view?.presenter.viewModels.update(viewModel:MockViewModel())
+        container.view = nil
+        XCTAssertNil(container.view, "Failed to release")
         self.waitForExpectations(timeout:0.3, handler:nil)
     }
     
@@ -91,7 +91,7 @@ class TestViewModel:XCTestCase {
             expect.fulfill()
         }
         DispatchQueue.global(qos:DispatchQoS.QoSClass.background).async {
-            view.presenter.viewModel.update(property:MockViewModelProtocol())
+            view.presenter.viewModels.update(viewModel:MockViewModel())
         }
         self.waitForExpectations(timeout:0.3, handler:nil)
     }

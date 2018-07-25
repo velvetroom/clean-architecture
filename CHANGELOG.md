@@ -1,6 +1,16 @@
 # Change log
 
 
+## Version 1.12
+
+- Renamed PresenterProtocol as Presenter
+- Renamed InteractorProtocol as Interactor
+- Renamed presenter as delegate in Interactor
+- Removed Content from View
+- Removed Router associated type
+- Refacfored ViewModel
+
+
 ## Version 1.11
 
 - Removed orientation change methods from Presenter

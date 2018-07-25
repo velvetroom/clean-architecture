@@ -1,7 +1,7 @@
 import UIKit
 import CleanArchitecture
 
-struct MockViewModelSecondProtocol:ViewModelProtocol {
+struct MockSecondViewModel:ViewModel {
     var value:CGFloat
     
     init() {

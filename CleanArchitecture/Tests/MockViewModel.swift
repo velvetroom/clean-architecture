@@ -1,7 +1,7 @@
 import Foundation
 import CleanArchitecture
 
-struct MockViewModelProtocol:ViewModelProtocol {
+struct MockViewModel:ViewModel {
     var name:String
     
     init() {

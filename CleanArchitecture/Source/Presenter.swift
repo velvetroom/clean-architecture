@@ -1,9 +1,9 @@
 import Foundation
 
-public protocol PresenterProtocol:InteractorDelegate {
-    associatedtype Interactor:InteractorProtocol
-    var interactor:Interactor! { get set }
-    var viewModel:ViewModel! { get set }
+public protocol Presenter:InteractorDelegate {
+    associatedtype InteractorType:Interactor
+    var interactor:InteractorType! { get set }
+    var viewModels:ViewModels! { get set }
     
     init()
     func didLoad()
@@ -11,7 +11,7 @@ public protocol PresenterProtocol:InteractorDelegate {
     func didAppear()
 }
 
-public extension PresenterProtocol {
+public extension Presenter {
     func didLoad() { }
     func willAppear() { }
     func didAppear() { }

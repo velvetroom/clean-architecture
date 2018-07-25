@@ -1,12 +1,12 @@
 import Foundation
 import CleanArchitecture
 
-class MockPresenterProtocol:PresenterProtocol {
+class MockPresenter:Presenter {
     var onDidLoad:(() -> Void)?
     var onWillAppear:(() -> Void)?
     var onDidAppear:(() -> Void)?
-    var interactor:MockInteractorProtocol!
-    var viewModel:ViewModel!
+    var interactor:MockInteractor!
+    var viewModels:ViewModels!
     
     required init() { }
     

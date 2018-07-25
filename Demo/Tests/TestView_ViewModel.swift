@@ -12,12 +12,12 @@ class TestView_ViewModel:XCTestCase {
     
     func testUpdateRateWithViewModel() {
         let expect:XCTestExpectation = self.expectation(description:"Observer not updated")
-        self.view.content.rate.field.text = String()
+        self.view.rate.field.text = String()
         var property:RateViewModel = RateViewModel()
         property.amount = "lorem ipsum"
-        self.view.presenter.viewModel.update(property:property)
+        self.view.presenter.viewModels.update(viewModel:property)
         DispatchQueue.main.async {
-            XCTAssertEqual(self.view.content.rate.field.text, property.amount, "Not updated")
+            XCTAssertEqual(self.view.rate.field.text, property.amount, "Not updated")
             expect.fulfill()
         }
         self.waitForExpectations(timeout:0.3, handler:nil)
@@ -25,12 +25,12 @@ class TestView_ViewModel:XCTestCase {
     
     func testUpdateEuroWithViewModel() {
         let expect:XCTestExpectation = self.expectation(description:"Observer not updated")
-        self.view.content.euro.field.text = String()
+        self.view.euro.field.text = String()
         var property:EuroViewModel = EuroViewModel()
         property.amount = "lorem ipsum"
-        self.view.presenter.viewModel.update(property:property)
+        self.view.presenter.viewModels.update(viewModel:property)
         DispatchQueue.main.async {
-            XCTAssertEqual(self.view.content.euro.field.text, property.amount, "Not updated")
+            XCTAssertEqual(self.view.euro.field.text, property.amount, "Not updated")
             expect.fulfill()
         }
         self.waitForExpectations(timeout:0.3, handler:nil)
@@ -38,12 +38,12 @@ class TestView_ViewModel:XCTestCase {
     
     func testUpdateUsdWithViewModel() {
         let expect:XCTestExpectation = self.expectation(description:"Observer not updated")
-        self.view.content.usd.field.text = String()
+        self.view.usd.field.text = String()
         var property:UsdViewModel = UsdViewModel()
         property.amount = "lorem ipsum"
-        self.view.presenter.viewModel.update(property:property)
+        self.view.presenter.viewModels.update(viewModel:property)
         DispatchQueue.main.async {
-            XCTAssertEqual(self.view.content.usd.field.text, property.amount, "Not updated")
+            XCTAssertEqual(self.view.usd.field.text, property.amount, "Not updated")
             expect.fulfill()
         }
         self.waitForExpectations(timeout:0.3, handler:nil)

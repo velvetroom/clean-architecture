@@ -7,16 +7,8 @@ import UIKit
         let window:UIWindow = UIWindow(frame:UIScreen.main.bounds)
         window.backgroundColor = UIColor.white
         window.makeKeyAndVisible()
-        window.rootViewController = self.makeRouter()
+        window.rootViewController = DemoView()
         self.window = window
         return true
-    }
-    
-    private func makeRouter() -> UINavigationController {
-        let router:UINavigationController = UINavigationController()
-        let view:DemoView = DemoView()
-        view.presenter.interactor.router = router
-        router.setViewControllers([view], animated:false)
-        return router
     }
 }

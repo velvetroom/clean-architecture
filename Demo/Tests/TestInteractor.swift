@@ -3,7 +3,7 @@ import XCTest
 
 class TestInteractor:XCTestCase {
     private var view:DemoView!
-    private var interactor:Interactor!
+    private var interactor:DemoInteractor!
     
     override func setUp() {
         super.setUp()
