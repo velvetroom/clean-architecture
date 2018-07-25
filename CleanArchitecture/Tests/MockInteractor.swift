@@ -3,7 +3,7 @@ import CleanArchitecture
 
 class MockInteractor:Interactor {
     var onDidLoad:(() -> Void)?
-    var presenter:InteractorDelegate?
+    var delegate:InteractorDelegate?
     
     required init() { }
     

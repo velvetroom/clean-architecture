@@ -1,7 +1,7 @@
 import Foundation
 
 public protocol Interactor:AnyObject {
-    var presenter:InteractorDelegate? { get set }
+    var delegate:InteractorDelegate? { get set }
     
     init()
     func didLoad()

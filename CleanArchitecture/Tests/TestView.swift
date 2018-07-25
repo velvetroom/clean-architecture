@@ -6,7 +6,7 @@ class TestView:XCTestCase {
         let view:MockView = MockView()
         XCTAssertNotNil(view.presenter, "Not injected")
         XCTAssertNotNil(view.presenter.interactor, "Not injected")
-        XCTAssertNotNil(view.presenter.interactor.presenter, "Not injected")
+        XCTAssertNotNil(view.presenter.interactor.delegate, "Not injected")
         XCTAssertNotNil(view.presenter.viewModels, "Not injected")
     }
     

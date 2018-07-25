@@ -6,7 +6,7 @@ open class View<PresenterType:Presenter>:UIViewController {
     public required init() {
         self.presenter = PresenterType()
         self.presenter.interactor = PresenterType.InteractorType()
-        self.presenter.interactor.presenter = self.presenter
+        self.presenter.interactor.delegate = self.presenter
         super.init(nibName:nil, bundle:nil)
         self.presenter.viewModels = ViewModels()
     }
