@@ -3,7 +3,7 @@ import XCTest
 
 class TestPresenter:XCTestCase {
     private var view:DemoView!
-    private var presenter:Presenter!
+    private var presenter:DemoPresenter!
     
     override func setUp() {
         super.setUp()
@@ -41,7 +41,7 @@ class TestPresenter:XCTestCase {
     func testUpdateViewModelOnUpdateRate() {
         let expect:XCTestExpectation = self.expectation(description:"Observer not updated")
         let string:String = "5"
-        self.view.presenter.viewModel.observe { (viewModel:UsdViewModel) in expect.fulfill() }
+        self.view.presenter.viewModels.observe { (viewModel:UsdViewModel) in expect.fulfill() }
         self.view.presenter.interactor.exchanger.exchange.euro = 1
         self.view.presenter.interactor.exchanger.exchange.usd = 1
         self.presenter.updatedRate(string:string)
@@ -51,7 +51,7 @@ class TestPresenter:XCTestCase {
     func testUpdateViewModelOnUpdateEuro() {
         let expect:XCTestExpectation = self.expectation(description:"Observer not updated")
         let string:String = "5.00"
-        self.view.presenter.viewModel.observe { (viewModel:UsdViewModel) in expect.fulfill() }
+        self.view.presenter.viewModels.observe { (viewModel:UsdViewModel) in expect.fulfill() }
         self.view.presenter.interactor.exchanger.exchange.rate = 1
         self.view.presenter.interactor.exchanger.exchange.usd = 1
         self.presenter.updatedEuro(string:string)
@@ -61,7 +61,7 @@ class TestPresenter:XCTestCase {
     func testUpdateViewModelOnUpdateUsd() {
         let expect:XCTestExpectation = self.expectation(description:"Observer not updated")
         let string:String = "5"
-        self.view.presenter.viewModel.observe { (viewModel:EuroViewModel) in expect.fulfill() }
+        self.view.presenter.viewModels.observe { (viewModel:EuroViewModel) in expect.fulfill() }
         self.view.presenter.interactor.exchanger.exchange.rate = 1
         self.view.presenter.interactor.exchanger.exchange.euro = 1
         self.presenter.updatedUsd(string:string)

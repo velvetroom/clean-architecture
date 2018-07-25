@@ -1,7 +1,7 @@
 import Foundation
 @testable import Demo
 
-class MockPresenter:Presenter {
+class MockPresenter:DemoPresenter {
     var onUpdatedRate:(() -> Void)?
     var onUpdatedEuro:(() -> Void)?
     var onUpdatedUsd:(() -> Void)?

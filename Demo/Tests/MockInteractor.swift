@@ -1,7 +1,7 @@
 import Foundation
 @testable import Demo
 
-class MockInteractor:Interactor {
+class MockInteractor:DemoInteractor {
     var onUpdateRate:(() -> Void)?
     var onUpdateEuro:(() -> Void)?
     var onUpdateUsd:(() -> Void)?

@@ -6,8 +6,13 @@ struct Exchange {
     var usd:Float
     
     init() {
-        self.rate = 0
-        self.euro = 0
+        self.rate = Constants.rate
+        self.euro = Constants.euro
         self.usd = 0
     }
+}
+
+private struct Constants {
+    static let rate:Float = 1.17
+    static let euro:Float = 1
 }
