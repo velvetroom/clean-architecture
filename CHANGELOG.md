@@ -1,5 +1,10 @@
 # Change log
 
+## Version 1.13
+
+- Defined modules for supporting modular headers 
+- Deploy as static framework
+
 
 ## Version 1.12
 

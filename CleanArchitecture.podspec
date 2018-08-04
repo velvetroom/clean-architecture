@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
 s.name             = 'CleanArchitecture'
-s.version          = '1.12.121'
+s.version          = '1.13.125'
 s.summary          = 'Clean Architecture for iOS'
 s.description      = <<-DESC
 Clean architecture for iOS apps
