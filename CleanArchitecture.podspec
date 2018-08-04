@@ -12,4 +12,6 @@ s.platform         = :ios, '9.0'
 s.source           = { :git => 'https://github.com/velvetroom/clean-architecture.git', :tag => "v#{s.version}" }
 s.source_files     = 'CleanArchitecture/Source/*.swift'
 s.swift_version    = '4.2'
+s.pod_target_xcconfig = { 'DEFINES_MODULE' => 'YES' }
+s.static_framework = true
 end
