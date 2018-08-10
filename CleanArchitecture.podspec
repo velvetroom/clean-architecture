@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
 s.name             = 'CleanArchitecture'
-s.version          = '1.13.125'
+s.version          = '1.14.127'
 s.summary          = 'Clean Architecture for iOS'
 s.description      = <<-DESC
 Clean architecture for iOS apps
@@ -13,5 +13,6 @@ s.source           = { :git => 'https://github.com/velvetroom/clean-architecture
 s.source_files     = 'CleanArchitecture/Source/*.swift'
 s.swift_version    = '4.2'
 s.pod_target_xcconfig = { 'DEFINES_MODULE' => 'YES' }
+s.prefix_header_file = false
 s.static_framework = true
 end
