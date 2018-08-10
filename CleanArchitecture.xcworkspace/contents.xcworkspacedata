@@ -2,27 +2,27 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "group:Demo/Demo.xcodeproj">
+      location = "group:CleanArchitecture.xcodeproj">
    </FileRef>
    <FileRef
-      location = "group:CleanArchitecture/CleanArchitecture.xcodeproj">
+      location = "group:Configuration">
    </FileRef>
    <FileRef
       location = "group:Design">
    </FileRef>
    <FileRef
-      location = "group:Demo/../README.md">
+      location = "group:CleanArchitecture.podspec">
+   </FileRef>
+   <FileRef
+      location = "group:LICENSE">
+   </FileRef>
+   <FileRef
+      location = "group:README.md">
    </FileRef>
    <FileRef
       location = "group:CHANGELOG.md">
    </FileRef>
    <FileRef
-      location = "group:CleanArchitecture.podspec">
-   </FileRef>
-   <FileRef
-      location = "group:Demo/../LICENSE">
-   </FileRef>
-   <FileRef
-      location = "group:Demo/../.gitignore">
+      location = "group:.gitignore">
    </FileRef>
 </Workspace>

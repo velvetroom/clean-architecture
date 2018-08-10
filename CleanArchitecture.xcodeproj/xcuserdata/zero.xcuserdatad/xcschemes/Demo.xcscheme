@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scheme
-   LastUpgradeVersion = "0940"
+   LastUpgradeVersion = "1000"
    version = "1.3">
    <BuildAction
       parallelizeBuildables = "YES"
@@ -14,9 +14,9 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "DA20C7F220E0CAC800B7234B"
-               BuildableName = "CleanArchitecture.framework"
-               BlueprintName = "CleanArchitecture"
+               BlueprintIdentifier = "DAA20CAD211DC3D70031217A"
+               BuildableName = "Demo.app"
+               BlueprintName = "Demo"
                ReferencedContainer = "container:CleanArchitecture.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -29,10 +29,12 @@
       shouldUseLaunchSchemeArgsEnv = "YES">
       <Testables>
          <TestableReference
-            skipped = "NO">
+            skipped = "NO"
+            parallelizable = "YES"
+            testExecutionOrdering = "random">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "DA20C80620E0CC5A00B7234B"
+               BlueprintIdentifier = "DAA20CC3211DC3E70031217A"
                BuildableName = "Tests.xctest"
                BlueprintName = "Tests"
                ReferencedContainer = "container:CleanArchitecture.xcodeproj">
@@ -42,9 +44,9 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "DA20C7F220E0CAC800B7234B"
-            BuildableName = "CleanArchitecture.framework"
-            BlueprintName = "CleanArchitecture"
+            BlueprintIdentifier = "DAA20CAD211DC3D70031217A"
+            BuildableName = "Demo.app"
+            BlueprintName = "Demo"
             ReferencedContainer = "container:CleanArchitecture.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
@@ -61,15 +63,16 @@
       debugDocumentVersioning = "YES"
       debugServiceExtension = "internal"
       allowLocationSimulation = "YES">
-      <MacroExpansion>
+      <BuildableProductRunnable
+         runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "DA20C7F220E0CAC800B7234B"
-            BuildableName = "CleanArchitecture.framework"
-            BlueprintName = "CleanArchitecture"
+            BlueprintIdentifier = "DAA20CAD211DC3D70031217A"
+            BuildableName = "Demo.app"
+            BlueprintName = "Demo"
             ReferencedContainer = "container:CleanArchitecture.xcodeproj">
          </BuildableReference>
-      </MacroExpansion>
+      </BuildableProductRunnable>
       <AdditionalOptions>
       </AdditionalOptions>
    </LaunchAction>
@@ -79,15 +82,16 @@
       savedToolIdentifier = ""
       useCustomWorkingDirectory = "NO"
       debugDocumentVersioning = "YES">
-      <MacroExpansion>
+      <BuildableProductRunnable
+         runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "DA20C7F220E0CAC800B7234B"
-            BuildableName = "CleanArchitecture.framework"
-            BlueprintName = "CleanArchitecture"
+            BlueprintIdentifier = "DAA20CAD211DC3D70031217A"
+            BuildableName = "Demo.app"
+            BlueprintName = "Demo"
             ReferencedContainer = "container:CleanArchitecture.xcodeproj">
          </BuildableReference>
-      </MacroExpansion>
+      </BuildableProductRunnable>
    </ProfileAction>
    <AnalyzeAction
       buildConfiguration = "Debug">
