@@ -124,7 +124,6 @@
 				DAF180B1211DC8A800299702 /* Demo.app */,
 				DAF180B2211DC8B200299702 /* Tests.xctest */,
 				DAF180B3211DC96D00299702 /* libCleanArchitecture.a */,
-				DAF180B6211DCAA400299702 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -157,10 +156,10 @@
 		DAF18095211DC7DC00299702 /* Source */ = {
 			isa = PBXGroup;
 			children = (
-				DAF18096211DC7DC00299702 /* View.swift */,
-				DAF18097211DC7DC00299702 /* ViewModel.swift */,
 				DAF18098211DC7DC00299702 /* Interactor.swift */,
 				DAF18099211DC7DC00299702 /* Presenter.swift */,
+				DAF18097211DC7DC00299702 /* ViewModel.swift */,
+				DAF18096211DC7DC00299702 /* View.swift */,
 			);
 			path = Source;
 			sourceTree = "<group>";
@@ -178,13 +177,6 @@
 				DAF180A7211DC7E700299702 /* MockView.swift */,
 			);
 			path = Tests;
-			sourceTree = "<group>";
-		};
-		DAF180B6211DCAA400299702 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
