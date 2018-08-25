@@ -208,8 +208,8 @@ struct MyViewModel:ViewModel {
     var icon:UIImage?
 
     init() {
-        self.userName = String()
-        self.buttonEnabled = false
+        userName = String()
+        buttonEnabled = false
     }
 }
 ```
@@ -222,9 +222,9 @@ In your Presenter class
 
 ```
 func update(userName:String) {
-    var viewModel:MyViewModel = MyViewModel()
+    var viewMode = MyViewModel()
     viewModel.userName = userName
-    self.viewModels.update(viewModel:viewModel)
+    viewModels.update(viewModel:viewModel)
 }
 ```
 
@@ -240,7 +240,7 @@ In your DemoView class
 
 ```
 func listenToUpdates() {
-    self.presenter.viewModels.observe { [weak self] (viewModel:MyViewModel) in
+    presenter.viewModels.observe { [weak self] (viewModel:MyViewModel) in
         self?.title = viewModel.userName
     }
 }
