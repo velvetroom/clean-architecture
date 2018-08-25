@@ -3,7 +3,7 @@ import XCTest
 
 class TestView:XCTestCase {
     func testInjectsDependencies() {
-        let view:MockView = MockView()
+        let view = MockView()
         XCTAssertNotNil(view.presenter, "Not injected")
         XCTAssertNotNil(view.presenter.interactor, "Not injected")
         XCTAssertNotNil(view.presenter.interactor.delegate, "Not injected")
@@ -11,38 +11,38 @@ class TestView:XCTestCase {
     }
     
     func testCallsPresenterOnViewDidLoad() {
-        let presenter:MockPresenter = MockPresenter()
+        let presenter = MockPresenter()
         presenter.interactor = MockInteractor()
-        let view:MockView = MockView(presenter:presenter)
-        var called:Bool = false
+        let view = MockView(presenter:presenter)
+        var called = false
         presenter.onDidLoad = { called = true }
         view.viewDidLoad()
         XCTAssertTrue(called, "Not called")
     }
     
     func testCallsInteractorOnViewDidLoad() {
-        let presenter:MockPresenter = MockPresenter()
+        let presenter = MockPresenter()
         presenter.interactor = MockInteractor()
-        let view:MockView = MockView(presenter:presenter)
-        var called:Bool = false
+        let view = MockView(presenter:presenter)
+        var called = false
         presenter.interactor.onDidLoad = { called = true }
         view.viewDidLoad()
         XCTAssertTrue(called, "Not called")
     }
     
     func testCallsPresenterOnViewWillAppear() {
-        let presenter:MockPresenter = MockPresenter()
-        let view:MockView = MockView(presenter:presenter)
-        var called:Bool = false
+        let presenter = MockPresenter()
+        let view = MockView(presenter:presenter)
+        var called = false
         presenter.onWillAppear = { called = true }
         view.viewWillAppear(false)
         XCTAssertTrue(called, "Not called")
     }
     
     func testCallsPresenterOnViewDidAppear() {
-        let presenter:MockPresenter = MockPresenter()
-        let view:MockView = MockView(presenter:presenter)
-        var called:Bool = false
+        let presenter = MockPresenter()
+        let view = MockView(presenter:presenter)
+        var called = false
         presenter.onDidAppear = { called = true }
         view.viewDidAppear(false)
         XCTAssertTrue(called, "Not called")

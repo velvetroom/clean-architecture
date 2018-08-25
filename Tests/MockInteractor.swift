@@ -8,6 +8,6 @@ class MockInteractor:Interactor {
     required init() { }
     
     func didLoad() {
-        self.onDidLoad?()
+        onDidLoad?()
     }
 }

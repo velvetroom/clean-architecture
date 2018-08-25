@@ -39,4 +39,3 @@ private struct Item<V:ViewModel> {
         viewModel = V()
     }
 }
-

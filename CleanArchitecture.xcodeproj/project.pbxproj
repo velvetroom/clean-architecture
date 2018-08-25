@@ -167,14 +167,14 @@
 		DAF1809F211DC7E700299702 /* Tests */ = {
 			isa = PBXGroup;
 			children = (
-				DAF180A0211DC7E700299702 /* MockSecondViewModel.swift */,
 				DAF180A1211DC7E700299702 /* TestViewModel.swift */,
-				DAF180A2211DC7E700299702 /* MockContainer.swift */,
-				DAF180A3211DC7E700299702 /* MockInteractor.swift */,
-				DAF180A4211DC7E700299702 /* MockViewModel.swift */,
 				DAF180A5211DC7E700299702 /* TestView.swift */,
+				DAF180A4211DC7E700299702 /* MockViewModel.swift */,
+				DAF180A3211DC7E700299702 /* MockInteractor.swift */,
+				DAF180A2211DC7E700299702 /* MockContainer.swift */,
 				DAF180A6211DC7E700299702 /* MockPresenter.swift */,
 				DAF180A7211DC7E700299702 /* MockView.swift */,
+				DAF180A0211DC7E700299702 /* MockSecondViewModel.swift */,
 			);
 			path = Tests;
 			sourceTree = "<group>";
