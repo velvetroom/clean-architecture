@@ -7,30 +7,30 @@ class DemoInteractor:Interactor {
     var exchanger:Exchanger
     
     required init() {
-        self.amount = Amount()
-        self.exchanger = Exchanger()
+        amount = Amount()
+        exchanger = Exchanger()
     }
     
     func initialExchanger() -> ExchangeText {
-        self.exchanger.euroChanged()
-        return self.amount.exchangeFrom(exchange:self.exchanger.exchange)
+        exchanger.euroChanged()
+        return amount.exchangeFrom(exchange:exchanger.exchange)
     }
     
     func updateRateWith(string:String) -> ExchangeText {
-        self.exchanger.exchange.rate = self.amount.amountFrom(string:string)
-        self.exchanger.rateChanged()
-        return self.amount.exchangeFrom(exchange:self.exchanger.exchange)
+        exchanger.exchange.rate = amount.amountFrom(string:string)
+        exchanger.rateChanged()
+        return amount.exchangeFrom(exchange:exchanger.exchange)
     }
     
     func updateEuroWith(string:String) -> ExchangeText {
-        self.exchanger.exchange.euro = self.amount.amountFrom(string:string)
-        self.exchanger.euroChanged()
-        return self.amount.exchangeFrom(exchange:self.exchanger.exchange)
+        exchanger.exchange.euro = amount.amountFrom(string:string)
+        exchanger.euroChanged()
+        return amount.exchangeFrom(exchange:exchanger.exchange)
     }
     
     func updateUsdWith(string:String) -> ExchangeText {
-        self.exchanger.exchange.usd = self.amount.amountFrom(string:string)
-        self.exchanger.usdChanged()
-        return self.amount.exchangeFrom(exchange:self.exchanger.exchange)
+        exchanger.exchange.usd = amount.amountFrom(string:string)
+        exchanger.usdChanged()
+        return amount.exchangeFrom(exchange:exchanger.exchange)
     }
 }

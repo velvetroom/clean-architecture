@@ -4,15 +4,12 @@ struct Exchange {
     var rate:Float
     var euro:Float
     var usd:Float
+    private static let rate:Float = 1.17
+    private static let euro:Float = 1
     
     init() {
-        self.rate = Constants.rate
-        self.euro = Constants.euro
-        self.usd = 0
+        rate = Exchange.rate
+        euro = Exchange.euro
+        usd = 0
     }
-}
-
-private struct Constants {
-    static let rate:Float = 1.17
-    static let euro:Float = 1
 }
