@@ -1,37 +1,37 @@
 import UIKit
 
-open class View<PresenterType:Presenter>:UIViewController {
-    open var presenter:PresenterType
+open class View<P:Presenter>:UIViewController {
+    open var presenter:P
     
     public required init() {
-        self.presenter = PresenterType()
-        self.presenter.interactor = PresenterType.InteractorType()
-        self.presenter.interactor.delegate = self.presenter
+        presenter = P()
+        presenter.interactor = P.I()
+        presenter.interactor.delegate = presenter
         super.init(nibName:nil, bundle:nil)
-        self.presenter.viewModels = ViewModels()
+        presenter.viewModels = ViewModels()
     }
     
-    public init(presenter:PresenterType) {
+    public init(presenter:P) {
         self.presenter = presenter
         super.init(nibName:nil, bundle:nil)
-        self.presenter.viewModels = ViewModels()
+        presenter.viewModels = ViewModels()
     }
     
     public required init?(coder:NSCoder) { return nil }
     
     open override func viewDidLoad() {
         super.viewDidLoad()
-        self.presenter.didLoad()
-        self.presenter.interactor.didLoad()
+        presenter.didLoad()
+        presenter.interactor.didLoad()
     }
     
     open override func viewWillAppear(_ animated:Bool) {
         super.viewWillAppear(animated)
-        self.presenter.willAppear()
+        presenter.willAppear()
     }
     
     open override func viewDidAppear(_ animated:Bool) {
         super.viewDidAppear(animated)
-        self.presenter.didAppear()
+        presenter.didAppear()
     }
 }
