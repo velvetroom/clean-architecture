@@ -8,31 +8,31 @@ class TestViewModel:XCTestCase {
     
     override func setUp() {
         super.setUp()
-        self.viewModels = ViewModels()
-        self.propertyA = MockViewModel()
-        self.propertyB = MockSecondViewModel()
+        viewModels = ViewModels()
+        propertyA = MockViewModel()
+        propertyB = MockSecondViewModel()
     }
     
     func testUpdatesProperty() {
-        let expect:XCTestExpectation = self.expectation(description:"Observer not updated")
-        let name:String = "hello world"
-        self.viewModels.observe { (viewModel:MockViewModel) in
+        let expect = expectation(description:"Observer not updated")
+        let name = "hello world"
+        viewModels.observe { (viewModel:MockViewModel) in
             XCTAssertEqual(viewModel.name, name, "Failed to update")
             expect.fulfill()
         }
-        var property:MockViewModel = MockViewModel()
+        var property = MockViewModel()
         property.name = name
-        self.viewModels.update(viewModel:property)
-        self.waitForExpectations(timeout:0.3, handler:nil)
+        viewModels.update(viewModel:property)
+        waitForExpectations(timeout:1, handler:nil)
     }
     
     func testNotifyObserver() {
-        var notified:Bool = false
-        let expectNotified:XCTestExpectation = self.expectation(description:"Observer not updated")
-        let expectAfterCopy:XCTestExpectation = self.expectation(description:"Observer not updated")
-        let firstName:String = "hello world"
-        let secondName:String = "lorem ipsum"
-        self.viewModels.observe { (viewModel:MockViewModel) in
+        var notified = false
+        let expectNotified = expectation(description:"Observer not updated")
+        let expectAfterCopy = expectation(description:"Observer not updated")
+        let firstName = "hello world"
+        let secondName = "lorem ipsum"
+        viewModels.observe { (viewModel:MockViewModel) in
             if notified == false {
                 notified = true
                 expectNotified.fulfill()
@@ -42,57 +42,55 @@ class TestViewModel:XCTestCase {
                 XCTAssertEqual(secondName, viewModel.name, "Invalid value")
             }
         }
-        
-        self.propertyA.name = firstName
-        self.viewModels.update(viewModel:self.propertyA)
-        
-        self.propertyA.name = secondName
-        self.viewModels.update(viewModel:self.propertyA)
-        self.waitForExpectations(timeout:0.3, handler:nil)
+        propertyA.name = firstName
+        viewModels.update(viewModel:propertyA)
+        propertyA.name = secondName
+        viewModels.update(viewModel:propertyA)
+        waitForExpectations(timeout:1, handler:nil)
     }
     
     func testReplacesExistingPropertyOfSameType() {
-        self.viewModels.update(viewModel:MockViewModel())
-        self.viewModels.update(viewModel:MockViewModel())
-        self.viewModels.update(viewModel:MockViewModel())
-        self.viewModels.update(viewModel:MockViewModel())
-        self.viewModels.update(viewModel:MockViewModel())
-        self.viewModels.update(viewModel:MockViewModel())
-        XCTAssertEqual(self.viewModels.items.count, 1, "Failed to replace")
+        viewModels.update(viewModel:MockViewModel())
+        viewModels.update(viewModel:MockViewModel())
+        viewModels.update(viewModel:MockViewModel())
+        viewModels.update(viewModel:MockViewModel())
+        viewModels.update(viewModel:MockViewModel())
+        viewModels.update(viewModel:MockViewModel())
+        XCTAssertEqual(viewModels.items.count, 1, "Failed to replace")
     }
     
     func testUpdateObserver() {
-        let expect:XCTestExpectation = self.expectation(description:"Observer not updated")
-        let view:MockView = MockView()
+        let expect = expectation(description:"Observer not updated")
+        let view = MockView()
         view.startObserving()
         view.onPropertyUpdated = { expect.fulfill() }
         view.presenter.viewModels.update(viewModel:MockViewModel())
-        self.waitForExpectations(timeout:0.3, handler:nil)
+        waitForExpectations(timeout:1, handler:nil)
     }
     
     func testNotRetainingObserver() {
-        let expect:XCTestExpectation = self.expectation(description:"Observer not updated")
-        let container:MockContainer = MockContainer()
+        let expect = expectation(description:"Observer not updated")
+        let container = MockContainer()
         container.view = MockView()
         container.view?.startObserving()
         container.view?.onPropertyUpdated = { expect.fulfill() }
         container.view?.presenter.viewModels.update(viewModel:MockViewModel())
         container.view = nil
         XCTAssertNil(container.view, "Failed to release")
-        self.waitForExpectations(timeout:0.3, handler:nil)
+        waitForExpectations(timeout:1, handler:nil)
     }
     
     func testUpdatesObserverOnMainThread() {
-        let expect:XCTestExpectation = self.expectation(description:"Observer not updated")
-        let view:MockView = MockView()
+        let expect = expectation(description:"Observer not updated")
+        let view = MockView()
         view.startObserving()
         view.onPropertyUpdated = {
             XCTAssertEqual(Thread.current, Thread.main, "Not on main thread")
             expect.fulfill()
         }
-        DispatchQueue.global(qos:DispatchQoS.QoSClass.background).async {
+        DispatchQueue.global(qos:.background).async {
             view.presenter.viewModels.update(viewModel:MockViewModel())
         }
-        self.waitForExpectations(timeout:0.3, handler:nil)
+        waitForExpectations(timeout:1, handler:nil)
     }
 }

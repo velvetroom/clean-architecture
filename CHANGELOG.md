@@ -1,5 +1,10 @@
 # Change log
 
+## Version 1.15
+
+- Removing clutter to make code more compact
+
+
 ## Version 1.14
 
 - Remove prefix header from pod

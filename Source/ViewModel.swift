@@ -4,27 +4,25 @@ public class ViewModels {
     var items:[ObjectIdentifier:Any]
     
     init() {
-        self.items = [:]
+        items = [:]
     }
     
-    public func update<ViewModelType:ViewModel>(viewModel:ViewModelType) {
-        var item:Item<ViewModelType> = Item<ViewModelType>()
+    public func update<V:ViewModel>(viewModel:V) {
+        var item = Item<V>()
         item.viewModel = viewModel
         item.observer = self.item().observer
-        self.items[ObjectIdentifier(ViewModelType.self)] = item
+        items[ObjectIdentifier(V.self)] = item
         DispatchQueue.main.async { item.observer?(viewModel) }
     }
     
-    public func observe<ViewModelType:ViewModel>(observer:@escaping((ViewModelType) -> Void)) {
-        var item:Item<ViewModelType> = self.item()
+    public func observe<V:ViewModel>(observer:@escaping((V) -> Void)) {
+        var item:Item<V> = self.item()
         item.observer = observer
-        self.items[ObjectIdentifier(ViewModelType.self)] = item
+        items[ObjectIdentifier(V.self)] = item
     }
     
-    private func item<ViewModelType:ViewModel>() -> Item<ViewModelType> {
-        guard
-            let item:Item<ViewModelType> = self.items[ObjectIdentifier(ViewModelType.self)] as? Item<ViewModelType>
-        else { return Item<ViewModelType>() }
+    private func item<V:ViewModel>() -> Item<V> {
+        guard let item = items[ObjectIdentifier(V.self)] as? Item<V> else { return Item<V>() }
         return item
     }
 }
@@ -33,12 +31,11 @@ public protocol ViewModel {
     init()
 }
 
-private struct Item<ViewModelType:ViewModel> {
-    var viewModel:ViewModelType
-    var observer:((ViewModelType) -> Void)?
+private struct Item<V:ViewModel> {
+    var viewModel:V
+    var observer:((V) -> Void)?
     
     init() {
-        self.viewModel = ViewModelType()
+        viewModel = V()
     }
 }
-

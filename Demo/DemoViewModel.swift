@@ -7,9 +7,9 @@ struct DemoViewModel:ViewModel {
     var usd:String
     
     init() {
-        self.rate = String()
-        self.euro = String()
-        self.usd = String()
+        rate = String()
+        euro = String()
+        usd = String()
     }
 }
 
@@ -17,7 +17,7 @@ struct RateViewModel:ViewModel {
     var amount:String
     
     init() {
-        self.amount = String()
+        amount = String()
     }
 }
 
@@ -25,7 +25,7 @@ struct EuroViewModel:ViewModel {
     var amount:String
     
     init() {
-        self.amount = String()
+        amount = String()
     }
 }
 
@@ -33,6 +33,6 @@ struct UsdViewModel:ViewModel {
     var amount:String
     
     init() {
-        self.amount = String()
+        amount = String()
     }
 }

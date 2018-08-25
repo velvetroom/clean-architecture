@@ -6,8 +6,8 @@ struct ExchangeText {
     var usd:String
     
     init() {
-        self.rate = String()
-        self.euro = String()
-        self.usd = String()
+        rate = String()
+        euro = String()
+        usd = String()
     }
 }

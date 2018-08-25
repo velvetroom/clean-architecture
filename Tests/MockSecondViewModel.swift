@@ -5,6 +5,6 @@ struct MockSecondViewModel:ViewModel {
     var value:CGFloat
     
     init() {
-        self.value = 0
+        value = 0
     }
 }

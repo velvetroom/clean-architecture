@@ -11,14 +11,14 @@ class MockPresenter:Presenter {
     required init() { }
     
     func didLoad() {
-        self.onDidLoad?()
+        onDidLoad?()
     }
     
     func willAppear() {
-        self.onWillAppear?()
+        onWillAppear?()
     }
     
     func didAppear() {
-        self.onDidAppear?()
+        onDidAppear?()
     }
 }
