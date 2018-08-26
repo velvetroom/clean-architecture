@@ -9,7 +9,6 @@ class DemoView:View<DemoPresenter> {
     private static let left:CGFloat = 20
     private static let inputWidth:CGFloat = 150
     private static let inputHeight:CGFloat = 80
-    private static let titleBottom:CGFloat = 20
     private static let titleTop:CGFloat = 20
     
     override func viewDidLoad() {
@@ -51,7 +50,7 @@ class DemoView:View<DemoPresenter> {
         header.leftAnchor.constraint(equalTo:view.leftAnchor, constant:DemoView.left).isActive = true
         header.rightAnchor.constraint(equalTo:view.rightAnchor, constant:-DemoView.left).isActive = true
         
-        rate.topAnchor.constraint(equalTo:header.bottomAnchor, constant:DemoView.titleBottom).isActive = true
+        rate.topAnchor.constraint(equalTo:header.bottomAnchor, constant:20).isActive = true
         rate.leftAnchor.constraint(equalTo:view.leftAnchor, constant:DemoView.left).isActive = true
         rate.widthAnchor.constraint(equalToConstant:DemoView.inputWidth).isActive = true
         rate.heightAnchor.constraint(equalToConstant:DemoView.inputHeight).isActive = true
