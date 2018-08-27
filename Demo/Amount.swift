@@ -1,11 +1,10 @@
 import Foundation
 
 class Amount {
-    private let formatter:NumberFormatter
+    private let formatter = NumberFormatter()
     
     init() {
-        formatter = NumberFormatter()
-        formatter.numberStyle = NumberFormatter.Style.decimal
+        formatter.numberStyle = .decimal
         formatter.minimumIntegerDigits = 1
         formatter.minimumFractionDigits = 2
         formatter.maximumFractionDigits = 2

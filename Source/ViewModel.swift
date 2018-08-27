@@ -1,11 +1,7 @@
 import Foundation
 
 public class ViewModels {
-    var items:[ObjectIdentifier:Any]
-    
-    init() {
-        items = [:]
-    }
+    var items:[ObjectIdentifier:Any] = [:]
     
     public func update<V:ViewModel>(viewModel:V) {
         var item = Item<V>()
@@ -32,10 +28,6 @@ public protocol ViewModel {
 }
 
 private struct Item<V:ViewModel> {
-    var viewModel:V
     var observer:((V) -> Void)?
-    
-    init() {
-        viewModel = V()
-    }
+    var viewModel = V()
 }

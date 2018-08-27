@@ -1,11 +1,7 @@
 import Foundation
 
 class Exchanger {
-    var exchange:Exchange
-    
-    init() {
-        exchange = Exchange()
-    }
+    var exchange = Exchange()
     
     func rateChanged() {
         exchange.usd = exchange.rate * exchange.euro
