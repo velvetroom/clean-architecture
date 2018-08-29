@@ -6,10 +6,6 @@ class DemoView:View<DemoPresenter> {
     private weak var rate:InputView!
     private weak var euro:InputView!
     private weak var usd:InputView!
-    private static let left:CGFloat = 20
-    private static let inputWidth:CGFloat = 150
-    private static let inputHeight:CGFloat = 80
-    private static let titleTop:CGFloat = 20
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -47,29 +43,28 @@ class DemoView:View<DemoPresenter> {
     }
     
     private func layoutOutlets() {
-        header.leftAnchor.constraint(equalTo:view.leftAnchor, constant:DemoView.left).isActive = true
-        header.rightAnchor.constraint(equalTo:view.rightAnchor, constant:-DemoView.left).isActive = true
+        header.leftAnchor.constraint(equalTo:view.leftAnchor, constant:20).isActive = true
+        header.rightAnchor.constraint(equalTo:view.rightAnchor, constant:-20).isActive = true
         
         rate.topAnchor.constraint(equalTo:header.bottomAnchor, constant:20).isActive = true
-        rate.leftAnchor.constraint(equalTo:view.leftAnchor, constant:DemoView.left).isActive = true
-        rate.widthAnchor.constraint(equalToConstant:DemoView.inputWidth).isActive = true
-        rate.heightAnchor.constraint(equalToConstant:DemoView.inputHeight).isActive = true
+        rate.leftAnchor.constraint(equalTo:view.leftAnchor, constant:20).isActive = true
+        rate.widthAnchor.constraint(equalToConstant:150).isActive = true
+        rate.heightAnchor.constraint(equalToConstant:80).isActive = true
         
         euro.topAnchor.constraint(equalTo:rate.bottomAnchor).isActive = true
-        euro.leftAnchor.constraint(equalTo:view.leftAnchor, constant:DemoView.left).isActive = true
-        euro.widthAnchor.constraint(equalToConstant:DemoView.inputWidth).isActive = true
-        euro.heightAnchor.constraint(equalToConstant:DemoView.inputHeight).isActive = true
+        euro.leftAnchor.constraint(equalTo:view.leftAnchor, constant:20).isActive = true
+        euro.widthAnchor.constraint(equalToConstant:150).isActive = true
+        euro.heightAnchor.constraint(equalToConstant:80).isActive = true
         
         usd.topAnchor.constraint(equalTo:euro.bottomAnchor).isActive = true
-        usd.leftAnchor.constraint(equalTo:view.leftAnchor, constant:DemoView.left).isActive = true
-        usd.widthAnchor.constraint(equalToConstant:DemoView.inputWidth).isActive = true
-        usd.heightAnchor.constraint(equalToConstant:DemoView.inputHeight).isActive = true
+        usd.leftAnchor.constraint(equalTo:view.leftAnchor, constant:20).isActive = true
+        usd.widthAnchor.constraint(equalToConstant:150).isActive = true
+        usd.heightAnchor.constraint(equalToConstant:80).isActive = true
         
         if #available(iOS 11.0, *) {
-            header.topAnchor.constraint(equalTo:view.safeAreaLayoutGuide.topAnchor,
-                                        constant:DemoView.titleTop).isActive = true
+            header.topAnchor.constraint(equalTo:view.safeAreaLayoutGuide.topAnchor, constant:20).isActive = true
         } else {
-            header.topAnchor.constraint(equalTo:view.topAnchor, constant:DemoView.titleTop).isActive = true
+            header.topAnchor.constraint(equalTo:view.topAnchor, constant:20).isActive = true
         }
     }
     
