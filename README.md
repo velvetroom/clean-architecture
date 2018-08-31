@@ -136,7 +136,7 @@ import CleanArchitecture
 Create a class that implements Presenter and add the required boiler plate:
 
 ```
-class MyPresenter:PresenterProtocol {
+class MyPresenter:Presenter {
     var viewModels:ViewModels!
     var interactor:MyInteractor!
 
@@ -222,7 +222,7 @@ In your Presenter class
 
 ```
 func update(userName:String) {
-    var viewMode = MyViewModel()
+    var viewModel = MyViewModel()
     viewModel.userName = userName
     viewModels.update(viewModel:viewModel)
 }
