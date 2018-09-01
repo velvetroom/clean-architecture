@@ -1,24 +1,20 @@
 import Foundation
 import CleanArchitecture
 
-class MockPresenter:Presenter {
+class MockPresenter:Presenter<MockInteractor> {
     var onDidLoad:(() -> Void)?
     var onWillAppear:(() -> Void)?
     var onDidAppear:(() -> Void)?
-    var interactor:MockInteractor!
-    var viewModels:ViewModels!
     
-    required init() { }
-    
-    func didLoad() {
+    override func didLoad() {
         onDidLoad?()
     }
     
-    func willAppear() {
+    override func willAppear() {
         onWillAppear?()
     }
     
-    func didAppear() {
+    override func didAppear() {
         onDidAppear?()
     }
 }

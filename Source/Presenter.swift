@@ -1,21 +1,17 @@
 import Foundation
 
-public protocol Presenter:Delegate {
-    associatedtype I:Interactor
-    var interactor:I! { get set }
-    var viewModels:ViewModels! { get set }
+open class Presenter<I:Interactor>:Delegate {
+    open var interactor:I!
+    open var viewModels:ViewModels!
     
-    init()
-    func didLoad()
-    func willAppear()
-    func didAppear()
-}
-
-public extension Presenter {
-    func didLoad() { }
-    func willAppear() { }
-    func didAppear() { }
-    func shouldUpdate() { }
+    public required init() {
+        
+    }
+    
+    open func didLoad() {}
+    open func willAppear() { }
+    open func didAppear() { }
+    open func shouldUpdate() { }
 }
 
 public protocol Delegate:AnyObject {

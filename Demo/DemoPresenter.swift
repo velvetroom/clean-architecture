@@ -1,12 +1,7 @@
 import Foundation
 import CleanArchitecture
 
-class DemoPresenter:Presenter {
-    var viewModels:ViewModels!
-    var interactor:DemoInteractor!
-    
-    required init() { }
-    
+class DemoPresenter:Presenter<DemoInteractor> {
     func updatedRate(string:String) {
         let exchange = interactor.updateRateWith(string:string)
         var property = UsdViewModel()
@@ -28,7 +23,7 @@ class DemoPresenter:Presenter {
         viewModels.update(viewModel:property)
     }
     
-    func didAppear() {
+    override func didAppear() {
         let exchange = interactor.initialExchanger()
         var property = DemoViewModel()
         property.rate = exchange.rate
