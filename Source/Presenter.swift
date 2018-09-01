@@ -1,6 +1,6 @@
 import Foundation
 
-open class Presenter<I:Interactor>:Delegate {
+open class Presenter<I>:Delegate where I:Interactor {
     open var interactor:I!
     private(set) var viewModels:[ObjectIdentifier:Any] = [:]
     
