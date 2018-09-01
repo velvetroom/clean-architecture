@@ -1,12 +1,7 @@
 import Foundation
 
-public protocol Interactor:AnyObject {
-    var delegate:Delegate? { get set }
-    
-    init()
-    func didLoad()
-}
-
-public extension Interactor {
-    func didLoad() { }
+open class Interactor {
+    public weak var delegate:Delegate?
+    public required init() { }
+    open func didLoad() { }
 }

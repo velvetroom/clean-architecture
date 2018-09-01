@@ -4,11 +4,8 @@ open class Presenter<I:Interactor>:Delegate {
     open var interactor:I!
     private(set) var viewModels:[ObjectIdentifier:Any] = [:]
     
-    public required init() {
-        
-    }
-    
-    open func didLoad() {}
+    public required init() { }
+    open func didLoad() { }
     open func willAppear() { }
     open func didAppear() { }
     open func shouldUpdate() { }
