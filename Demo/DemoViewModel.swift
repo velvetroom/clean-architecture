@@ -1,20 +1,19 @@
 import Foundation
-import CleanArchitecture
 
-struct DemoViewModel:ViewModel {
+struct DemoViewModel {
     var rate = String()
     var euro = String()
     var usd = String()
 }
 
-struct RateViewModel:ViewModel {
+struct RateViewModel {
     var amount = String()
 }
 
-struct EuroViewModel:ViewModel {
+struct EuroViewModel {
     var amount = String()
 }
 
-struct UsdViewModel:ViewModel {
+struct UsdViewModel {
     var amount = String()
 }

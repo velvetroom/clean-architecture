@@ -45,6 +45,15 @@ class TestViewModel:XCTestCase {
         waitForExpectations(timeout:1, handler:nil)
     }
     
+    func testNotifyObserverWithOptional() {
+        let expect = expectation(description:String())
+        viewModels.observe { (viewModel:MockViewModel) in
+            expect.fulfill()
+        }
+        viewModels.update(viewModel:MockViewModel() as MockViewModel?)
+        waitForExpectations(timeout:1, handler:nil)
+    }
+    
     func testReplacesExistingPropertyOfSameType() {
         viewModels.update(viewModel:MockViewModel())
         viewModels.update(viewModel:MockViewModel())

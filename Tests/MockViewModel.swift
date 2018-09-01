@@ -1,6 +1,5 @@
 import Foundation
-import CleanArchitecture
 
-struct MockViewModel:ViewModel {
+struct MockViewModel {
     var name = String()
 }

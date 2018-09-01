@@ -3,31 +3,27 @@ import Foundation
 public class ViewModels {
     var items:[ObjectIdentifier:Any] = [:]
     
-    public func update<V:ViewModel>(viewModel:V) {
+    public func update<V>(viewModel:V!) {
         var item = Item<V>()
         item.viewModel = viewModel
-        item.observer = self.item().observer
+        item.observer = cached().observer
         items[ObjectIdentifier(V.self)] = item
         DispatchQueue.main.async { item.observer?(viewModel) }
     }
     
-    public func observe<V:ViewModel>(observer:@escaping((V) -> Void)) {
-        var item:Item<V> = self.item()
+    public func observe<V>(observer:@escaping((V) -> Void)) {
+        var item:Item<V> = cached()
         item.observer = observer
         items[ObjectIdentifier(V.self)] = item
     }
     
-    private func item<V:ViewModel>() -> Item<V> {
+    private func cached<V>() -> Item<V> {
         guard let item = items[ObjectIdentifier(V.self)] as? Item<V> else { return Item<V>() }
         return item
     }
 }
 
-public protocol ViewModel {
-    init()
-}
-
-private struct Item<V:ViewModel> {
+private struct Item<V> {
     var observer:((V) -> Void)?
-    var viewModel = V()
+    var viewModel:V!
 }
