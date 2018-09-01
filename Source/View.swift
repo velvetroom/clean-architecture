@@ -8,13 +8,11 @@ open class View<I, P>:UIViewController where P:Presenter<I> {
         presenter.interactor = I()
         presenter.interactor.delegate = presenter
         super.init(nibName:nil, bundle:nil)
-        presenter.viewModels = ViewModels()
     }
     
     public init(presenter:P) {
         self.presenter = presenter
         super.init(nibName:nil, bundle:nil)
-        presenter.viewModels = ViewModels()
     }
     
     public required init?(coder:NSCoder) { return nil }

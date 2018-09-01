@@ -7,7 +7,6 @@ class TestView:XCTestCase {
         XCTAssertNotNil(view.presenter)
         XCTAssertNotNil(view.presenter.interactor)
         XCTAssertNotNil(view.presenter.interactor.delegate)
-        XCTAssertNotNil(view.presenter.viewModels)
     }
     
     func testCallsPresenterOnViewDidLoad() {

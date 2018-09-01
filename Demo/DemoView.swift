@@ -69,18 +69,18 @@ class DemoView:View<DemoInteractor, DemoPresenter> {
     }
     
     private func configureViewModel() {
-        presenter.viewModels.observe { [weak self] (viewModel:DemoViewModel) in
+        presenter.viewModel { [weak self] (viewModel:DemoViewModel) in
             self?.rate.field.text = viewModel.rate
             self?.euro.field.text = viewModel.euro
             self?.usd.field.text = viewModel.usd
         }
-        presenter.viewModels.observe { [weak self] (viewModel:RateViewModel) in
+        presenter.viewModel { [weak self] (viewModel:RateViewModel) in
             self?.rate.field.text = viewModel.amount
         }
-        presenter.viewModels.observe { [weak self] (viewModel:EuroViewModel) in
+        presenter.viewModel { [weak self] (viewModel:EuroViewModel) in
             self?.euro.field.text = viewModel.amount
         }
-        presenter.viewModels.observe { [weak self] (viewModel:UsdViewModel) in
+        presenter.viewModel { [weak self] (viewModel:UsdViewModel) in
             self?.usd.field.text = viewModel.amount
         }
     }

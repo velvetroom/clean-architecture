@@ -6,21 +6,21 @@ class DemoPresenter:Presenter<DemoInteractor> {
         let exchange = interactor.updateRateWith(string:string)
         var property = UsdViewModel()
         property.amount = exchange.usd
-        viewModels.update(viewModel:property)
+        update(viewModel:property)
     }
     
     func updatedEuro(string:String) {
         let exchange = interactor.updateEuroWith(string:string)
         var property = UsdViewModel()
         property.amount = exchange.usd
-        viewModels.update(viewModel:property)
+        update(viewModel:property)
     }
     
     func updatedUsd(string:String) {
         let exchange = interactor.updateUsdWith(string:string)
         var property = EuroViewModel()
         property.amount = exchange.euro
-        viewModels.update(viewModel:property)
+        update(viewModel:property)
     }
     
     override func didAppear() {
@@ -29,6 +29,6 @@ class DemoPresenter:Presenter<DemoInteractor> {
         property.rate = exchange.rate
         property.euro = exchange.euro
         property.usd = exchange.usd
-        viewModels.update(viewModel:property)
+        update(viewModel:property)
     }
 }

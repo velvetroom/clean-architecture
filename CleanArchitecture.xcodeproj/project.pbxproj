@@ -20,7 +20,6 @@
 		DAF18093211DC7CD00299702 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = DAF18090211DC7CD00299702 /* Localizable.strings */; };
 		DAF18094211DC7CD00299702 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DAF18092211DC7CD00299702 /* LaunchScreen.storyboard */; };
 		DAF1809A211DC7DC00299702 /* View.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAF18096211DC7DC00299702 /* View.swift */; };
-		DAF1809C211DC7DC00299702 /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAF18097211DC7DC00299702 /* ViewModel.swift */; };
 		DAF1809D211DC7DC00299702 /* Interactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAF18098211DC7DC00299702 /* Interactor.swift */; };
 		DAF1809E211DC7DC00299702 /* Presenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAF18099211DC7DC00299702 /* Presenter.swift */; };
 		DAF180A8211DC7E700299702 /* MockSecondViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAF180A0211DC7E700299702 /* MockSecondViewModel.swift */; };
@@ -71,7 +70,6 @@
 		DAF18091211DC7CD00299702 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		DAF18092211DC7CD00299702 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		DAF18096211DC7DC00299702 /* View.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = View.swift; sourceTree = "<group>"; };
-		DAF18097211DC7DC00299702 /* ViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
 		DAF18098211DC7DC00299702 /* Interactor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Interactor.swift; sourceTree = "<group>"; };
 		DAF18099211DC7DC00299702 /* Presenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Presenter.swift; sourceTree = "<group>"; };
 		DAF180A0211DC7E700299702 /* MockSecondViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MockSecondViewModel.swift; sourceTree = "<group>"; };
@@ -158,7 +156,6 @@
 			children = (
 				DAF18098211DC7DC00299702 /* Interactor.swift */,
 				DAF18099211DC7DC00299702 /* Presenter.swift */,
-				DAF18097211DC7DC00299702 /* ViewModel.swift */,
 				DAF18096211DC7DC00299702 /* View.swift */,
 			);
 			path = Source;
@@ -300,7 +297,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				DAF1809D211DC7DC00299702 /* Interactor.swift in Sources */,
-				DAF1809C211DC7DC00299702 /* ViewModel.swift in Sources */,
 				DAF1809E211DC7DC00299702 /* Presenter.swift in Sources */,
 				DAF1809A211DC7DC00299702 /* View.swift in Sources */,
 			);

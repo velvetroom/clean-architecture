@@ -2,25 +2,25 @@ import XCTest
 @testable import CleanArchitecture
 
 class TestViewModel:XCTestCase {
-    private var viewModels:ViewModels!
+    private var presenter:MockPresenter!
     private var propertyA:MockViewModel!
     private var propertyB:MockSecondViewModel!
     
     override func setUp() {
-        viewModels = ViewModels()
+        presenter = MockPresenter()
         propertyA = MockViewModel()
         propertyB = MockSecondViewModel()
     }
     
     func testUpdatesProperty() {
         let expect = expectation(description:String())
-        viewModels.observe { (viewModel:MockViewModel) in
+        presenter.viewModel { (viewModel:MockViewModel) in
             XCTAssertEqual("hello world", viewModel.name)
             expect.fulfill()
         }
         var property = MockViewModel()
         property.name = "hello world"
-        viewModels.update(viewModel:property)
+        presenter.update(viewModel:property)
         waitForExpectations(timeout:1, handler:nil)
     }
     
@@ -28,7 +28,7 @@ class TestViewModel:XCTestCase {
         var notified = false
         let expectNotified = expectation(description:String())
         let expectAfterCopy = expectation(description:String())
-        viewModels.observe { (viewModel:MockViewModel) in
+        presenter.viewModel { (viewModel:MockViewModel) in
             if notified == false {
                 notified = true
                 expectNotified.fulfill()
@@ -39,29 +39,29 @@ class TestViewModel:XCTestCase {
             }
         }
         propertyA.name = "hello world"
-        viewModels.update(viewModel:propertyA)
+        presenter.update(viewModel:propertyA)
         propertyA.name = "lorem ipsum"
-        viewModels.update(viewModel:propertyA)
+        presenter.update(viewModel:propertyA)
         waitForExpectations(timeout:1, handler:nil)
     }
     
     func testNotifyObserverWithOptional() {
         let expect = expectation(description:String())
-        viewModels.observe { (viewModel:MockViewModel) in
+        presenter.viewModel { (viewModel:MockViewModel) in
             expect.fulfill()
         }
-        viewModels.update(viewModel:MockViewModel() as MockViewModel?)
+        presenter.update(viewModel:MockViewModel() as MockViewModel?)
         waitForExpectations(timeout:1, handler:nil)
     }
     
     func testReplacesExistingPropertyOfSameType() {
-        viewModels.update(viewModel:MockViewModel())
-        viewModels.update(viewModel:MockViewModel())
-        viewModels.update(viewModel:MockViewModel())
-        viewModels.update(viewModel:MockViewModel())
-        viewModels.update(viewModel:MockViewModel())
-        viewModels.update(viewModel:MockViewModel())
-        XCTAssertEqual(1, viewModels.items.count)
+        presenter.update(viewModel:MockViewModel())
+        presenter.update(viewModel:MockViewModel())
+        presenter.update(viewModel:MockViewModel())
+        presenter.update(viewModel:MockViewModel())
+        presenter.update(viewModel:MockViewModel())
+        presenter.update(viewModel:MockViewModel())
+        XCTAssertEqual(1, presenter.viewModels.count)
     }
     
     func testUpdateObserver() {
@@ -69,7 +69,7 @@ class TestViewModel:XCTestCase {
         let view = MockView()
         view.startObserving()
         view.onPropertyUpdated = { expect.fulfill() }
-        view.presenter.viewModels.update(viewModel:MockViewModel())
+        view.presenter.update(viewModel:MockViewModel())
         waitForExpectations(timeout:1, handler:nil)
     }
     
@@ -79,7 +79,7 @@ class TestViewModel:XCTestCase {
         container.view = MockView()
         container.view?.startObserving()
         container.view?.onPropertyUpdated = { expect.fulfill() }
-        container.view?.presenter.viewModels.update(viewModel:MockViewModel())
+        container.view?.presenter.update(viewModel:MockViewModel())
         container.view = nil
         XCTAssertNil(container.view)
         waitForExpectations(timeout:1, handler:nil)
@@ -93,7 +93,7 @@ class TestViewModel:XCTestCase {
             XCTAssertEqual(Thread.main, Thread.current)
             expect.fulfill()
         }
-        DispatchQueue.global(qos:.background).async { view.presenter.viewModels.update(viewModel:MockViewModel()) }
+        DispatchQueue.global(qos:.background).async { view.presenter.update(viewModel:MockViewModel()) }
         waitForExpectations(timeout:1, handler:nil)
     }
 }
