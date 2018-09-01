@@ -1,10 +1,5 @@
 import UIKit
-import CleanArchitecture
 
-struct MockSecondViewModel:ViewModel {
-    var value:CGFloat
-    
-    init() {
-        value = 0
-    }
+struct MockSecondViewModel {
+    var value:CGFloat = 0
 }

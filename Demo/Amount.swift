@@ -1,23 +1,18 @@
 import Foundation
 
 class Amount {
-    private let formatter:NumberFormatter
-    private static let defaultAmount:Float = 0
-    private static let minIntegers:Int = 1
-    private static let minDecimals:Int = 2
-    private static let maxDecimals:Int = 2
+    private let formatter = NumberFormatter()
     
     init() {
-        formatter = NumberFormatter()
-        formatter.numberStyle = NumberFormatter.Style.decimal
-        formatter.minimumIntegerDigits = Amount.minIntegers
-        formatter.minimumFractionDigits = Amount.minDecimals
-        formatter.maximumFractionDigits = Amount.maxDecimals
+        formatter.numberStyle = .decimal
+        formatter.minimumIntegerDigits = 1
+        formatter.minimumFractionDigits = 2
+        formatter.maximumFractionDigits = 2
         formatter.decimalSeparator = "."
     }
     
     func amountFrom(string:String) -> Float {
-        guard let number = formatter.number(from:string) else { return Amount.defaultAmount }
+        guard let number = formatter.number(from:string) else { return 0 }
         return number.floatValue
     }
     

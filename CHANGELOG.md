@@ -1,5 +1,14 @@
 # Change log
 
+## Version 2.0
+
+- Remove ViewModels
+Now Presenter will be in charge of the view models.
+- Replace protocol by class
+Presenter and Interactor are now classes that you can extend.
+This will reduce the boiler plate and it will lead to an easier and smoother implementation.
+
+
 ## Version 1.15
 
 - Removing clutter to make code more compact

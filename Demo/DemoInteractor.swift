@@ -2,14 +2,8 @@ import UIKit
 import CleanArchitecture
 
 class DemoInteractor:Interactor {
-    weak var delegate:InteractorDelegate?
-    var amount:Amount
-    var exchanger:Exchanger
-    
-    required init() {
-        amount = Amount()
-        exchanger = Exchanger()
-    }
+    var amount:Amount = Amount()
+    var exchanger = Exchanger()
     
     func initialExchanger() -> ExchangeText {
         exchanger.euroChanged()

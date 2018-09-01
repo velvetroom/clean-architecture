@@ -1,11 +1,11 @@
 import Foundation
 import CleanArchitecture
 
-class MockView:View<MockPresenter> {
+class MockView:View<MockInteractor, MockPresenter> {
     var onPropertyUpdated:(() -> Void)?
     
     func startObserving() {
-        presenter.viewModels.observe { (property:MockViewModel) in
+        presenter.viewModel { (_:MockViewModel) in
             self.onPropertyUpdated?()
         }
     }

@@ -4,8 +4,6 @@ class InputView:UIView, UITextFieldDelegate {
     weak var label:UILabel!
     weak var field:UITextField!
     var listener:((String) -> Void)?
-    private static let fieldHeight:CGFloat = 35
-    private static let labelHeight:CGFloat = 30
     
     init() {
         super.init(frame:.zero)
@@ -51,11 +49,11 @@ class InputView:UIView, UITextFieldDelegate {
     private func layoutOutlets() {
         label.topAnchor.constraint(equalTo:topAnchor).isActive = true
         label.leftAnchor.constraint(equalTo:leftAnchor).isActive = true
-        label.heightAnchor.constraint(equalToConstant:InputView.labelHeight).isActive = true
+        label.heightAnchor.constraint(equalToConstant:30).isActive = true
         
         field.topAnchor.constraint(equalTo:label.bottomAnchor).isActive = true
         field.leftAnchor.constraint(equalTo:leftAnchor).isActive = true
         field.rightAnchor.constraint(equalTo:rightAnchor).isActive = true
-        field.heightAnchor.constraint(equalToConstant:InputView.fieldHeight).isActive = true
+        field.heightAnchor.constraint(equalToConstant:35).isActive = true
     }
 }
