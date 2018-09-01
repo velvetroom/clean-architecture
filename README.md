@@ -106,18 +106,17 @@ In a new file import Clean Architecture
 import CleanArchitecture
 ```
 
-Create a class that implements Interactor and add the required boiler plate:
+Create a class that extends Interactor:
 
 ```
 class MyInteractor:Interactor {
-    weak var delegate:InteractorDelegate?
 
-    required init() { }
 }
 ```
 
-- `delegate` A weak reference to the InteractorDelegate; this is the only communication going from the Interactor to the Presenter, the Interactor notifies the Presenter when it should update the presentation.
-- `required init` Initialize any property that you need or leave it empty if none.
+Properties of Interactor
+
+- `delegate` A weak reference to the Presenter; this is the only communication going from the Interactor to the Presenter, the Interactor notifies the Presenter when it should update the presentation.
 
 ### Presenter
 
@@ -133,20 +132,18 @@ In a new file import Clean Architecture
 import CleanArchitecture
 ```
 
-Create a class that implements Presenter and add the required boiler plate:
+Create a class that extends Presenter:
 
 ```
-class MyPresenter:Presenter {
-    var viewModels:ViewModels!
-    var interactor:MyInteractor!
-
-    required init() { }
+class MyPresenter:Presenter<MyInteractor> {
+    
 }
 ```
 
-- `viewModels` A container for your view models. Presenter edits ViewModels and View gets notifified of a change, then View can display the change to the user.
+Properties of presenter
+
+- `viewModels` Presenter edits ViewModels and View gets notifified of a change, then View can display the change to the user.
 - `interactor` Presenter is the owner of the interactor.
-- `required init` Initialize any property if needed.
 
 ### View
 
@@ -172,19 +169,18 @@ import CleanArchitecture
 
 Create a new class that inherits from View.
 
-View is a Generic class that needs to be specialized with a class conforming to Presenter.
+View is a Generic class that needs to be specialized with a Presenter and an Interactor.
 
 ```
-class MyView:View<MyPresenter> { }
+class MyView:View<MyInteractor, MyPresenter> { }
 ```
 
-- `MyPresenter` Your class conforming to Presenter
+- `MyInteractor` Your class extending Interactor
+- `MyPresenter` Your class extending Presenter
 
 ### ViewModels
 
 The structure of information that will be presented to the user.
-
-You don't create a ViewModels object, Presenter has a ViewModels object already and you rather create as many ViewModel structs as your View needs.
 
 Presenter is in charge of updating the ViewModel whenever it is needed. Every ViewModel can have an observer which will be notified via a closure when the property changes; ideally this observer would be your View.
 
@@ -198,19 +194,14 @@ In a new file import Clean Architecture
 import CleanArchitecture
 ```
 
-Create a new structure that implements ViewModel.
+Create a new structure.
 
 ```
-struct MyViewModel:ViewModel {
-    var userName:String
-    var buttonEnabled:Bool
+struct MyViewModel {
+    var userName = String()
+    var buttonEnabled = false
     var buttonColor:UIColor?
     var icon:UIImage?
-
-    init() {
-        userName = String()
-        buttonEnabled = false
-    }
 }
 ```
 
@@ -221,10 +212,10 @@ Your Presenter is in charge of updating the ViewModel and you can decide when to
 In your Presenter class
 
 ```
-func update(userName:String) {
+func newUser(name:String) {
     var viewModel = MyViewModel()
-    viewModel.userName = userName
-    viewModels.update(viewModel:viewModel)
+    viewModel.userName = name
+    update(viewModel:viewModel)
 }
 ```
 
@@ -240,7 +231,7 @@ In your DemoView class
 
 ```
 func listenToUpdates() {
-    presenter.viewModels.observe { [weak self] (viewModel:MyViewModel) in
+    presenter.viewModel { [weak self] (viewModel:MyViewModel) in
         self?.title = viewModel.userName
     }
 }
