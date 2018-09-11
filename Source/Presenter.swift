@@ -1,8 +1,8 @@
 import Foundation
 
-open class Presenter<I:Interactor>:Delegate {
+open class Presenter<I:Interactor>:Delegate, PresenterInterface {
     open var interactor:I!
-    private(set) var viewModels:[ObjectIdentifier:Any] = [:]
+    private(set) var viewModels = [ObjectIdentifier:Any]()
     
     public required init() { }
     open func didLoad() { }
@@ -28,6 +28,16 @@ open class Presenter<I:Interactor>:Delegate {
         guard let item = viewModels[ObjectIdentifier(V.self)] as? Item<V> else { return Item<V>() }
         return item
     }
+}
+
+public protocol PresenterInterface:AnyObject {
+    associatedtype I:Interactor
+    var interactor:I! { get set }
+    
+    init()
+    func didLoad()
+    func willAppear()
+    func didAppear()
 }
 
 public protocol Delegate:AnyObject {
