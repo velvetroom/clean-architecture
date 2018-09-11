@@ -1,5 +1,12 @@
 # Change log
 
+
+## Version 2.1
+
+- Removed Interactor Generic from View Signature
+Interactor can now be inferred from Presenter
+
+
 ## Version 2.0
 
 - Remove ViewModels
