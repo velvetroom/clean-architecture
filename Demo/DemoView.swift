@@ -1,7 +1,7 @@
 import UIKit
 import CleanArchitecture
 
-class DemoView:View<DemoInteractor, DemoPresenter> {
+class DemoView:View<DemoPresenter> {
     private weak var header:UILabel!
     private weak var rate:InputView!
     private weak var euro:InputView!

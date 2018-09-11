@@ -1,12 +1,12 @@
 import UIKit
 
-open class View<I, P>:UIViewController where P:Presenter<I> {
+open class View<P:PresenterInterface>:UIViewController {
     open var presenter:P
     
     public required init() {
         presenter = P()
-        presenter.interactor = I()
-        presenter.interactor.delegate = presenter
+        presenter.interactor = P.I()
+        presenter.interactor.delegate = presenter as? Delegate
         super.init(nibName:nil, bundle:nil)
     }
     
