@@ -11,7 +11,6 @@
 		DAF18085211DC7B600299702 /* Amount.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAF1807B211DC7B600299702 /* Amount.swift */; };
 		DAF18086211DC7B600299702 /* DemoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAF1807C211DC7B600299702 /* DemoView.swift */; };
 		DAF18087211DC7B600299702 /* Exchanger.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAF1807D211DC7B600299702 /* Exchanger.swift */; };
-		DAF18088211DC7B600299702 /* DemoInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAF1807E211DC7B600299702 /* DemoInteractor.swift */; };
 		DAF18089211DC7B600299702 /* Application.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAF1807F211DC7B600299702 /* Application.swift */; };
 		DAF1808A211DC7B600299702 /* Exchange.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAF18080211DC7B600299702 /* Exchange.swift */; };
 		DAF1808B211DC7B600299702 /* ExchangeText.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAF18081211DC7B600299702 /* ExchangeText.swift */; };
@@ -20,12 +19,10 @@
 		DAF18093211DC7CD00299702 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = DAF18090211DC7CD00299702 /* Localizable.strings */; };
 		DAF18094211DC7CD00299702 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DAF18092211DC7CD00299702 /* LaunchScreen.storyboard */; };
 		DAF1809A211DC7DC00299702 /* View.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAF18096211DC7DC00299702 /* View.swift */; };
-		DAF1809D211DC7DC00299702 /* Interactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAF18098211DC7DC00299702 /* Interactor.swift */; };
 		DAF1809E211DC7DC00299702 /* Presenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAF18099211DC7DC00299702 /* Presenter.swift */; };
 		DAF180A8211DC7E700299702 /* MockSecondViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAF180A0211DC7E700299702 /* MockSecondViewModel.swift */; };
 		DAF180A9211DC7E700299702 /* TestViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAF180A1211DC7E700299702 /* TestViewModel.swift */; };
 		DAF180AA211DC7E700299702 /* MockContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAF180A2211DC7E700299702 /* MockContainer.swift */; };
-		DAF180AB211DC7E700299702 /* MockInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAF180A3211DC7E700299702 /* MockInteractor.swift */; };
 		DAF180AC211DC7E700299702 /* MockViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAF180A4211DC7E700299702 /* MockViewModel.swift */; };
 		DAF180AD211DC7E700299702 /* TestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAF180A5211DC7E700299702 /* TestView.swift */; };
 		DAF180AE211DC7E700299702 /* MockPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAF180A6211DC7E700299702 /* MockPresenter.swift */; };
@@ -61,7 +58,6 @@
 		DAF1807B211DC7B600299702 /* Amount.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Amount.swift; sourceTree = "<group>"; };
 		DAF1807C211DC7B600299702 /* DemoView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DemoView.swift; sourceTree = "<group>"; };
 		DAF1807D211DC7B600299702 /* Exchanger.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Exchanger.swift; sourceTree = "<group>"; };
-		DAF1807E211DC7B600299702 /* DemoInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DemoInteractor.swift; sourceTree = "<group>"; };
 		DAF1807F211DC7B600299702 /* Application.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Application.swift; sourceTree = "<group>"; };
 		DAF18080211DC7B600299702 /* Exchange.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Exchange.swift; sourceTree = "<group>"; };
 		DAF18081211DC7B600299702 /* ExchangeText.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExchangeText.swift; sourceTree = "<group>"; };
@@ -70,12 +66,10 @@
 		DAF18091211DC7CD00299702 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		DAF18092211DC7CD00299702 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		DAF18096211DC7DC00299702 /* View.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = View.swift; sourceTree = "<group>"; };
-		DAF18098211DC7DC00299702 /* Interactor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Interactor.swift; sourceTree = "<group>"; };
 		DAF18099211DC7DC00299702 /* Presenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Presenter.swift; sourceTree = "<group>"; };
 		DAF180A0211DC7E700299702 /* MockSecondViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MockSecondViewModel.swift; sourceTree = "<group>"; };
 		DAF180A1211DC7E700299702 /* TestViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestViewModel.swift; sourceTree = "<group>"; };
 		DAF180A2211DC7E700299702 /* MockContainer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MockContainer.swift; sourceTree = "<group>"; };
-		DAF180A3211DC7E700299702 /* MockInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MockInteractor.swift; sourceTree = "<group>"; };
 		DAF180A4211DC7E700299702 /* MockViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MockViewModel.swift; sourceTree = "<group>"; };
 		DAF180A5211DC7E700299702 /* TestView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestView.swift; sourceTree = "<group>"; };
 		DAF180A6211DC7E700299702 /* MockPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MockPresenter.swift; sourceTree = "<group>"; };
@@ -129,15 +123,14 @@
 			isa = PBXGroup;
 			children = (
 				DAF1807A211DC7B600299702 /* DemoPresenter.swift */,
-				DAF1807B211DC7B600299702 /* Amount.swift */,
+				DAF18083211DC7B600299702 /* DemoViewModel.swift */,
 				DAF1807C211DC7B600299702 /* DemoView.swift */,
+				DAF1807B211DC7B600299702 /* Amount.swift */,
 				DAF1807D211DC7B600299702 /* Exchanger.swift */,
-				DAF1807E211DC7B600299702 /* DemoInteractor.swift */,
 				DAF1807F211DC7B600299702 /* Application.swift */,
 				DAF18080211DC7B600299702 /* Exchange.swift */,
 				DAF18081211DC7B600299702 /* ExchangeText.swift */,
 				DAF18082211DC7B600299702 /* InputView.swift */,
-				DAF18083211DC7B600299702 /* DemoViewModel.swift */,
 			);
 			path = Demo;
 			sourceTree = "<group>";
@@ -154,7 +147,6 @@
 		DAF18095211DC7DC00299702 /* Source */ = {
 			isa = PBXGroup;
 			children = (
-				DAF18098211DC7DC00299702 /* Interactor.swift */,
 				DAF18099211DC7DC00299702 /* Presenter.swift */,
 				DAF18096211DC7DC00299702 /* View.swift */,
 			);
@@ -167,7 +159,6 @@
 				DAF180A1211DC7E700299702 /* TestViewModel.swift */,
 				DAF180A5211DC7E700299702 /* TestView.swift */,
 				DAF180A4211DC7E700299702 /* MockViewModel.swift */,
-				DAF180A3211DC7E700299702 /* MockInteractor.swift */,
 				DAF180A2211DC7E700299702 /* MockContainer.swift */,
 				DAF180A6211DC7E700299702 /* MockPresenter.swift */,
 				DAF180A7211DC7E700299702 /* MockView.swift */,
@@ -296,7 +287,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DAF1809D211DC7DC00299702 /* Interactor.swift in Sources */,
 				DAF1809E211DC7DC00299702 /* Presenter.swift in Sources */,
 				DAF1809A211DC7DC00299702 /* View.swift in Sources */,
 			);
@@ -311,7 +301,6 @@
 				DAF18086211DC7B600299702 /* DemoView.swift in Sources */,
 				DAF1808D211DC7B600299702 /* DemoViewModel.swift in Sources */,
 				DAF18085211DC7B600299702 /* Amount.swift in Sources */,
-				DAF18088211DC7B600299702 /* DemoInteractor.swift in Sources */,
 				DAF1808B211DC7B600299702 /* ExchangeText.swift in Sources */,
 				DAF1808C211DC7B600299702 /* InputView.swift in Sources */,
 				DAF18087211DC7B600299702 /* Exchanger.swift in Sources */,
@@ -326,7 +315,6 @@
 				DAF180AD211DC7E700299702 /* TestView.swift in Sources */,
 				DAF180AC211DC7E700299702 /* MockViewModel.swift in Sources */,
 				DAF180AE211DC7E700299702 /* MockPresenter.swift in Sources */,
-				DAF180AB211DC7E700299702 /* MockInteractor.swift in Sources */,
 				DAF180A9211DC7E700299702 /* TestViewModel.swift in Sources */,
 				DAF180A8211DC7E700299702 /* MockSecondViewModel.swift in Sources */,
 				DAF180AF211DC7E700299702 /* MockView.swift in Sources */,

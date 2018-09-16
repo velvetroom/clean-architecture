@@ -1,7 +1,7 @@
 import Foundation
 import CleanArchitecture
 
-class MockPresenter:Presenter<MockInteractor> {
+class MockPresenter:Presenter {
     var onDidLoad:(() -> Void)?
     var onWillAppear:(() -> Void)?
     var onDidAppear:(() -> Void)?

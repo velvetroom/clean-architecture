@@ -1,6 +1,13 @@
 # Change log
 
 
+## Version 3.0
+
+- Removed Interactor
+In order to avoid code duplication and complexity now Presenter should be in charge
+of interacting directly with Business Logic.
+
+
 ## Version 2.1
 
 - Removed Interactor Generic from View Signature
