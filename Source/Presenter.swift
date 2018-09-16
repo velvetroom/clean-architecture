@@ -7,7 +7,6 @@ open class Presenter {
     open func didLoad() { }
     open func willAppear() { }
     open func didAppear() { }
-    open func shouldUpdate() { }
     
     public func update<V>(viewModel:V!) {
         var item = Item<V>()
