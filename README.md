@@ -92,37 +92,12 @@ Install and download
 
 If you are wondering what is CocoaPods take a look at: [https://cocoapods.org](https://cocoapods.org)
 
-### Interactor
-
-Interactors are the higher level layer in Clean Architecture, that is, the closer to your business level.
-
-They should know nothing about the user interface or how it is displayed to the user.
-
-They should depend (know everything or import) on your business layer.
-
-In a new file import Clean Architecture
-
-```
-import CleanArchitecture
-```
-
-Create a class that extends Interactor:
-
-```
-class MyInteractor:Interactor {
-
-}
-```
-
-Properties of Interactor
-
-- `delegate` A weak reference to the Presenter; this is the only communication going from the Interactor to the Presenter, the Interactor notifies the Presenter when it should update the presentation.
 
 ### Presenter
 
 Presenters are in charge of how to interpret your application data so it can be displayed to the user.
 
-Should depend on Interactor and know nothing specific about the View.
+Should depend on the business logic and know nothing specific about the View.
 
 They communicate to the View via the ViewModel.
 
@@ -135,15 +110,10 @@ import CleanArchitecture
 Create a class that extends Presenter:
 
 ```
-class MyPresenter:Presenter<MyInteractor> {
+class MyPresenter:Presenter {
     
 }
 ```
-
-Properties of presenter
-
-- `viewModels` Presenter edits ViewModels and View gets notifified of a change, then View can display the change to the user.
-- `interactor` Presenter is the owner of the interactor.
 
 ### View
 
@@ -153,11 +123,11 @@ Should know everything about Presenter, ideally only interact with it and no oth
 
 Applications in iOS usually consist of transitions between view controllers and most of the time there is only one of these active.
 
-When your View is instantiated it creates instances of your Presenter, Interactor and ViewModels, connects them accordingly and assigns them their responsibilities.
+When your View is instantiated it creates instances of your Presenter and ViewModels, connects them accordingly and assigns them their responsibilities.
 
-If your View gets released also your Presenter, Interactor and ViewModel will be released.
+If your View gets released also your Presenter and ViewModel will be released.
 
-You can abstract each View as a section or screen in your application. You should create a View for each section, each View will have their own ViewModels ideally they will also have their own specific Presenter. Interactors can be shared or could also be specific for each section.
+You can abstract each View as a section or screen in your application. You should create a View for each section, each View will have their own ViewModels ideally they will also have their own specific Presenter.
 
 View inherits from UIViewController.
 
@@ -169,13 +139,12 @@ import CleanArchitecture
 
 Create a new class that inherits from View.
 
-View is a Generic class that needs to be specialized with a Presenter and an Interactor.
+View is a Generic class that needs to be specialized with a Presenter.
 
 ```
-class MyView:View<MyInteractor, MyPresenter> { }
+class MyView:View<MyPresenter> { }
 ```
 
-- `MyInteractor` Your class extending Interactor
 - `MyPresenter` Your class extending Presenter
 
 ### ViewModels
