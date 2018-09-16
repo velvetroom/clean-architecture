@@ -1,12 +1,10 @@
 import UIKit
 
-open class View<P:PresenterInterface>:UIViewController {
+open class View<P:Presenter>:UIViewController {
     open var presenter:P
     
     public required init() {
         presenter = P()
-        presenter.interactor = P.I()
-        presenter.interactor.delegate = presenter as? Delegate
         super.init(nibName:nil, bundle:nil)
     }
     
@@ -20,7 +18,6 @@ open class View<P:PresenterInterface>:UIViewController {
     open override func viewDidLoad() {
         super.viewDidLoad()
         presenter.didLoad()
-        presenter.interactor.didLoad()
     }
     
     open override func viewWillAppear(_ animated:Bool) {
