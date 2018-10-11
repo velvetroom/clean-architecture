@@ -115,15 +115,11 @@ Should depend on the business logic and know nothing specific about the View.
 They communicate to the View via the ViewModel.
 
 
-In a new file import Clean Architecture
+In a new file import Clean Architecture and create a class that extends Presenter:
 
 ```
 import CleanArchitecture
-```
 
-Create a class that extends Presenter:
-
-```
 class MyPresenter:Presenter {
     
 }
@@ -146,17 +142,13 @@ You can abstract each View as a section or screen in your application, each View
 View inherits from UIViewController.
 
 
-In a new file import Clean Architecture
-
-```
-import CleanArchitecture
-```
-
-Create a new class that inherits from View.
+In a new file import Clean Architecture and create a class that extends View.
 
 View is a Generic class that needs to be specialized with a Presenter.
 
 ```
+import CleanArchitecture
+
 class MyView:View<MyPresenter> {
 
 }
@@ -175,16 +167,11 @@ You can define anything that you need in a ViewModel from basic types like Bool 
 
 You can also decide if your properties are optional or not.
 
-
-In a new file import Clean Architecture
-
-```
-import CleanArchitecture
-```
-
-Create a new structure.
+In a new file create a structure.
 
 ```
+import Foundation
+
 struct MyViewModel {
     var userName = String()
     var buttonEnabled = false
@@ -201,9 +188,9 @@ Your Presenter is in charge of updating the ViewModel and you can decide when to
 In your Presenter class
 
 ```
-func newUser(name:String) {
+override func didLoad() {
     var viewModel = MyViewModel()
-    viewModel.userName = name
+    viewModel.userName = "hello world"
     update(viewModel:viewModel)
 }
 ```
@@ -221,7 +208,8 @@ Listening to updates is thread safe, it doesn't matter if your Presenter is upda
 In your MyView class
 
 ```
-func listenToUpdates() {
+override func viewDidLoad() {
+    super.viewDidLoad()
     presenter.viewModel { [weak self] (viewModel:MyViewModel) in
         self?.title = viewModel.userName
     }
